@@ -1,0 +1,40 @@
+/*.bird{
+  cursor: url("chrome-extension://__MSG_@@extension_id__/nightingale_sm.png") 0 0, auto;
+}*/
+
+.keatstip {
+  position: relative;
+  display: inline-block;
+  text-shadow: 0 0 3px #d10015, 0 0 6px #2d08d1;
+  cursor: url("chrome-extension://__MSG_@@extension_id__/nightingale_sm.png") 0 0, auto;
+}
+
+.keatstip .keatstiptext {
+  visibility: hidden;
+  min-width: 200px;
+  background-color: black;
+  color: #fff;
+  border-radius: 6px;
+  padding: 5px 5px;
+
+  /*text*/
+  text-align: center;
+  font-size: 20px;
+  
+  /* Position the tooltip source: https://stackoverflow.com/a/25829529*/
+  position: fixed;
+  left: 50%;
+  top: 45%;
+  transform: translate(-50%, -50%);
+
+  /*  opacity and z-index */  
+  opacity: 0;  
+  z-index: 10;
+  transition: opacity 6s;
+}
+
+.keatstip:hover .keatstiptext {
+  visibility: visible;
+  opacity: 1;
+  cursor:none;  
+}

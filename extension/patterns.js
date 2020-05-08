@@ -1,5 +1,22 @@
 /// pairs: (regex, quote from keats)
 var regex2quote = [
+	//ode on indolence
+
+	[/\bwith (an? )?\w+ed (necks?|heads?|face?|hands?|arms?|lips?|eyes?|mouths?|smiles?|shoulders?|teeth|tooth|noses?|fingers?|foot|feet|hair), and (an? )?\w+ (necks?|heads?|face?|hands?|arms?|lips?|eyes?|mouths?|smiles?|shoulders?|teeth|tooth|noses?|fingers?|foot|feet|hair)\b/i,
+		"One morn before me were three figures seen,<br>With bowèd necks, and joinèd hands, side-faced;"],
+
+	[/\b\w+ed in (white|black|silver|gold) \w+s|\b\w+ in (white|black|silver|gold) \w+s \w+ed\b|\wed,? one (behind|in front of|with) the other\b|one (behind|in front of|with) the other \w+ed|\b(tevas|birkenstocks|chacos)\b/i,
+		"And one behind the other stepp’d serene,<br>In placid sandals, and in white robes graced"],
+
+	[/\b(zoetrope|duotrope|wintergarden|Méliès|george melies|action movies?|british cinema|(mm|millimetres?) film|horse gait|gait of (the|a) ?horses)\b/i,
+		"They pass’d, like figures on a marble urn,<br>When shifted round to see the other side"],
+
+	[/\b((a|the) sequel to|eternal (return|recurrence)|time is (infinite|a circle))\b/i,
+		"They came again; as when the urn once more<br>Is shifted round, the first seen shades return"],
+
+	[/\bas may (sometimes? )?(happen|be the case) with \w+,|((ceramic|cereal|ramen|set of \d+|tea|coffee|japanese|pyrex|porcelain|clay) (bowls?|cups?|mugs?))/,
+		"And they were strange to me, as may betide<br>With vases, to one deep in Phidian lore."]
+
 
 	//ode on melancholy
 
@@ -33,6 +50,7 @@ var regex2quote = [
 
 	[/the \w+ness of (my|her|our|your|his|their)? [b-df-hj-np-tv-z]{0,}[aeiou]+[b-df-hj-np-tv-z]+\b|\w[b-df-hj-np-tv-z]{0,}[aeiou]+[b-df-hj-np-tv-z]+(y|ies?) \w[b-df-hj-np-tv-z]{0,}[aeiou]+[b-df-hj-np-tv-z]+(y|ies?)|\b(troph(ies|y)|of her (might|power|strength|capability|influence|prestige|control|design))\b/,
 		"His soul shalt taste the sadness of her might,<br>And be among her cloudy trophies hung."],
+
 
 	//ode to a nightingale
 
@@ -125,6 +143,7 @@ var regex2quote = [
 
 	[/\b((just|only) an? (echo|dream|memory))\b|\bnightingale\b|\bbird('s)? ?song\b|(\b(empty|alone|sad|depressed|confused|miserable|bereft) again\b)|\balready (so |really )?far away\b|\bcouldn't hear (it|the song|the music) anymore\b|\bearshot\b|\balready gone\b|\bone hand clapping\b|\bwoke\b|\babout my dream\b/i,
 		"and now 'tis buried deep<br>In the next valley-glades:<br>Was it a vision, or a waking dream?"],
+
 
 	//ode on a grecian urn
 

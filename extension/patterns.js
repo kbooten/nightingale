@@ -1,5 +1,7 @@
 /// pairs: (regex, quote from keats)
 var regex2quote = [
+
+
 	//ode on indolence
 
 	[/\bwith (an? )?\w+ed (necks?|heads?|face?|hands?|arms?|lips?|eyes?|mouths?|smiles?|shoulders?|teeth|tooth|noses?|fingers?|foot|feet|hair), and (an? )?\w+ (necks?|heads?|face?|hands?|arms?|lips?|eyes?|mouths?|smiles?|shoulders?|teeth|tooth|noses?|fingers?|foot|feet|hair)\b/i,
@@ -15,7 +17,19 @@ var regex2quote = [
 		"They came again; as when the urn once more<br>Is shifted round, the first seen shades return"],
 
 	[/\bas may (sometimes? )?(happen|be the case) with \w+,|((ceramic|cereal|ramen|set of \d+|tea|coffee|japanese|pyrex|porcelain|clay) (bowls?|cups?|mugs?))/,
-		"And they were strange to me, as may betide<br>With vases, to one deep in Phidian lore."]
+		"And they were strange to me, as may betide<br>With vases, to one deep in Phidian lore."],
+
+	[/\bHow is it that I (\w+ )?knew|\w+ed in such a \w+ \w+[?.!]|(n95|surgical|sheet|3d[- ]printed) masks?\b/i,
+		"How is it, Shadows! that I knew ye not?\bHow came ye muffled in so hush a mask?"],
+
+	[/\b(grew|grows?) (less|\w+er) and (less|\w+er)|(necks?|heads?|face?|hands?|arms?|lips?|eyes?|fingers?|foot|feet|body|bodies|skin|legs?|gums) (was|were|is|are|felt|got) numb\b|\bslow\w+ pulse\b/i,
+		"Ripe was the drowsy hour;<br>The blissful cloud of summer-indolence<br>Benumb’d my eyes; my pulse grew less and less"],
+
+	[/[.?!] +\bPain?\b[A-Za-z, '’]+\bpleasure?\b[A-Za-z, '’]+[.?!]|[.?!] +Pleasures?\b[A-Za-z, '’]+\bpains?\b[A-Za-z, '’]+[.?!]/i,
+		"Pain had no sting, and pleasure’s wreath no flower"],
+
+	[/\b(exorcis[mt])\b|\bthink about nothing\b|\bstare at (her|my|their|his) phone\b/i,
+		"O, why did ye not melt, and leave my sense<br>Unhaunted quite of all but—nothingness?",]
 
 
 	//ode on melancholy
@@ -48,8 +62,20 @@ var regex2quote = [
 	[/(turn\w+ to|bec[oa]me|grew) (poison|ash|ruin|shit|mold|spoil)\w{0,}|\b\w+-mouth\b|\b(alchemy|metamorph[a-z]+|betrayals?|curdled?)\b/i,
 		"and aching Pleasure nigh,<br>Turning to poison while the bee-mouth sips"],
 
-	[/the \w+ness of (my|her|our|your|his|their)? [b-df-hj-np-tv-z]{0,}[aeiou]+[b-df-hj-np-tv-z]+\b|\w[b-df-hj-np-tv-z]{0,}[aeiou]+[b-df-hj-np-tv-z]+(y|ies?) \w[b-df-hj-np-tv-z]{0,}[aeiou]+[b-df-hj-np-tv-z]+(y|ies?)|\b(troph(ies|y)|of her (might|power|strength|capability|influence|prestige|control|design))\b/,
+	[/the \w+ness of (my|her|our|your|his|their)? [b-df-hj-np-tv-z]{0,}[aeiou]+[b-df-hj-np-tv-z]+\b|\w[b-df-hj-np-tv-z]{0,}[aeiou]+[b-df-hj-np-tv-z]+(y|ies?) \w[b-df-hj-np-tv-z]{0,}[aeiou]+[b-df-hj-np-tv-z]+(y|ies?)|\b(troph(ies|y)|of her (might|power|strength|capability|influence|prestige|control|design))\b/i,
 		"His soul shalt taste the sadness of her might,<br>And be among her cloudy trophies hung."],
+
+	[/(your|my|our) (lazy|idle|tired|exhausted) [b-df-hj-np-tv-z]{0,}[aeiou]+[b-df-hj-np-tv-z]+\b|\b(achievement subject|neoliberal ideology|self-optimization|byung-chul han)\b/i
+		"Was it a silent deep-disguisèd plot<br>To steal away, and leave without a task<br>My idle days?"],
+
+	[/\b(like clockwork|rule of threes?|scotophob\w+)|and, [b-df-hj-np-tv-z]{0,}[aeiou]+[b-df-hj-np-tv-z]+ing\b,/i,
+		"A third time pass’d they by, and, passing, turn’d<br>Each one the face a moment whiles to me"],
+
+	[/\b((so|gettin?) faded)\b|\bfaded (af|every (day|night)|all the time)\b|\b|\b(wingstop|bw3|(barbecue|bbq|hot|chicken) wings)\b/i,
+		"Then faded, and to follow them I burn’d<br>And ached for wings"],
+
+	[/\b(her name was|she was (called|named)) (Am|Lo)\w+\b|\bher \w+ was pale\b|\bthe three[:;.]/i,
+		"I knew the three;<br>The first was a fair Maid, and Love her name;<br>The second was Ambition, pale of cheek,<br>And ever watchful with fatiguèd eye",],
 
 
 	//ode to a nightingale

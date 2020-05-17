@@ -1,7 +1,3 @@
-/*.bird{
-  cursor: url("chrome-extension://__MSG_@@extension_id__/nightingale_sm.png") 0 0, auto;
-}*/
-
 .keatstip {
   position: relative;
   display: inline-block;
@@ -30,11 +26,14 @@
   /*  opacity and z-index */  
   opacity: 0;  
   z-index: 10;
-  transition: opacity 6s;
+  transition: all 2.0s ease;
+  transition-delay: 2s;
 }
 
 .keatstip:hover .keatstiptext {
   visibility: visible;
   opacity: 1;
-  cursor:none;  
+  cursor:default;
+  transition: all 6s ease;
+  transition-delay: .25s;
 }

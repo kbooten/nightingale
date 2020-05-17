@@ -29,7 +29,37 @@ var regex2quote = [
 		"Pain had no sting, and pleasure’s wreath no flower"],
 
 	[/\b(exorcis[mt])\b|\bthink about nothing\b|\bstare at (her|my|their|his) phone\b/i,
-		"O, why did ye not melt, and leave my sense<br>Unhaunted quite of all but—nothingness?",]
+		"O, why did ye not melt, and leave my sense<br>Unhaunted quite of all but—nothingness?"],
+
+	[/\b(unmeek|bossy|overbearing|pushy|loud|obstreperous|unruly|difficult|noisy|demanding) (wom[ea]n|girls|wi[fv]es?|girlfriends?)\b|\b(my|her|his|your) demons?\b|\b(artistic|poetic) inspiration\b|\bthe poetry of \b/i,
+		"The last, whom I love more, the more of blame<br>Is heap’d upon her, maiden most unmeek,—<br>I knew to be my demon Poesy."],
+
+	[/(your|my|our) (lazy|idle|tired|exhausted) [b-df-hj-np-tv-z]{0,}[aeiou]+[b-df-hj-np-tv-z]+\b|\b(achievement subject|neoliberal ideology|self-optimization|byung-chul han)\b/i,
+		"Was it a silent deep-disguisèd plot<br>To steal away, and leave without a task<br>My idle days?"],
+
+	[/\b(like clockwork|rule of threes?|scotophob\w+)|and, [b-df-hj-np-tv-z]{0,}[aeiou]+[b-df-hj-np-tv-z]+ing\b,/i,
+		"A third time pass’d they by, and, passing, turn’d<br>Each one the face a moment whiles to me"],
+
+	[/\b((so|gettin?) faded)\b|\bfaded (af|every (day|night)|all the time)\b|\b|\b(wingstop|bw3|(barbecue|bbq|hot|chicken) wings)\b/i,
+		"Then faded, and to follow them I burn’d<br>And ached for wings"],
+
+	[/\b(her name was|she was (called|named)) (Am|Lo)\w+\b|\bher \w+ was pale\b|\bthe three[:;.]/i,
+		"I knew the three;<br>The first was a fair Maid, and Love her name;<br>The second was Ambition, pale of cheek,<br>And ever watchful with fatiguèd eye",],
+
+	[/\blove is\b|\bwant(s|ed|ing)? (wings|to hide|to fly( away)?|super[- ]?powers)|\bfade[ -](in|out)\b|\bOh? f\w+!|\bW(hat|here|ho|hen) (\b[A-Z]?[a-z]+\b ?){2,7}\? +(\b[A-Z]?[a-z]+\b ?){2,7}\?/i,
+		"They faded, and, forsooth! I wanted wings:<br>O folly! What is Love? and where is it?"],
+
+	[/\b((stay|keep|get) motivated|need motivation|time management|bullet journal|pomodoro technique|to-?do app|trello)\b|\b\w+[’']s \w+ \w+[’']s/i,
+		"And for that poor Ambition! it springs<br>From a man’s little heart’s short fever-fit"],
+
+	[/\bat least for me\b|\bnothing (sweeter|better|(as )?sweet|(as )?good) (as|than)\b|\bhoneyed\b|\brather be (sleeping|in bed)\b/i,
+		"For Poesy!—no,—she has not a joy,—<br>At least for me,—so sweet as drowsy noons,<br>And evenings steep’d in honey’d indolence"],
+
+	[/\b((your|my) ((late|early|mid)[- ])?((twen|thir|for|six|seven|eigh|nine)ties|(2|3|4|5|6|7|8|9)0s))\b|\bretirement[- ]age\b|\buniversal[- ]basic income\b/i,
+		"O, for an age so shelter’d from annoy,<br>That I may never know how change the moons,<br>Or hear the voice of busy common-sense!"],
+
+	[/\b([b-df-hj-np-tv-z]+)\w+ \1[b-df-hj-np-tv-z]{0,}(ea[nm]s?|oo[nm]s?|ai[nm]s?|)\b|\bembroidered with\b/i,
+		"My sleep had been embroider’d with dim dreams;<br>My soul had been a lawn besprinkled o’er<br>With flowers, and stirring shades, and baffled beams"],
 
 
 	//ode on melancholy
@@ -41,7 +71,7 @@ var regex2quote = [
 		"Nor suffer thy pale forehead to be kiss'd<br>By nightshade, ruby grape of Proserpine"],
 
 	[/\b(your rosary|a partner in your|psyche)\b|\w+'s mysteries\b/i,
-		"Make not your rosary of yew-berries,<br>Nor let the beetle, <br>nor the death-moth be<br>Your mournful Psyche, nor the downy owl<br>A partner in your sorrow's mysteries"]
+		"Make not your rosary of yew-berries,<br>Nor let the beetle, <br>nor the death-moth be<br>Your mournful Psyche, nor the downy owl<br>A partner in your sorrow's mysteries"],
 
 	[/([st]h\w+) to \1|the \w+ \w+ of the (soul|mind|heart|imagination)/i,
 		"For shade to shade will come too drowsily,<br>And drown the wakeful anguish of the soul"],
@@ -52,8 +82,7 @@ var regex2quote = [
 	[/\brainbow of the\b|\b(globed|peonies|glut|shroud)\b|\bof global\b|\b(red|blue|green|black|white|grey) (hill|peak|field|stream|pond|brook|cloud|star|creek|mist)|\bApril sh\w+/,
 		"And hides the green hill in an April shroud;<br>Then glut thy sorrow on a morning rose,<br>Or on the rainbow of the salt sand-wave,<br>Or on the wealth of globed peonies"],
 
-	[/\b([b-df-hj-np-tv-z])([eo]{2})\w+.{1,20}([b-df-hj-np-tv-z])(?!\1)\2\w+|\b(\w+), \4 
-	\b(through|in|by|against|with|over|among|of|up|under|towards?)\b/i,
+	[/\b([b-df-hj-np-tv-z])([eo]{2})\w+.{1,20}([b-df-hj-np-tv-z])(?!\1)\2\w+|\b(\w+), \4 (through|in|by|against|with|over|among|of|up|under|within|without|towards?)\b/i,
 		"Or if thy mistress some rich anger shows,<br>Emprison her soft hand, and let her rave,<br>And feed deep, deep upon her peerless eyes."],
 
 	[/(\w{5,})( - |—|--|---|–|[.?!.] )\1|\b([.?!] +She lives with|must die)\b/,
@@ -62,20 +91,17 @@ var regex2quote = [
 	[/(turn\w+ to|bec[oa]me|grew) (poison|ash|ruin|shit|mold|spoil)\w{0,}|\b\w+-mouth\b|\b(alchemy|metamorph[a-z]+|betrayals?|curdled?)\b/i,
 		"and aching Pleasure nigh,<br>Turning to poison while the bee-mouth sips"],
 
+	[/\b([Cc]hurch|[Tt]emple) of [A-Z]\w+\b|\b[Ss]overeign\w+\b|\b[Vv]eil\w+\b/,
+		"Ay, in the very temple of Delight<br>Veil'd Melancholy has her sovran shrine"],
+
+	[/\b(gnostic\w+|sommeliers?|(refined|excellent|superb) tastes?|secret (society|club))|a sophisticate\b|\bsensitive (people|person|guy)\b/i,
+		"Veil'd Melancholy has her sovran shrine,<br>Though seen of none save him whose strenuous tongue<br>Can burst Joy's grape against his palate fine"],
+
 	[/the \w+ness of (my|her|our|your|his|their)? [b-df-hj-np-tv-z]{0,}[aeiou]+[b-df-hj-np-tv-z]+\b|\w[b-df-hj-np-tv-z]{0,}[aeiou]+[b-df-hj-np-tv-z]+(y|ies?) \w[b-df-hj-np-tv-z]{0,}[aeiou]+[b-df-hj-np-tv-z]+(y|ies?)|\b(troph(ies|y)|of her (might|power|strength|capability|influence|prestige|control|design))\b/i,
 		"His soul shalt taste the sadness of her might,<br>And be among her cloudy trophies hung."],
 
-	[/(your|my|our) (lazy|idle|tired|exhausted) [b-df-hj-np-tv-z]{0,}[aeiou]+[b-df-hj-np-tv-z]+\b|\b(achievement subject|neoliberal ideology|self-optimization|byung-chul han)\b/i
-		"Was it a silent deep-disguisèd plot<br>To steal away, and leave without a task<br>My idle days?"],
-
-	[/\b(like clockwork|rule of threes?|scotophob\w+)|and, [b-df-hj-np-tv-z]{0,}[aeiou]+[b-df-hj-np-tv-z]+ing\b,/i,
-		"A third time pass’d they by, and, passing, turn’d<br>Each one the face a moment whiles to me"],
-
-	[/\b((so|gettin?) faded)\b|\bfaded (af|every (day|night)|all the time)\b|\b|\b(wingstop|bw3|(barbecue|bbq|hot|chicken) wings)\b/i,
-		"Then faded, and to follow them I burn’d<br>And ached for wings"],
-
-	[/\b(her name was|she was (called|named)) (Am|Lo)\w+\b|\bher \w+ was pale\b|\bthe three[:;.]/i,
-		"I knew the three;<br>The first was a fair Maid, and Love her name;<br>The second was Ambition, pale of cheek,<br>And ever watchful with fatiguèd eye",],
+	[/\b(starlings|goldfinch(es)?|magpies?|sparrows?|wrens?|crows?|orioles?|warblers?)'s?|\b(vine|ivy|tendril)[,.]|\bpent[- ]up\b/i,
+		"The morn was clouded, but no shower fell,<br>Tho’ in her lids hung the sweet tears of May;<br>The open casement press’d a new-leaved vine,<br>Let in the budding warmth and throstle’s lay"],
 
 
 	//ode to a nightingale

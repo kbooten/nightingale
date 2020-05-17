@@ -1,6 +1,6 @@
 console.log('Nightingale')
-console.log('2020')
-
+console.log('(C) kyle booten 2020')
+console.log('*'.repeat(20))
 
 
 /// storing quotes already on page
@@ -49,7 +49,6 @@ function walk(node){
 }
 
 
-
 function shuffleArray(array) {
 	// source: https://stackoverflow.com/a/12646864
     for (let i = array.length - 1; i > 0; i--) {
@@ -59,18 +58,16 @@ function shuffleArray(array) {
 }
 
 
-
 function injectPopup(textNode){
 	// regexes matching web text to poetry
 	// inject first match
 	for (var i = 0; i < regex2quote.length; i++) {
+		//console.log(regex2quote[i])
 		if (usedQuotes.includes(regex2quote[i][1])==false){
 		    regex = regex2quote[i][0];
 		    quote = regex2quote[i][1];
 		    match = textNode.textContent.match(regex);
 		    if (match){
-		    	console.log(textNode.textContent);
-		    	console.log(regex)
 		    	keatstip = "<span class='keatstip'>"+match[0]+"<span class='keatstiptext'>"+quote+"</span></span>";
 		    	var replacementNode = document.createElement('span');
 				replacementNode.innerHTML = textNode.textContent.replace(match[0],keatstip);

@@ -1,6 +1,49 @@
 /// pairs: (regex, quote from keats)
 var regex2quote = [
 
+	// ode to psyche
+
+	[/\b((written|spoken)[ -]word)\b|\bread(s|ing)? ((a|some) )?(poems?|poetry)\b/i,
+		"O Goddess! hear these tuneless numbers, wrung<br>By sweet enforcement and remembrance dear"],
+
+	[/\b(conch|mollusks?|mussels?|sea snails?|\byour \w+ ears?|psychoan\w+)\b/i,
+		"And pardon that thy secrets should be sung<br>Even into thine own soft-conched ear"],
+
+	[/\bdream(ed|s|ing|t)?.{1,50}\baw[oa]ke\w+\b|\bSurely I\b/i,
+		"Surely I dreamt to-day, or did I see<br>The winged Psyche with awaken'd eyes?"],
+
+	[/\b(a stroll|I wandered) (in|into|through|by|past)\b|\ball of a sudden\b/i,
+		"I wander'd in a forest thoughtlessly,<br>And, on the sudden, fainting with surprise<br>Saw two fair creatures, couched side by side"],
+
+	[/\b(pikachus|raichus|caterpies|pokemon)\b|\b(rivulet|(the|a) (creek|brook))\b|\b(coucher|collocate|the \w+ couple)\b|\boff the beaten (trail|track|path)\b/,
+		"...two fair creatures, couched side by side<br>In deepest grass, beneath the whisp'ring roof<br>Of leaves and trembled blossoms, where there ran<br>A brooklet, scarce espied"],
+
+	[/\b(blue|green|black|white|silver|gold|green|pink|orange|teal|gr[ea]y|pink|purple|yellow)\b[ -]\b(blue|green|black|white|silver|gold|green|pink|orange|teal|gr[ea]y|pink|purple|yellow)|\b(soft|cool|damp) (earth|soil|mud|dirt)\b|\bbreathing (exercises?|techniques?)\b|\bbiofeedback\b|\bdeep breathing\b|\b(cool|cold)-\w+\b/i,
+		"Mid hush'd, cool-rooted flowers, fragrant-eyed,<br>Blue, silver-white, and budded Tyrian,<br>They lay calm-breathing, on the bedded grass"],
+
+	[/\b(their arms|legs|wings|buffalo wild wings|bw3|wing stop|drivetrain)\b|\b\w+oo\b.{5,50}ieu\b/i,
+		"Their arms embraced, and their pinions too;<br>Their lips touch'd not, but had not bade adieu"],
+
+	[/\bsoft (hands|arms|touch)\b|\b(manipulated by|rearranged the \w+s|the dreamers|bertolucci)\b/i,
+		"As if disjoined by soft-handed slumber,<br>And ready still past kisses to outnumber"],
+
+	[/\b[3-6]:\d\d (a.?m.?|in the morning)\b|\bat dawn\b|\b()\beye-\w+\b|\beye \w+ (from|of|with|by)\b|\bthe (\w+ )?sublime\b/i,
+		"And ready still past kisses to outnumber<br>At tender eye-dawn of aurorean love"],
+
+	[/\b(Icarus|Caravaggio|Jarman)\b|\bthe \w+ boy I know\b|\bthe winged \w+\b/i,
+		"The winged boy I knew"],
+
+	[/\b(\w+[yY]?),? \1\b|\btrue [B-DF-HJ-NP-TV-Z]+/i,
+		"But who wast thou, O happy, happy dove?<br>His Psyche true!"],
+
+	[/\bla\w+st (\w+ )?and lo\w+st\b|\b(\w+st|most \w+) (vision|sight|scene|view|panorama|vista)\b|\b\w+ed \w+archy\b|\bit[ -]girl\b|\b(Jane Birken|Chlo[eë] Sevigny|Kendall Jenner|Grace Jones|Edie Sedgwick)\b/i,
+		"O latest born and loveliest vision far<br>Of all Olympus' faded hierarchy!"],
+
+	[/\b(Phoebe|Venus|Hesperus|Phosphorus|evening (star|sky|meal)|gold[- ]crowned|crown of gold|sapphire[- ]\w+ed|glow[- ]?worm|biolum\w+)\b/i,
+		"Fairer than Phoebe's sapphire-region'd star,<br>Or Vesper, amorous glow-worm of the sky"],
+
+	[/\b(do(n't| not|es not|esn't) have|without) (m?any|an? )?(temples?|altars?|hymns?|fans?|follow(ers?|ing)|website?|Patreon|wikipedia page|fan[ -]?base|simps|stans)\b/i,
+		"Fairer than Phoebe's sapphire-region'd star,<br>Or Vesper, amorous glow-worm of the sky<br>Fairer than these, though temple thou hast none,<br>Nor altar heap'd with flowers"]
 
 	//ode on indolence
 
@@ -58,8 +101,29 @@ var regex2quote = [
 	[/\b((your|my) ((late|early|mid)[- ])?((twen|thir|for|six|seven|eigh|nine)ties|(2|3|4|5|6|7|8|9)0s))\b|\bretirement[- ]age\b|\buniversal[- ]basic income\b/i,
 		"O, for an age so shelter’d from annoy,<br>That I may never know how change the moons,<br>Or hear the voice of busy common-sense!"],
 
-	[/\b([b-df-hj-np-tv-z]+)\w+ \1[b-df-hj-np-tv-z]{0,}(ea[nm]s?|oo[nm]s?|ai[nm]s?|)\b|\bembroidered with\b/i,
+	[/\b\b([b-df-hj-np-tv-z]+)\w+ \1[b-df-hj-np-tv-z]{0,}(ea[nm]s?|oo[nm]s?|ai[nm]s?)|\bembroidered with\b/i,
 		"My sleep had been embroider’d with dim dreams;<br>My soul had been a lawn besprinkled o’er<br>With flowers, and stirring shades, and baffled beams"],
+
+	[/\b(starlings|goldfinch(es)?|magpies?|sparrows?|wrens?|crows?|orioles?|warblers?)'s?|\b(vine|ivy|tendril)[,.]|\bpent[- ]up\b/i,
+		"The morn was clouded, but no shower fell,<br>Tho’ in her lids hung the sweet tears of May;<br>The open casement press’d a new-leaved vine,<br>Let in the budding warmth and throstle’s lay"],
+
+	[/\bno \w+ of mine\b|\bsee me cry\b|\b(your|my) (skirts?|dress(es)?|blouses?|tears)\b|\bclosing[- ]time\b/i,
+		"O Shadows! ’twas a time to bid farewell!<br>Upon your skirts had fallen no tears of mine."],
+
+	[/\b(Laters?|Adios|Hasta luego|Seeya|Bye ?bye|Peace)[!.,]|\b(I'm|am|I was) (just )?(chilling?|(chill|rel)axing|spac(ing|ed) out)\b/i,
+		"So, ye three Ghosts, adieu! Ye cannot raise<br>My head cool-bedded in the flowery grass"],
+
+	[/\ba pet[- ]\w+\b|\ba sentimental \w+\b|\b(farce|bullshit|scandal|charade|shit[ -]show|travesty)[.!]/i,
+		"For I would not be dieted with praise,<br>A pet-lamb in a sentimental farce!"],
+
+	[/\bsoftly (from|through|with|over|beyond|at|over|into)\b|\bon the [b-df-hj-np-tv-z]+eamy\b/i,
+		"Fade softly from my eyes, and be once more<br>In masque-like figures on the dreamy urn"],
+
+	[/\b\w+s (for|of|with) the (night|evening|dark)[.,?!]|\bnights? [\w ,\n]{1,30}\bdays?\b/i,
+		"Farewell! I yet have visions for the night,<br>And for the day faint visions there is store"],
+
+	[/(fuckers|(\bassholes|shitheads|dipshits|losers|ghosts))!|\bfuck off!|\b(idle|lazy) [b-df-hj-np-tv-z]{0,}[aeiou]+[b-df-hj-np-tv-z]+[aeiou]?s?\b/i,
+		"Vanish, ye Phantoms! from my idle spright,<br>Into the clouds, and never more return!"],
 
 
 	//ode on melancholy
@@ -99,9 +163,6 @@ var regex2quote = [
 
 	[/the \w+ness of (my|her|our|your|his|their)? [b-df-hj-np-tv-z]{0,}[aeiou]+[b-df-hj-np-tv-z]+\b|\w[b-df-hj-np-tv-z]{0,}[aeiou]+[b-df-hj-np-tv-z]+(y|ies?) \w[b-df-hj-np-tv-z]{0,}[aeiou]+[b-df-hj-np-tv-z]+(y|ies?)|\b(troph(ies|y)|of her (might|power|strength|capability|influence|prestige|control|design))\b/i,
 		"His soul shalt taste the sadness of her might,<br>And be among her cloudy trophies hung."],
-
-	[/\b(starlings|goldfinch(es)?|magpies?|sparrows?|wrens?|crows?|orioles?|warblers?)'s?|\b(vine|ivy|tendril)[,.]|\bpent[- ]up\b/i,
-		"The morn was clouded, but no shower fell,<br>Tho’ in her lids hung the sweet tears of May;<br>The open casement press’d a new-leaved vine,<br>Let in the budding warmth and throstle’s lay"],
 
 
 	//ode to a nightingale

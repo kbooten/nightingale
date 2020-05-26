@@ -12,6 +12,10 @@
 			"run_at": "document_end"
 		}
 	],
+	"permissions":
+	[
+		"storage"
+	],
 	"web_accessible_resources": 
 	[
 		"nightingale_sm.png"

@@ -4,21 +4,36 @@ console.log('*'.repeat(20))
 
 
 /// storing quotes already on page
-var usedQuotes = [];
+// var usedQuotes = [];
 
 /// storing all text nodes from page; from recursive 'walk' function
 var allTextNodes = [];
-
 walk(document.body);
 
 /// shuffling the text nodes so tooltips are placed randomly
 shuffleArray(allTextNodes);
 
-/// injecting tooltip
-for (var i = 0; i < allTextNodes.length; i++){
-	injectPopup(allTextNodes[i])
-}
 
+// // get the requisite info from localstorage
+// // inject tooltip
+// // update localstorage
+// chrome.storage.local.set({"timedQuotes":{}},function(){
+// 	console.log('udpated local storage (maybe)');
+// });	
+
+
+
+chrome.storage.local.get({'timedQuotes':{}}, function(data){
+	var timedQuotes = data.timedQuotes;
+	console.log(data);
+	for (var i = 0; i < allTextNodes.length; i++){
+		injectPopup(allTextNodes[i],timedQuotes);
+	}
+	console.log(timedQuotes);
+	chrome.storage.local.set({"timedQuotes":timedQuotes},function(){
+		console.log('udpated local storage (maybe)');
+	});				
+});
 
 
 function walk(node){
@@ -58,25 +73,59 @@ function shuffleArray(array) {
 }
 
 
-function injectPopup(textNode){
+
+function hasEnoughTimePassed(timestamp,seconds=259200){ //defaults to
+	///figure out if hard coded amount of time has passed since timestamp
+	currentTimestamp = Math.floor(Date.now()/1000);
+	if (currentTimestamp-timestamp>seconds){
+		return true;
+	}else{
+		return false;
+	}
+}
+
+
+function howManyInLastNSeconds(timestamps,){
+	///figure out if hard coded amount of time has passed since timestamp
+	currentTimestamp = Math.floor(Date.now()/1000);
+	if (currentTimestamp-timestamp>259200){
+		return true;
+	}else{
+		return false;
+	}
+}
+
+
+function injectPopup(textNode,timedQuotes){
 	// regexes matching web text to poetry
 	// inject first match
-	for (var i = 0; i < regex2quote.length; i++) {
+	for (var i = 0; i < regex2quote.length; i++){
 		//console.log(regex2quote[i])
-		if (usedQuotes.includes(regex2quote[i][1])==false){
-		    regex = regex2quote[i][0];
-		    quote = regex2quote[i][1];
-		    match = textNode.textContent.match(regex);
+		var quote = regex2quote[i][1]
+		if ((quote in timedQuotes)==true){
+			var timestamp = timedQuotes[quote];
+			timeCheck = hasEnoughTimePassed(timestamp);
+		}else{
+			timeCheck=true;
+		}
+		if (timeCheck==true){
+		    var regex = regex2quote[i][0];
+		    var match = textNode.textContent.match(regex);
 		    if (match){
+		    	console.log(match[0])
 		    	keatstip = "<span class='keatstip'>"+match[0]+"<span class='keatstiptext'>"+quote+"</span></span>";
 		    	var replacementNode = document.createElement('span');
 				replacementNode.innerHTML = textNode.textContent.replace(match[0],keatstip);
 				textNode.parentNode.insertBefore(replacementNode, textNode);
 				textNode.parentNode.removeChild(textNode);
-				usedQuotes.push(regex2quote[i][1]);
-		    }
+				//usedQuotes.push(quote);
+				// add to local storage (quote, timestamp)
+				console.log('adding to localstorage')
+				ts = Math.floor(Date.now()/1000);
+				timedQuotes[quote]=ts;
+				// only one quote per page
+				break;
+			}
 		}
 	}
 }
-
-

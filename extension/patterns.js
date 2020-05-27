@@ -42,8 +42,17 @@ var regex2quote = [
 	[/\b(Phoebe|Venus|Hesperus|Phosphorus|evening (star|sky|meal)|gold[- ]crowned|crown of gold|sapphire[- ]\w+ed|glow[- ]?worm|biolum\w+)\b/i,
 		"Fairer than Phoebe's sapphire-region'd star,<br>Or Vesper, amorous glow-worm of the sky"],
 
-	[/\b(do(n't| not|es not|esn't) have|without) (m?any|an? )?(temples?|altars?|hymns?|fans?|follow(ers?|ing)|website?|Patreon|wikipedia page|fan[ -]?base|simps|stans)\b/i,
-		"Fairer than Phoebe's sapphire-region'd star,<br>Or Vesper, amorous glow-worm of the sky<br>Fairer than these, though temple thou hast none,<br>Nor altar heap'd with flowers"]
+	[/\b(do(n't| not|es not|esn't) have|has no|without) (m?any|an? )?(temples?|altars?|hymns?|fans?|follow(ers?|ing)|website?|Patreon|wikipedia page|fan[ -]?base|simps|stans)\b/i,
+		"Fairer than Phoebe's sapphire-region'd star,<br>Or Vesper, amorous glow-worm of the sky<br>Fairer than these, though temple thou hast none,<br>Nor altar heap'd with flowers"],
+
+	[/\b(virgins)\b|\bto (make|cook|brew) (an?|some )?(delicious|fabulous|tasty) \w+|\bvirgin \w+ v.?s.? (the )?chad \w+\b/i,
+		"Nor virgin-choir to make delicious moan<br>Upon the midnight hours"],
+
+	[/\b(incense|aromatherpy|diffuser|censer|lost (my|her|his|your) voice)\b|\b(\w+[kn] Orthodox|Divine Liturgy)\b/i,
+		"No voice, no lute, no pipe, no incense sweet<br>From chain-swung censer teeming"],
+
+	[/\b(seculari\w+|rates? of (church|relig\w+))\b|\b(prophe\w+|Ezekiel|Isaiah|Jeremiah)\b|\b((data|predictive) analytics|(logistic|linear) regression|(language|time series) models|actuar\w+)\b/i,
+		"No shrine, no grove, no oracle, no heat<br>Of pale-mouth'd prophet dreaming."],
 
 	//ode on indolence
 

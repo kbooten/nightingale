@@ -1,6 +1,7 @@
 /// pairs: (regex, quote from keats)
 var regex2quote = [
 
+
 	// ode to psyche
 
 	[/\b((written|spoken)[ -]word)\b|\bread(s|ing)? ((a|some) )?(poems?|poetry)\b/i,
@@ -53,6 +54,27 @@ var regex2quote = [
 
 	[/\b(seculari\w+|rates? of (church|relig\w+))\b|\b(prophe\w+|Ezekiel|Isaiah|Jeremiah)\b|\b((data|predictive) analytics|(logistic|linear) regression|(language|time series) models|actuar\w+)\b/i,
 		"No shrine, no grove, no oracle, no heat<br>Of pale-mouth'd prophet dreaming."],
+
+	[/\btoo, too\b|\btoo late for (the|a\w+)\b|\bfor a promises?\b|\b(the|an?) (\w+ )?(\w+)?(believing|faithful|religious) \w+|\bfor (\w+ )?(ancient|vintage|antique|old|aged) \w+s\b/i,
+		"O brightest! though too late for antique vows,<br>Too, too late for the fond believing lyre"],
+
+	[/\b(air)\b.{2,50}\b(water|fire)\b|\b(water)\b.{2,50}\b(air|fire)\b|\b(fire)\b.{2,50}\b(water|air)\b|\b(haunted|spooky) (forests?|woods?)\b/i,
+		"Too, too late for the fond believing lyre,<br>When holy were the haunted forest boughs,<br>Holy the air, the water, and the fire"],
+
+	[/\byour (bright|glowing|shining) [b-df-hj-np-tv-z]{0,}[aeiou]+[b-df-hj-np-tv-z]+\b|\bOlympians?\b|\bI('m| am) my own|\bmy own eyes\b/i,
+		"Yet even in these days so far retir'd<br>From happy pieties, thy lucent fans,<br>Fluttering among the faint Olympians<br>I see, and sing, by my own eyes inspir'd."],
+
+	[/\bso let me be\b|\bbe your (ch|k)[aeoiu]\w+\b|\bmidnight hours?\b|\ba ((gr|m)oan|whimper)\b|\bnsfw\b/i,
+		"So let me be thy choir, and make a moan<br>Upon the midnight hours"],
+
+	[/\b(your (\w+ )?\w+, ){1,}((and )?your (\w+ )?\w+)|\b/i,
+		"Thy voice, thy lute, thy pipe, thy incense sweet<br>From swinged censer teeming"],
+
+	[/\b(shrines?|gardens?|alters?|oracles?|priests?|prophets?|tombs?|dreams?(ing)?|holy?|sacred?|mystical|mysterious|flowers?|flora|vines?)\b[^.!?]+\b(shrines?|gardens?|alters?|oracles?|priests?|prophets?|tombs?|dreams?(ing)?|holy?|sacred?|mystical|mysterious|flowers?|flora|vines?)/i,
+		"Thy shrine, thy grove, thy oracle, thy heat<br>Of pale-mouth'd prophet dreaming."],
+
+
+
 
 	//ode on indolence
 

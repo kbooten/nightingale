@@ -31,7 +31,7 @@ chrome.storage.local.get({'timedQuotes':{}}, function(data){
 	}
 	console.log(timedQuotes);
 	chrome.storage.local.set({"timedQuotes":timedQuotes},function(){
-		console.log('udpated local storage (maybe)');
+		console.log('updated local storage (maybe)');
 	});				
 });
 

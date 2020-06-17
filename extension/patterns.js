@@ -70,11 +70,31 @@ var regex2quote = [
 	[/\b(your (\w+ )?\w+, ){1,}((and )?your (\w+ )?\w+)|\b/i,
 		"Thy voice, thy lute, thy pipe, thy incense sweet<br>From swinged censer teeming"],
 
-	[/\b(shrines?|gardens?|alters?|oracles?|priests?|prophets?|tombs?|dreams?(ing)?|holy?|sacred?|mystical|mysterious|flowers?|flora|vines?)\b[^.!?]+\b(shrines?|gardens?|alters?|oracles?|priests?|prophets?|tombs?|dreams?(ing)?|holy?|sacred?|mystical|mysterious|flowers?|flora|vines?)/i,
+	[/\b(shrines?|gardens?|altars?|oracles?|priests?|prophets?|tombs?|dreams?(ing)?|holy?|sacred?|mystical|mysterious|flowers?|flora|vines?)\b[^.!?]+\b(shrines?|gardens?|alters?|oracles?|priests?|prophets?|tombs?|dreams?(ing)?|holy?|sacred?|mystical|mysterious|flowers?|flora|vines?)/i,
 		"Thy shrine, thy grove, thy oracle, thy heat<br>Of pale-mouth'd prophet dreaming."],
 
+	[/\ba (temple|shrine|church) in some\b|\b(bethel|basilica|shrine|chapel|tabernacle|stupa|reliquary|buts?udan|maq[āa]m|chantry|ciborium|chantry)\b/i,
+		"Yes, I will be thy priest, and build a fane<br>In some untrodden region of my mind"],
 
+	[/\b(primeval|primary|virgin|wild|untouched|) (forest?|gardens?|woods?|nature)\b|\bnature preserves?\b|\b(concept|mind)[- ]map(\w+)?\b|\b(neurogenesis|synap\w+|dendrit\w+|decision trees?)|\bin the wind\b/i,
+		"In some untrodden region of my mind,<br>Where branched thoughts, new grown with pleasant pain,<br>Instead of pines shall murmur in the wind"],
 
+	[/\b(winged|gr[eo]ws?(ing)? (\w+ )?wings|(baby|fledgling) birds?)\b|\bs\w+ by s\w+\b|\bfar,? far\b|terrafor\w+/i,
+		"Far, far around shall those dark-cluster'd trees<br>Fledge the wild-ridged mountains steep by steep"],
+
+	[/\b(light|west(ern?)) winds?\b|\bbirds and (the )?bees\b|\b(dryads?|fairy|fairies|nymphs?|oaks?|oaken|pixies?)\b|\b(melatonin|ambien)s?\b/i,
+		"And there by zephyrs, streams, and birds, and bees,<br>The moss-lain Dryads shall be lull'd to sleep"],
+
+	[/\bin the midst of this\b|\ba w\+ (sanctuary|temple|church|shrine|mosque)\b|\b(neural[ -]?network|cognition|neurogenesis|synap\w+|dendrit\w+|decision trees?)\b|\bnoise( -)cancelling\b|\b(florists?|landscape arch\w+)\b/i,
+		"And in the midst of this wide quietness<br>A rosy sanctuary will I dress<br>With the wreath'd trellis of a working brain"],
+
+	[/b[aeiou]+[b-df-hj-np-tv-z]+,? (and|not|or|with|of|for) ?b[aeiou]+[b-df-hj-np-tv-z]+|without (a name|names)|\bgreen thumbs?|horticult\w+\b|\bheirloom (vegetables?|fruits?|agricult\w+)\b|\bone of a kind\b|\bbroke the mou?ld\b|\bastron\w+\b|\bbook of Genesis\b|\bGenesis 2:[0-9]{2}/i,
+		"With buds, and bells, and stars without a name,<br>With all the gardener Fancy e'er could feign,<br>Who breeding flowers, will never breed the same"],
+
+	[//i,
+		]
+
+	
 
 	//ode on indolence
 

@@ -91,8 +91,11 @@ var regex2quote = [
 	[/b[aeiou]+[b-df-hj-np-tv-z]+,? (and|not|or|with|of|for) ?b[aeiou]+[b-df-hj-np-tv-z]+|without (a name|names)|\bgreen thumbs?|horticult\w+\b|\bheirloom (vegetables?|fruits?|agricult\w+)\b|\bone of a kind\b|\bbroke the mou?ld\b|\bastron\w+\b|\bbook of Genesis\b|\bGenesis 2:[0-9]{2}/i,
 		"With buds, and bells, and stars without a name,<br>With all the gardener Fancy e'er could feign,<br>Who breeding flowers, will never breed the same"],
 
-	[//i,
-		]
+	[/\b(all|most|some) (soft|sweet|kind|delicious|merciful|good|pure|beautiful|nice|holy) \w{6,}\b|\bthere (shall|will) be (for|in|by|of)\b|\blaw of attraction\b|\bpower of positiv(ity|e (thoughts|thinking))\b|\b(an?|the) (truce|endgame)\b/i,
+		"And there shall be for thee all soft delight<br>That shadowy thought can win"],
+
+	[/\bbright [b-df-hj-np-tv-z]{0,}[aeiou]+[b-df-hj-np-tv-z]+\b|\bopen(ed (the|a))? window\b|\b(maglite|petzl|black diamond)|\b(casper|purple|avocado) mattress\b|\bwarm [b-df-hj-np-tv-z]{0,}[aeiou]+[b-df-hj-np-tv-z]+[ie]{0,}\b|\blet (love|truth|inspiration)\b/i,
+		"And there shall be for thee all soft delight<br>That shadowy thought can win,<br>A bright torch, and a casement<br>ope at night,<br>To let the warm Love in!"],
 
 	
 

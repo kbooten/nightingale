@@ -97,7 +97,6 @@ var regex2quote = [
 	[/\bbright [b-df-hj-np-tv-z]{0,}[aeiou]+[b-df-hj-np-tv-z]+\b|\bopen(ed (the|a))? window\b|\b(maglite|petzl|black diamond)|\b(casper|purple|avocado) mattress\b|\bwarm [b-df-hj-np-tv-z]{0,}[aeiou]+[b-df-hj-np-tv-z]+[ie]{0,}\b|\blet (love|truth|inspiration)\b/i,
 		"And there shall be for thee all soft delight<br>That shadowy thought can win,<br>A bright torch, and a casement<br>ope at night,<br>To let the warm Love in!"],
 
-	
 
 	//ode on indolence
 
@@ -376,5 +375,13 @@ var regex2quote = [
 
 	[/\b[Aa] friend to\b|\b[Aa]ll I know is\b|\b[Aa]ll you need to know\b|\b(Beauty|Love|Truth|Power|Wisdom) is\b/,
 		"A friend to man, to whom thou say'st,<br>\"Beauty is truth, truth beauty,—that is all<br>Ye know on earth, and all ye need to know.\""],
+
+	// To Autumn
+
+	[/\b(pumpkins?|figs?|pears?|persimmons?|beets?|cranberr(y|ies)|bosom[- ]budd(y|ies))\b/i,
+		"Season of mists and mellow fruitfulness,<br>Close bosom-friend of the maturing sun"],
+
+	[/\b(conspiracy theor(y|ies)|agribusiness|GMOs?|Isidore|(St.?|Saint) Dorothy||thatched)\b|\bautumn\w+/i,
+		"Close bosom-friend of the maturing sun;<br>Conspiring with him how to load and bless<br>With fruit the vines that round the thatch-eves run"]
 
 ]

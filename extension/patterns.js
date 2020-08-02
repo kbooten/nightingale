@@ -1,4 +1,7 @@
+/// kyle booten 2020
+/// regex interpretetations of keats' 6 late odes
 /// pairs: (regex, quote from keats)
+
 var regex2quote = [
 
 
@@ -401,7 +404,32 @@ var regex2quote = [
 	[/\b(barley|oats|rye|maize|millet|amaranth|quinoa|buckwheat|farro|spelt)\b|\b(hard|soft|warm|cold|near|far)-\w+ed|w\w+ winds?/i,
 		"Sometimes whoever seeks abroad may find<br>Thee sitting careless on a granary floor,<br>Thy hair soft-lifted by the winnowing wind"],
 
-	[//i,
-		""],
+	[/\b(furrow|sound asleep|drowsy|sudafed|heroin|methadone|narcotic|opi(um|ate)|spared by|swath|thresher|eau de (parfum|toilette|cologne)|perfume|burnout)\b/i,
+		"Or on a half-reap'd furrow sound asleep,<br>Drows'd with the fume of poppies, while thy hook<br>Spares the next swath and all its twined flowers"],
+
+	[/\b(chaff|deep attention|thresholds?|heavy is the head|across a brook|wrap(ping)? up|finishing touches)\b/i,
+		"And sometimes like a gleaner thou dost keep<br>Steady thy laden head across a brook"],
+
+	[/\b(ciders?|applejack|calvados|deep attention|ooz(e[ds]?|ings?)|dregs|residues?)\b|a \w+-press\b|\b(hour|day|month)s? by (hour|day|month)s?\b/i,
+		"Or by a cyder-press, with patient look,<br>Thou watchest the last oozings hours by hours."],
+
+	[/\bWhere.{10,30}Where\b|\b[Tt]hink not of\b|\b[Yy]ou have your\b/,
+		"Where are the songs of spring? Ay, Where are they?<br>Think not of them, thou hast thy music too,—"],
+
+	[/\b(the evening|(five|5) o'?clock shadow|at (sunset|dusk)|stubble|with (rosy|reddish|pink(ish)?))\b/i,
+		"While barred clouds bloom the soft-dying day,<br>And touch the stubble-plains with rosy hue;"],
+
+	[/\b(gnats?|midges?|flies?|willows?|reeds?|cat[ -](tails|kins)?|borne aloft|on the (wind|breeze))\b/i,
+		"Then in a wailful choir the small gnats mourn<br>Among the river sallows, borne aloft<br>Or sinking as the light wind lives or dies"],
+
+	[/\b(fully?[ -]grown|bleat(s|ing|ed)?|from (the )?hilly? \w+)\b/i,
+		"And full-grown lambs loud bleat from hilly bourn"],
+
+	[/\b(crickets?|cicadas?|locusts?|grasshoppers?|Syngenta|Nutrien|Monsanto|DowDuPont|agri-?business|(family|community|neighborhood)[ -](farm|garden)s?|robin|finch|treble)\b/i,
+		"Hedge-crickets sing; and now with treble soft<br>The red-breast whistles from a garden-croft;"],
+
+	[/\b(a|the|some|\w+ing) swallows?|tweet(s|ed|ing)? (at|in|with|on|to)\b/i,
+		"And gathering swallows twitter in the skies."]
+
 
 ]

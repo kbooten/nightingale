@@ -88,7 +88,7 @@ var regex2quote = [
 	[/\bin the midst of this\b|\ba w\+ (sanctuary|temple|church|shrine|mosque)\b|\b(neural[ -]?network|cognition|neurogenesis|synap\w+|dendrit\w+|decision trees?)\b|\bnoise( -)cancelling\b|\b(florists?|landscape arch\w+)\b/i,
 		"And in the midst of this wide quietness<br>A rosy sanctuary will I dress<br>With the wreath'd trellis of a working brain"],
 
-	[/b[aeiou]+[b-df-hj-np-tv-z]+,? (and|not|or|with|of|for) ?b[aeiou]+[b-df-hj-np-tv-z]+|without (a name|names)|\bgreen thumbs?|horticult\w+\b|\bheirloom (vegetables?|fruits?|agricult\w+)\b|\bone of a kind\b|\bbroke the mou?ld\b|\bastron\w+\b|\bbook of Genesis\b|\bGenesis 2:[0-9]{2}/i,
+	[/\bb[aeiou]+[b-df-hj-np-tv-z]+,? (and|not|or|with|of|for) ?b[aeiou]+[b-df-hj-np-tv-z]+|without (a name|names)|\bgreen thumbs?|horticult\w+\b|\bheirloom (vegetables?|fruits?|agricult\w+)\b|\bone of a kind\b|\bbroke the mou?ld\b|\bastron\w+\b|\bbook of Genesis\b|\bGenesis 2:[0-9]{2}/i,
 		"With buds, and bells, and stars without a name,<br>With all the gardener Fancy e'er could feign,<br>Who breeding flowers, will never breed the same"],
 
 	[/\b(all|most|some) (soft|sweet|kind|delicious|merciful|good|pure|beautiful|nice|holy) \w{6,}\b|\bthere (shall|will) be (for|in|by|of)\b|\blaw of attraction\b|\bpower of positiv(ity|e (thoughts|thinking))\b|\b(an?|the) (truce|endgame)\b/i,
@@ -163,7 +163,7 @@ var regex2quote = [
 	[/\bno \w+ of mine\b|\bsee me cry\b|\b(your|my) (skirts?|dress(es)?|blouses?|tears)\b|\bclosing[- ]time\b/i,
 		"O Shadows! ’twas a time to bid farewell!<br>Upon your skirts had fallen no tears of mine."],
 
-	[/\b(Laters?|Adios|Hasta luego|Seeya|Bye ?bye|Peace)[!.,]|\b(I'm|am|I was) (just )?(chilling?|(chill|rel)axing|spac(ing|ed) out)\b/i,
+	[/\b(Adi[oó]s|Hasta luego|Seeya|Bye ?bye|Peace)[!.,]|\b(I'm|am|I was) (just )?(chilling?|(chill|rel)axing|spac(ing|ed) out)\b/i,
 		"So, ye three Ghosts, adieu! Ye cannot raise<br>My head cool-bedded in the flowery grass"],
 
 	[/\ba pet[- ]\w+\b|\ba sentimental \w+\b|\b(farce|bullshit|scandal|charade|shit[ -]show|travesty)[.!]/i,
@@ -199,7 +199,8 @@ var regex2quote = [
 	[/\brainbow of the\b|\b(globed|peonies|glut|shroud)\b|\bof global\b|\b(red|blue|green|black|white|grey) (hill|peak|field|stream|pond|brook|cloud|star|creek|mist)|\bApril sh\w+/,
 		"And hides the green hill in an April shroud;<br>Then glut thy sorrow on a morning rose,<br>Or on the rainbow of the salt sand-wave,<br>Or on the wealth of globed peonies"],
 
-	[/\b([b-df-hj-np-tv-z])([eo]{2})\w+.{1,20}([b-df-hj-np-tv-z])(?!\1)\2\w+|\b(\w+), \4 (through|in|by|against|with|over|among|of|up|under|within|without|towards?)\b/i,
+		/// this one doesn't make any sense
+	[/\b([b-df-hj-np-tv-z])([eo]{2})\w+.{1,20}([b-df-hj-np-tv-z])(?!\1)\2\w+|\b(\w+), \4 (upon|through|in|by|against|with|over|among|of|up|under|within|without|towards?)\b/i,
 		"Or if thy mistress some rich anger shows,<br>Emprison her soft hand, and let her rave,<br>And feed deep, deep upon her peerless eyes."],
 
 	[/(\w{5,})( - |—|--|---|–|[.?!.] )\1|\b([.?!] +She lives with|must die)\b/,
@@ -376,12 +377,31 @@ var regex2quote = [
 	[/\b[Aa] friend to\b|\b[Aa]ll I know is\b|\b[Aa]ll you need to know\b|\b(Beauty|Love|Truth|Power|Wisdom) is\b/,
 		"A friend to man, to whom thou say'st,<br>\"Beauty is truth, truth beauty,—that is all<br>Ye know on earth, and all ye need to know.\""],
 
+		
 	// To Autumn
 
 	[/\b(pumpkins?|figs?|pears?|persimmons?|beets?|cranberr(y|ies)|bosom[- ]budd(y|ies))\b/i,
 		"Season of mists and mellow fruitfulness,<br>Close bosom-friend of the maturing sun"],
 
 	[/\b(conspiracy theor(y|ies)|agribusiness|GMOs?|Isidore|(St.?|Saint) Dorothy||thatched)\b|\bautumn\w+/i,
-		"Close bosom-friend of the maturing sun;<br>Conspiring with him how to load and bless<br>With fruit the vines that round the thatch-eves run"]
+		"Close bosom-friend of the maturing sun;<br>Conspiring with him how to load and bless<br>With fruit the vines that round the thatch-eves run"],
+
+	[/\b(Thomas Kincade|tutti frutti|juice box(es)?|Mott's|Simply Orange|Capri Sun|Tropicana|Minute Maid|fill all|to the core)\b/i,
+		"Conspiring with him...<br>To bend with apples the moss'd cottage-trees,<br>And fill all fruit with ripeness to the core"],
+
+	[/\b(nutella|ferrero rocher|bacci|tumescen(ce|t)|fertility|sweet corn|fatten the|KIND bars?|hazelnut?|pistachios?|Mr\.? Peanut)\b/i,
+		"Conspiring with him...<br>To swell the gourd, and plump the hazel shells<br>With a sweet kernel"],
+
+	[/\b(apiary|honey|bees?|honecombs?|endless summers?|lobster rolls?|fried clams?|hives?|🍯|🐝|over the (lip|edge|brim)s?)\b/i,
+		"to set budding more,<br>And still more, later flowers for the bees,<br>Until they think warm days will never cease,<br>For summer has o'er-brimm'd their clammy cells."],
+
+	[/\b(preppers?|survivalism|hoarding|pandemic pantry|sardines|lentils|stockpil(e|ing)|toilet paper)\b/i,
+		"Who hath not seen thee oft amid thy store?"],
+
+	[/\b(barley|oats|rye|maize|millet|amaranth|quinoa|buckwheat|farro|spelt)\b|\b(hard|soft|warm|cold|near|far)-\w+ed|w\w+ winds?/i,
+		"Sometimes whoever seeks abroad may find<br>Thee sitting careless on a granary floor,<br>Thy hair soft-lifted by the winnowing wind"],
+
+	[//i,
+		""],
 
 ]

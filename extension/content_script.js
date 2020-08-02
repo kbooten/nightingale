@@ -74,7 +74,7 @@ function shuffleArray(array) {
 
 
 
-function hasEnoughTimePassed(timestamp,seconds=259200){ //defaults to
+function hasEnoughTimePassed(timestamp,seconds=259200){
 	///figure out if hard coded amount of time has passed since timestamp
 	currentTimestamp = Math.floor(Date.now()/1000);
 	if (currentTimestamp-timestamp>seconds){
@@ -85,22 +85,21 @@ function hasEnoughTimePassed(timestamp,seconds=259200){ //defaults to
 }
 
 
-function howManyInLastNSeconds(timestamps,){
-	///figure out if hard coded amount of time has passed since timestamp
-	currentTimestamp = Math.floor(Date.now()/1000);
-	if (currentTimestamp-timestamp>259200){
-		return true;
-	}else{
-		return false;
-	}
-}
+// function howManyInLastNSeconds(timestamps,){
+// 	///figure out if hard coded amount of time has passed since timestamp
+// 	currentTimestamp = Math.floor(Date.now()/1000);
+// 	if (currentTimestamp-timestamp>259200){
+// 		return true;
+// 	}else{
+// 		return false;
+// 	}
+// }
 
 
 function injectPopup(textNode,timedQuotes){
 	// regexes matching web text to poetry
 	// inject first match
 	for (var i = 0; i < regex2quote.length; i++){
-		//console.log(regex2quote[i])
 		var quote = regex2quote[i][1]
 		if ((quote in timedQuotes)==true){
 			var timestamp = timedQuotes[quote];

@@ -27,13 +27,24 @@ chrome.storage.local.get({'timedQuotes':{}}, function(data){
 	var timedQuotes = data.timedQuotes;
 	console.log(data);
 	for (var i = 0; i < allTextNodes.length; i++){
-		injectPopup(allTextNodes[i],timedQuotes);
+		if (isHidden(allTextNodes[i])==false){
+			injectPopup(allTextNodes[i],timedQuotes);
+		}
 	}
 	console.log(timedQuotes);
 	chrome.storage.local.set({"timedQuotes":timedQuotes},function(){
 		console.log('updated local storage (maybe)');
 	});				
 });
+
+
+
+function isHidden(el) {
+	// https://stackoverflow.com/a/21696585
+	// does this actually do anything work?
+	return (el.offsetParent === null)
+}
+
 
 
 function walk(node){
@@ -111,6 +122,7 @@ function injectPopup(textNode,timedQuotes){
 		    var regex = regex2quote[i][0];
 		    var match = textNode.textContent.match(regex);
 		    if (match){
+		    	console.log("found a match:")
 		    	console.log(match[0])
 		    	keatstip = "<span class='keatstip'>"+match[0]+"<span class='keatstiptext'>"+quote+"</span></span>";
 		    	var replacementNode = document.createElement('span');

@@ -239,7 +239,7 @@ var regex2quote = [
 	[/\bshadows\b|\bfull-throated\b|\b(song|singing) of (the )?(summer)\b|\binfinity\b/i,
 		"shadows numberless,<br>Singest of summer in full-throated ease."],
 
-	[/\b(glass|pint) of \w+\b|\ba chilled \w+\b|(wine|merlot|pinot (noir|gris)|cabernet|sauvignon blanc|syrah|zinfandel)|\bin (the|a) (grotto|cave|cavern|earth)\b|\bneed (a|to) drink\b/i,
+	[/\b(glass|pint) of \w+\b|\ba chilled \w+\b|\b(wine|merlot|pinot (noir|gris)|cabernet|sauvignon blanc|syrah|zinfandel)\b|\bin (the|a) (grotto|cave|cavern|earth)\b|\bneed (a|to) drink\b/i,
 		"O, for a draught of vintage! that hath been<br>Cool'd a long age in the deep-delved earth"],
 
 	[/\b(grassy|vegetal|verdant|sunburned|sunburnt|mirth|glee|hilarity)\b|\bproven[cç]\w+\b|\b(Napa Valley|Sonoma)\b|\bthe \w+ green\b/i,
@@ -401,7 +401,7 @@ var regex2quote = [
 	[/\b(preppers?|survivalism|hoarding|pandemic pantry|sardines|lentils|stockpil(e|ing)|toilet paper)\b/i,
 		"Who hath not seen thee oft amid thy store?"],
 
-	[/\b(barley|oats|rye|maize|millet|amaranth|quinoa|buckwheat|farro|spelt)\b|\b(hard|soft|warm|cold|near|far)-\w+ed|w\w+ winds?/i,
+	[/\b(barley|oats|rye|maize|millet|amaranth|quinoa|buckwheat|farro|spelt)\b|\b(hard|soft|warm|cold|near|far)-\w+ed\b|\bw\w+ winds?\b/i,
 		"Sometimes whoever seeks abroad may find<br>Thee sitting careless on a granary floor,<br>Thy hair soft-lifted by the winnowing wind"],
 
 	[/\b(furrow|sound asleep|drowsy|sudafed|heroin|methadone|narcotic|opi(um|ate)|spared by|swath|thresher|eau de (parfum|toilette|cologne)|perfume|burnout)\b/i,

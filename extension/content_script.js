@@ -3,9 +3,6 @@ console.log('(C) kyle booten 2020')
 console.log('*'.repeat(20))
 
 
-/// storing quotes already on page
-// var usedQuotes = [];
-
 /// storing all text nodes from page; from recursive 'walk' function
 var allTextNodes = [];
 walk(document.body);
@@ -14,13 +11,14 @@ walk(document.body);
 shuffleArray(allTextNodes);
 
 
-// // get the requisite info from localstorage
-// // inject tooltip
-// // update localstorage
-// chrome.storage.local.set({"timedQuotes":{}},function(){
-// 	console.log('udpated local storage (maybe)');
-// });	
-
+/// for debugging
+function clearStorage(){
+	console.log("**CLEARING 'timedQuotes' IN LOCAL STORAGE**")
+	chrome.storage.local.set({"timedQuotes":{}},function(){
+		console.log('udpated local storage (maybe)');
+	});		
+}
+clearStorage();
 
 
 chrome.storage.local.get({'timedQuotes':{}}, function(data){
@@ -135,7 +133,7 @@ function injectPopup(textNode,timedQuotes){
 				ts = Math.floor(Date.now()/1000);
 				timedQuotes[quote]=ts;
 				// only one quote per page
-				break;
+				return;
 			}
 		}
 	}

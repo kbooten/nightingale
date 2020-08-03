@@ -37,7 +37,7 @@ var regex2quote = [
 	[/\b(Icarus|Caravaggio|Jarman)\b|\bthe \w+ boy I know\b|\bthe winged \w+\b/i,
 		"The winged boy I knew"],
 
-	[/\b(\w+[yY]?),? \1\b|\btrue [B-DF-HJ-NP-TV-Z]+/i,
+	[/\b(\w+[yY]?),? \1\b|\btrue [B-DF-HJ-NP-TV-Z]\w+\b/,
 		"But who wast thou, O happy, happy dove?<br>His Psyche true!"],
 
 	[/\bla\w+st (\w+ )?and lo\w+st\b|\b(\w+st|most \w+) (vision|sight|scene|view|panorama|vista)\b|\b\w+ed \w+archy\b|\bit[ -]girl\b|\b(Jane Birken|Chlo[eë] Sevigny|Kendall Jenner|Grace Jones|Edie Sedgwick)\b/i,
@@ -70,7 +70,7 @@ var regex2quote = [
 	[/\bso let me be\b|\bbe your (ch|k)[aeoiu]\w+\b|\bmidnight hours?\b|\ba ((gr|m)oan|whimper)\b|\bnsfw\b/i,
 		"So let me be thy choir, and make a moan<br>Upon the midnight hours"],
 
-	[/\b(your (\w+ )?\w+, ){1,}((and )?your (\w+ )?\w+)|\b/i,
+	[/\b(your (\w+ )?\w+, ){1,}((and )?your (\w+ )?\w+)\b/i,
 		"Thy voice, thy lute, thy pipe, thy incense sweet<br>From swinged censer teeming"],
 
 	[/\b(shrines?|gardens?|altars?|oracles?|priests?|prophets?|tombs?|dreams?(ing)?|holy?|sacred?|mystical|mysterious|flowers?|flora|vines?)\b[^.!?]+\b(shrines?|gardens?|alters?|oracles?|priests?|prophets?|tombs?|dreams?(ing)?|holy?|sacred?|mystical|mysterious|flowers?|flora|vines?)/i,
@@ -139,7 +139,7 @@ var regex2quote = [
 	[/\b(like clockwork|rule of threes?|scotophob\w+)|and, [b-df-hj-np-tv-z]{0,}[aeiou]+[b-df-hj-np-tv-z]+ing\b,/i,
 		"A third time pass’d they by, and, passing, turn’d<br>Each one the face a moment whiles to me"],
 
-	[/\b((so|gettin?) faded)\b|\bfaded (af|every (day|night)|all the time)\b|\b|\b(wingstop|bw3|(barbecue|bbq|hot|chicken) wings)\b/i,
+	[/\b((so|gettin?) faded)\b|\bfaded (af|every (day|night)|all the time)\b|\b(wingstop|bw3|(barbecue|bbq|hot|chicken) wings)\b/i,
 		"Then faded, and to follow them I burn’d<br>And ached for wings"],
 
 	[/\b(her name was|she was (called|named)) (Am|Lo)\w+\b|\bher \w+ was pale\b|\bthe three[:;.]/i,
@@ -386,7 +386,7 @@ var regex2quote = [
 	[/\b(pumpkins?|figs?|pears?|persimmons?|beets?|cranberr(y|ies)|bosom[- ]budd(y|ies))\b/i,
 		"Season of mists and mellow fruitfulness,<br>Close bosom-friend of the maturing sun"],
 
-	[/\b(conspiracy theor(y|ies)|agribusiness|GMOs?|Isidore|(St.?|Saint) Dorothy||thatched)\b|\bautumn\w+/i,
+	[/\b(conspiracy theor(y|ies)|agri-?business|GMOs?|Syngenta|Nutrien|Monsanto|DowDuPont|Isidore|(St.?|Saint) Dorothy|thatched)\b|\bautumn\w+/i,
 		"Close bosom-friend of the maturing sun;<br>Conspiring with him how to load and bless<br>With fruit the vines that round the thatch-eves run"],
 
 	[/\b(Thomas Kincade|tutti frutti|juice box(es)?|Mott's|Simply Orange|Capri Sun|Tropicana|Minute Maid|fill all|to the core)\b/i,

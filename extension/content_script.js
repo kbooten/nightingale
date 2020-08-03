@@ -12,10 +12,10 @@ shuffleArray(allTextNodes);
 
 
 /// for debugging
+/// comment this out before deploying
 function clearStorage(){
-	console.log("**CLEARING 'timedQuotes' IN LOCAL STORAGE**")
 	chrome.storage.local.set({"timedQuotes":{}},function(){
-		console.log('udpated local storage (maybe)');
+		console.log("Clearing Localstorage (for debugging)");
 	});		
 }
 clearStorage();
@@ -23,10 +23,14 @@ clearStorage();
 
 chrome.storage.local.get({'timedQuotes':{}}, function(data){
 	var timedQuotes = data.timedQuotes;
-	console.log(data);
 	for (var i = 0; i < allTextNodes.length; i++){
 		if (isHidden(allTextNodes[i])==false){
-			injectPopup(allTextNodes[i],timedQuotes);
+			// only replace one per page
+			// injectPopup returns 'true' if it replaced something
+			var replacedAny = injectPopup(allTextNodes[i],timedQuotes);
+			if (replacedAny==true){
+				break;
+			}
 		}
 	}
 	console.log(timedQuotes);
@@ -121,20 +125,23 @@ function injectPopup(textNode,timedQuotes){
 		    var match = textNode.textContent.match(regex);
 		    if (match){
 		    	console.log("found a match:")
+		    	console.log(regex)
+		    	console.log(match)
 		    	console.log(match[0])
 		    	keatstip = "<span class='keatstip'>"+match[0]+"<span class='keatstiptext'>"+quote+"</span></span>";
 		    	var replacementNode = document.createElement('span');
 				replacementNode.innerHTML = textNode.textContent.replace(match[0],keatstip);
 				textNode.parentNode.insertBefore(replacementNode, textNode);
 				textNode.parentNode.removeChild(textNode);
-				//usedQuotes.push(quote);
+				// usedQuotes.push(quote);
 				// add to local storage (quote, timestamp)
 				console.log('adding to localstorage')
 				ts = Math.floor(Date.now()/1000);
 				timedQuotes[quote]=ts;
 				// only one quote per page
-				return;
+				return true
 			}
 		}
 	}
+	return false
 }

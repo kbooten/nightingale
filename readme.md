@@ -14,9 +14,15 @@ will trigger a pop-up containing the lines:
 
 ## Adding it to your browser
 
+*Nightingale* is highly-personalized software; the regular expressions that match web-text to Keats's odes encode my no-doubt idiosyncratic interpretations of this verse.  Still, Chrome users can install the extension by 
 
+1. navigating to `chrome://extensions/`
+2. clicking "Load Unpacked"
+3. loading the folder `extension`, downloadable from this repo
 
 ## Other features
+
+*Nightingale* assumes that seeing the same lines from Keats pop up too frequently could breed resentment. It tracks in `localStorage` when a particular quotation from Keats was last inserted as a pop-up into a page the user visited, and the quotation will only appear after a certain amount of time has elapsed (by default, 3 days). 
 
 
 

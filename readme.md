@@ -1,6 +1,6 @@
 # *Nightingale*
 
-*Nightingale* is a Chrome browser extension that injects literary pop-up ads (lines from Keats's five major odes of 1819) into the web.   
+*Nightingale* is a Chrome browser extension that injects literary pop-up ads (lines from Keats's six major odes of 1819) into the web.   
 
 The resonances between lines of Keats's verse and fragments of web-pages are painstakingly encoded as a series of 136 regular expressions, each itself a "close-reading" that tries to consider what echoes there may be between the line and web pages I might visit.  For instance, web-text matching the regular expression:
 

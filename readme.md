@@ -22,7 +22,7 @@ will trigger a pop-up containing the lines:
 
 ## Other features
 
-*Nightingale* assumes that seeing the same lines from Keats pop up too frequently could breed resentment. It tracks in `localStorage` when a particular quotation from Keats was last inserted as a pop-up into a page the user visited, and the quotation will only appear after a certain amount of time has elapsed (by default, 3 days). 
+*Nightingale* assumes that seeing the same lines from Keats pop up too frequently could breed resentment. It tracks in `localStorage` when a particular quotation from Keats was last inserted as a pop-up into a page I have visited, and the quotation will only reappear after a certain amount of time has elapsed (by default, 3 days). 
 
 
 

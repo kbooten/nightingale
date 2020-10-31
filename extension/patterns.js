@@ -187,7 +187,7 @@ var regex2quote = [
 	[/\btight-\w+ed\b|\bits poisonous \w.+[.?!:;]|\bNo,? no,/,
 		"No, no, go not to Lethe, neither twist<br>Wolf's-bane, tight-rooted, for its poisonous wine"],
 
-	[/\bDon't let.{1,25}\b(kiss|touch)(ed)?|\b(nightshades?|egglplants?|xans|[Xx]anax|[Bb]enzos)\b/,
+	[/\bDon't let.{1,25}\b(kiss|touch)(ed)?|\b(nightshades?|egglplants?|[Xx]ans|[Xx]anax|[Bb]enzos?)|Ocean Spray\b/,
 		"Nor suffer thy pale forehead to be kiss'd<br>By nightshade, ruby grape of Proserpine"],
 
 	[/\b(your rosary|a partner in your|psyche)\b|\w+'s mysteries\b/i,
@@ -332,7 +332,7 @@ var regex2quote = [
 	[/\b(What men|What women|loth)\b|(\bWhat [a-z ]+\? {0,}){3,}|(\bWhat (mad|wild|crazy|insane) \w+[!?])/,
 		"What men or gods are these? What maidens loth?<br>What mad pursuit?  What struggle to escape?<br>What pipes and timbrels? What wild ecstasy?"],
 
-	[/\b([A-Z]\w+d (songs|melodies) are)\b|\bthose \w+ are \w+er\b|\b(\w+s are sweet)\b/,
+	[/\b[A-Z]\w+d (songs|melodies) are\b|\bthose \w+ are \w+er\b|\b\w+s are sweet\b/i,
 		"Heard melodies are sweet, but those unheard<br>Are sweeter"],	
 
 	[/\byour? soft \w+\b|\bplay on\b|\bof no t\w+/i,

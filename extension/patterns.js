@@ -187,7 +187,7 @@ var regex2quote = [
 	[/\btight-\w+ed\b|\bits poisonous \w.+[.?!:;]|\bNo,? no,/,
 		"No, no, go not to Lethe, neither twist<br>Wolf's-bane, tight-rooted, for its poisonous wine"],
 
-	[/\bDon't let.{1,25}\b(kiss|touch)(ed)?|\b(nightshades?|egglplants?|[Xx]ans|[Xx]anax|[Bb]enzos?)|Ocean Spray\b/,
+	[/\bDon't let[^.?!,]{1,25}\b(kiss|touch)(ed)?\b|\b(nightshades?|eggplants?|[Xx]ans?|[Xx]anax(es)?|[Bb]enzos?)\b|\bOcean Spray\b/,
 		"Nor suffer thy pale forehead to be kiss'd<br>By nightshade, ruby grape of Proserpine"],
 
 	[/\b(your rosary|a partner in your|psyche)\b|\w+'s mysteries\b/i,
@@ -203,7 +203,7 @@ var regex2quote = [
 		"And hides the green hill in an April shroud;<br>Then glut thy sorrow on a morning rose,<br>Or on the rainbow of the salt sand-wave,<br>Or on the wealth of globed peonies"],
 
 		/// this one doesn't make any sense
-	[/\b([b-df-hj-np-tv-z])([eo]{2})\w+.{1,20}([b-df-hj-np-tv-z])(?!\1)\2\w+|\b(\w+), \4 (upon|through|in|by|against|with|over|among|of|up|under|within|without|towards?)\b/i,
+	[/\b([b-df-hj-np-tv-z])([aeiou]{1,2})([b-df-hj-np-tv-z]), \1\2\3|\b(\w+), \4 (upon|through|in|by|against|with|over|among|of|up|under|within|without|towards?)\b/i,
 		"Or if thy mistress some rich anger shows,<br>Emprison her soft hand, and let her rave,<br>And feed deep, deep upon her peerless eyes."],
 
 	[/(\w{5,})( - |—|--|---|–|[.?!.] )\1|\b([.?!] +She lives with|must die)\b/,

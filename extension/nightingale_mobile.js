@@ -516,7 +516,7 @@ shuffleArray(allTextNodes);
 /// sampling regex2quote pairs
 var sampleN = 20;
 shuffleArray(regex2quote);
-regex2quote = regex2quote[:sampleN]
+regex2quote = regex2quote.slice(0, sampleN);
 
 
 

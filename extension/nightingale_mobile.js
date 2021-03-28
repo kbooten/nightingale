@@ -167,7 +167,8 @@ function injectPopup(textNode){//,timedQuotes){
 	// regexes matching web text to poetry
 	// inject first match
 	for (var i = 0; i < regex2quote.length; i++){
-		var quote = regex2quote[i][1]
+		var quote = regex2quote[i][1];
+		alert(quote);
 		// if ((quote in timedQuotes)==true){
 		// 	var timestamp = timedQuotes[quote];
 		// 	timeCheck = hasEnoughTimePassed(timestamp);
@@ -208,7 +209,7 @@ for (var i = 0; i < allTextNodes.length; i++){
 	if (isHidden(allTextNodes[i])==false){
 		// only replace one per page
 		// injectPopup returns 'true' if it replaced something
-		var replacedAny = injectPopup(allTextNodes[i])//,timedQuotes);
+		var replacedAny = injectPopup(allTextNodes[i]);//,timedQuotes);
 		if (replacedAny==true){
 			break;
 		}

@@ -185,7 +185,7 @@ function injectPopup(textNode){//,timedQuotes){
 	    	alert("got a match!")
 	    	// alert.log(match);
 	    	// alert.log(match[0]);
-	    	keatstip = "<span class='keatstip'>"+match[0]+"<span class='keatstiptext'>"+quote+"</span></span>";
+	    	keatstip = "<span class='keatstip'>"+match[0]+"<span class='keatstiptext'>!!!!!!!!!!!!!!!!"+quote+"!!!!!!!!!!!!!!!!</span></span>";
 	    	var replacementNode = document.createElement('span');
 			replacementNode.innerHTML = textNode.textContent.replace(match[0],keatstip);
 			textNode.parentNode.insertBefore(replacementNode, textNode);

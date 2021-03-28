@@ -177,8 +177,9 @@ function injectPopup(textNode){//,timedQuotes){
 		// if (timeCheck==true){
 	    var regex = regex2quote[i][0];
 	    var match = textNode.textContent.match(regex);
-	    alert(match);
+	    //alert(match);
 	    if (match){
+	    	alert.log(match);
 	    	alert.log(match[0]);
 	    	keatstip = "<span class='keatstip'>"+match[0]+"<span class='keatstiptext'>"+quote+"</span></span>";
 	    	var replacementNode = document.createElement('span');

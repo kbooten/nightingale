@@ -168,7 +168,6 @@ function injectPopup(textNode){//,timedQuotes){
 	// inject first match
 	for (var i = 0; i < regex2quote.length; i++){
 		var quote = regex2quote[i][1];
-		alert(quote);
 		// if ((quote in timedQuotes)==true){
 		// 	var timestamp = timedQuotes[quote];
 		// 	timeCheck = hasEnoughTimePassed(timestamp);
@@ -178,6 +177,7 @@ function injectPopup(textNode){//,timedQuotes){
 		// if (timeCheck==true){
 	    var regex = regex2quote[i][0];
 	    var match = textNode.textContent.match(regex);
+	    alert(match);
 	    if (match){
 	    	alert.log(match[0]);
 	    	keatstip = "<span class='keatstip'>"+match[0]+"<span class='keatstiptext'>"+quote+"</span></span>";

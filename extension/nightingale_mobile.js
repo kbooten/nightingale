@@ -100,41 +100,41 @@ function isHidden(el) {
 
 
 
-// function walk(node){
-// 	// source: http://is.gd/mwZp7E
-// 	var child, next;
-// 	var tagName = node.tagName ? node.tagName.toLowerCase() : "";
-// 	if (tagName == 'input' || tagName == 'textarea' || tagName == 'style' || tagName == 'script'){
-// 		return;
-// 	}
-// 	switch ( node.nodeType )  
-// 	{
-// 		case 1:  // Element
-// 		case 9:  // Document
-// 		case 11: // Document fragment
-// 			child = node.firstChild;
-// 			while ( child ) 
-// 			{
-// 				next = child.nextSibling;
-// 				walk(child);
-// 				child = next;
-// 			}
-// 			break;
-// 		case 3: // Text node
-// 			//injectPopup(node);
-// 			allTextNodes.push(node);
-// 			break;
-// 	}
-// }
+function walk(node){
+	// source: http://is.gd/mwZp7E
+	var child, next;
+	var tagName = node.tagName ? node.tagName.toLowerCase() : "";
+	if (tagName == 'input' || tagName == 'textarea' || tagName == 'style' || tagName == 'script'){
+		return;
+	}
+	switch ( node.nodeType )  
+	{
+		case 1:  // Element
+		case 9:  // Document
+		case 11: // Document fragment
+			child = node.firstChild;
+			while ( child ) 
+			{
+				next = child.nextSibling;
+				walk(child);
+				child = next;
+			}
+			break;
+		case 3: // Text node
+			//injectPopup(node);
+			allTextNodes.push(node);
+			break;
+	}
+}
 
 
-// function shuffleArray(array) {
-// 	// source: https://stackoverflow.com/a/12646864
-//     for (let i = array.length - 1; i > 0; i--) {
-//         const j = Math.floor(Math.random() * (i + 1));
-//         [array[i], array[j]] = [array[j], array[i]];
-//     }
-// }
+function shuffleArray(array) {
+	// source: https://stackoverflow.com/a/12646864
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
 
 
 

@@ -178,6 +178,8 @@ function injectPopup(textNode){//,timedQuotes){
 	    var regex = regex2quote[i][0];
 	    var match = textNode.textContent.match(regex);
 	    //alert(match);
+	    alert(textNode);
+	    alert(regex);
 	    if (match){
 	    	alert.log(match);
 	    	alert.log(match[0]);
@@ -212,6 +214,7 @@ for (var i = 0; i < allTextNodes.length; i++){
 		// injectPopup returns 'true' if it replaced something
 		var replacedAny = injectPopup(allTextNodes[i]);//,timedQuotes);
 		if (replacedAny==true){
+			alert('replacement made')
 			break;
 		}
 	}

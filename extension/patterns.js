@@ -19,7 +19,7 @@ var regex2quote = [
 	[/\b(a stroll|I wandered) (in|into|through|by|past)\b|\ball of a sudden\b/i,
 		"I wander'd in a forest thoughtlessly,<br>And, on the sudden, fainting with surprise<br>Saw two fair creatures, couched side by side"],
 
-	[/\b(pikachus|raichus|caterpies|pokemon)\b|\b(rivulet|(the|a) (creek|brook))\b|\b(coucher|collocate|the \w+ couple)\b|\boff the beaten (trail|track|path)\b/,
+	[/\b(pikachus?|raichus?|caterpies?|pokemon)\b|\b(rivulet|(the|a) (creek|brook))\b|\b(coucher|collocate|the \w+ couple)\b|\boff the beaten (trail|track|path)\b/,
 		"...two fair creatures, couched side by side<br>In deepest grass, beneath the whisp'ring roof<br>Of leaves and trembled blossoms, where there ran<br>A brooklet, scarce espied"],
 
 	[/\b(blue|green|black|white|silver|gold|green|pink|orange|teal|gr[ea]y|pink|purple|yellow)\b[ -]\b(blue|green|black|white|silver|gold|green|pink|orange|teal|gr[ea]y|pink|purple|yellow)|\b(soft|cool|damp) (earth|soil|mud|dirt)\b|\bbreathing (exercises?|techniques?)\b|\bbiofeedback\b|\bdeep breathing\b|\b(cool|cold)-\w+\b/i,
@@ -37,7 +37,7 @@ var regex2quote = [
 	[/\b(Icarus|Caravaggio|Jarman)\b|\bthe \w+ boy I know\b|\bthe winged \w+\b/i,
 		"The winged boy I knew"],
 
-	[/\b(\w+[yY]?),? \1\b|\btrue [B-DF-HJ-NP-TV-Z]\w+\b/,
+	[/\b(\w+(y|Y|ie|IE)),? \1\b|\btrue [B-DF-HJ-NP-TV-Z]\w+\b/,
 		"But who wast thou, O happy, happy dove?<br>His Psyche true!"],
 
 	[/\bla\w+st (\w+ )?and lo\w+st\b|\b(\w+st|most \w+) (vision|sight|scene|view|panorama|vista)\b|\b\w+ed \w+archy\b|\bit[ -]girl\b|\b(Jane Birken|Chlo[eë] Sevigny|Kendall Jenner|Grace Jones|Edie Sedgwick)\b/i,
@@ -202,7 +202,6 @@ var regex2quote = [
 	[/\brainbow of the\b|\b(globed|peonies|glut|shroud)\b|\bof global\b|\b(red|blue|green|black|white|grey) (hill|peak|field|stream|pond|brook|cloud|star|creek|mist)|\bApril sh\w+/,
 		"And hides the green hill in an April shroud;<br>Then glut thy sorrow on a morning rose,<br>Or on the rainbow of the salt sand-wave,<br>Or on the wealth of globed peonies"],
 
-		/// this one doesn't make any sense
 	[/\b([b-df-hj-np-tv-z])([aeiou]{1,2})([b-df-hj-np-tv-z]), \1\2\3|\b(\w+), \4 (upon|through|in|by|against|with|over|among|of|up|under|within|without|towards?)\b/i,
 		"Or if thy mistress some rich anger shows,<br>Emprison her soft hand, and let her rave,<br>And feed deep, deep upon her peerless eyes."],
 
@@ -338,7 +337,7 @@ var regex2quote = [
 	[/\byour? soft \w+\b|\bplay on\b|\bof no t\w+/i,
 		"therefore, ye soft pipes, play on;<br>Not to the sensual ear, but, more endear'd,<br>Pipe to the spirit ditties of no tone"],
 
-	[/\bt\w+ (be|are|were|) (bare|empty|naked)|\b[A-Z]\w+ youth|, beneath the \w+/i,
+	[/\bt\w+ (be|are|were|) (bare|empty|naked)|\b[A-Z]\w+ youth|, beneath the \w+/,
 		"Fair youth, beneath the trees, thou canst not leave<br>Thy song, nor ever can those trees be bare"],
 
 	[/\ba \w+ lover\b|\bnever,? never\b|\byou can kiss\b|\bnear the goal\b/i,

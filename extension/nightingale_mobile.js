@@ -26,6 +26,15 @@ function addStyle(styleString) {
   document.head.append(style);
 }
 
+addStyle(`
+.keatstip {
+  position: relative;
+  display: inline-block;
+  text-shadow: 0 0 3px #d10015, 0 0 6px #2d08d1;
+  cursor: url("chrome-extension://__MSG_@@extension_id__/nightingale_sm.png") 0 0, auto;
+}
+`
+);
 
 addStyle(`
 .keatstip .keatstiptext {
@@ -185,7 +194,7 @@ function injectPopup(textNode){//,timedQuotes){
 	    	alert("got a match!")
 	    	// alert.log(match);
 	    	// alert.log(match[0]);
-	    	keatstip = "<span class='keatstip'>"+match[0]+"<span class='keatstiptext'>!!!!!!!!!!!!!!!!"+quote+"!!!!!!!!!!!!!!!!</span></span>";
+	    	keatstip = "<span class='keatstip'>"+match[0]+"<span class='keatstiptext'>"+quote+"</span></span>";
 	    	var replacementNode = document.createElement('span');
 			replacementNode.innerHTML = textNode.textContent.replace(match[0],keatstip);
 			textNode.parentNode.insertBefore(replacementNode, textNode);

@@ -178,7 +178,7 @@ function injectPopup(textNode){//,timedQuotes){
 	    var regex = regex2quote[i][0];
 	    var match = textNode.textContent.match(regex);
 	    //alert(match);
-	    alert(textNode);
+	    alert(textNode.data);
 	    alert(regex);
 	    if (match){
 	    	alert.log(match);

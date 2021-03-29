@@ -573,7 +573,7 @@ function injectPopup(textNode){//,timedQuotes){
 	return false
 }
 
-<<<<<<< HEAD
+
 alert(allTextNodes.length + " possible nodes");
 for (var i = 0; i < allTextNodes.length; i++){
 	if (isHidden(allTextNodes[i])==false){
@@ -581,7 +581,7 @@ for (var i = 0; i < allTextNodes.length; i++){
 		if (replacedAny==true){
 			alert('replacement made')
 			break;
-=======
+
 
 function initialize(){
 	/// storing all text nodes from page; from recursive 'walk' function

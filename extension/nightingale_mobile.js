@@ -603,6 +603,8 @@ function tryToInjectInEachNode(){
 }
 
 //
+alert("test");
+
 document.addEventListener("DOMContentLoaded", function(){
 	alert("content loaded");
 	initialize();

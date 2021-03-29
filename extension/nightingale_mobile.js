@@ -547,8 +547,6 @@ function injectPopup(textNode){//,timedQuotes){
 
 function initialize(){
 	/// storing all text nodes from page; from recursive 'walk' function
-
-
 	function walk(node){
 		// source: http://is.gd/mwZp7E
 		var child, next;
@@ -604,8 +602,6 @@ function initialize(){
 			}
 		}
 	}
-
-
 }
 
 
@@ -619,8 +615,13 @@ initialize();
 
 //// Twitter stuff
 alert(window.location.hostname)
+var scrollY = window.pageYOffset;
 if (window.location.hostname.includes("twitter")==true){
 	setInterval(function(){
-		initialize();
+		var scrollYNew = window.pageYOffset;
+		if (scrollYNew - scrollY > 100){
+			alert("scrolled down, reinitializing")
+			initialize();
+		}
 	},7000);
 }

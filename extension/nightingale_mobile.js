@@ -606,8 +606,8 @@ function tryToInjectInEachNode(){
 //
 // window.onload = (event) => {
 alert("page loaded");
-initialize();
-tryToInjectInEachNode();
+// initialize();
+// tryToInjectInEachNode();
 // };
 
 

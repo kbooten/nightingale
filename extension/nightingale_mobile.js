@@ -604,6 +604,7 @@ function tryToInjectInEachNode(){
 
 //
 document.addEventListener("DOMContentLoaded", function(){
+	alert("content loaded");
 	initialize();
 	tryToInjectInEachNode();
 });

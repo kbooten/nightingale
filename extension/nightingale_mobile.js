@@ -577,7 +577,9 @@ function injectPopup(textNode){//,timedQuotes){
 function initialize(){
 	/// storing all text nodes from page; from recursive 'walk' function
 	var allTextNodes = [];
+	console.log("a");
 	walk(document.body);
+	console.log("b")
 
 	/// shuffling the text nodes so tooltips are placed randomly
 	shuffleArray(allTextNodes);
@@ -606,10 +608,15 @@ function tryToInjectInEachNode(){
 //
 // window.onload = (event) => {
 alert("page loaded");
-// initialize();
+initialize();
 // tryToInjectInEachNode();
 // };
 
 
 //// Twitter stuff
 alert(window.location.hostname)
+if (window.location.hostname.includes("twitter")==true){
+	setInterval(function(){
+		alert("twitter")
+	},7000);
+}

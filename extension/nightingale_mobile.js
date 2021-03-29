@@ -604,8 +604,8 @@ function tryToInjectInEachNode(){
 
 
 //
-window.addEventListener('DOMContentLoaded', (event) => {
-	alert("content loaded");
+window.onload = (event) => {
+	alert("page loaded");
 	initialize();
 	tryToInjectInEachNode();
-});
+};

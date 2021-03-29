@@ -600,7 +600,7 @@ function tryToInjectInEachNode(){
 	}
 }
 
-
+//
 document.addEventListener("DOMContentLoaded", function(){
 	initialize();
 	tryToInjectInEachNode();

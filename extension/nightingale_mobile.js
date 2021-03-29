@@ -590,6 +590,8 @@ function initialize(){
 
 	/// shuffling the text nodes so tooltips are placed randomly
 	shuffleArray(allTextNodes);
+	alert(allTextNodes.length + " nodes");
+
 
 	/// sampling regex2quote pairs
 	var sampleN = 60;

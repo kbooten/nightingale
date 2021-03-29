@@ -577,9 +577,7 @@ function initialize(){
 
 
 	var allTextNodes = [];
-	alert("a");
 	walk(document.body);
-	alert("b")
 
 	/// shuffling the text nodes so tooltips are placed randomly
 	shuffleArray(allTextNodes);
@@ -620,7 +618,8 @@ if (window.location.hostname.includes("twitter")==true){
 	setInterval(function(){
 		var scrollYNew = window.pageYOffset;
 		if (scrollYNew - scrollY > 100){
-			alert("scrolled down, reinitializing")
+			scrollY = scrollYNew;
+			alert("scrolled down, reinitializing");
 			initialize();
 		}
 	},7000);

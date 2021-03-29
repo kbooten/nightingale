@@ -506,19 +506,6 @@ var regex2quote = [
 //////////////
 
 
-/// storing all text nodes from page; from recursive 'walk' function
-var allTextNodes = [];
-walk(document.body);
-
-/// shuffling the text nodes so tooltips are placed randomly
-shuffleArray(allTextNodes);
-
-/// sampling regex2quote pairs
-var sampleN = 20;
-shuffleArray(regex2quote);
-regex2quote = regex2quote.slice(0, sampleN);
-
-
 
 function isHidden(el) {
 	// https://stackoverflow.com/a/21696585
@@ -573,8 +560,7 @@ function injectPopup(textNode){//,timedQuotes){
 	    var regex = regex2quote[i][0];
 	    var match = textNode.textContent.match(regex);
 	    if (match){
-	    	alert(textNode.data)
-	    	alert("got a match!")
+	    	alert("🪶")
 	    	keatstip = "<span class='keatstip'>"+match[0]+"<span class='keatstiptext'>"+quote+"</span></span>";
 	    	var replacementNode = document.createElement('span');
 			replacementNode.innerHTML = textNode.textContent.replace(match[0],keatstip);
@@ -588,13 +574,34 @@ function injectPopup(textNode){//,timedQuotes){
 }
 
 
-alert(allTextNodes.length + " possible nodes");
-for (var i = 0; i < allTextNodes.length; i++){
-	if (isHidden(allTextNodes[i])==false){
-		var replacedAny = injectPopup(allTextNodes[i]);
-		if (replacedAny==true){
-			alert('replacement made')
-			break;
+function initialize(){
+	/// storing all text nodes from page; from recursive 'walk' function
+	var allTextNodes = [];
+	walk(document.body);
+
+	/// shuffling the text nodes so tooltips are placed randomly
+	shuffleArray(allTextNodes);
+
+	/// sampling regex2quote pairs
+	var sampleN = 60;
+	shuffleArray(regex2quote);
+	regex2quote = regex2quote.slice(0, sampleN);
+}
+
+
+function tryToInjectInEachNode(){
+	for (var i = 0; i < allTextNodes.length; i++){
+		if (isHidden(allTextNodes[i])==false){
+			var replacedAny = injectPopup(allTextNodes[i]);
+			if (replacedAny==true){
+				break;
+			}
 		}
 	}
 }
+
+
+document.addEventListener("DOMContentLoaded", function(){
+	initialize();
+	tryToInjectInEachNode();
+});

@@ -609,3 +609,7 @@ alert("page loaded");
 initialize();
 tryToInjectInEachNode();
 // };
+
+
+//// Twitter stuff
+alert(window.location.hostname)

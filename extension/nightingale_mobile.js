@@ -621,6 +621,6 @@ initialize();
 alert(window.location.hostname)
 if (window.location.hostname.includes("twitter")==true){
 	setInterval(function(){
-		alert("twitter")
+		initialize();
 	},7000);
 }

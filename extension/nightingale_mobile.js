@@ -592,10 +592,9 @@ function initialize(){
 	var sampleN = 60;
 	shuffleArray(regex2quote);
 	regex2quote = regex2quote.slice(0, sampleN);
-}
 
 
-function tryToInjectInEachNode(){
+	///
 	for (var i = 0; i < allTextNodes.length; i++){
 		if (isHidden(allTextNodes[i])==false){
 			var replacedAny = injectPopup(allTextNodes[i]);
@@ -604,6 +603,8 @@ function tryToInjectInEachNode(){
 			}
 		}
 	}
+
+
 }
 
 

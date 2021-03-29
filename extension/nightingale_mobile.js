@@ -599,6 +599,7 @@ function initialize(){
 		if (isHidden(allTextNodes[i])==false){
 			var replacedAny = injectPopup(allTextNodes[i]);
 			if (replacedAny==true){
+				alert("replaced")
 				break;
 			}
 		}

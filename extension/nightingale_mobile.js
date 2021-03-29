@@ -613,7 +613,7 @@ function initialize(){
 // window.onload = (event) => {
 alert("page loaded");
 initialize();
-tryToInjectInEachNode();
+// tryToInjectInEachNode();
 // };
 
 

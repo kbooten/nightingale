@@ -587,7 +587,7 @@ function injectPopup(textNode){//,timedQuotes){
 	return false
 }
 
-
+//
 alert(allTextNodes.length + " possible nodes");
 for (var i = 0; i < allTextNodes.length; i++){
 	if (isHidden(allTextNodes[i])==false){

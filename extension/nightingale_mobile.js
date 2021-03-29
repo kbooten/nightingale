@@ -574,15 +574,6 @@ function injectPopup(textNode){//,timedQuotes){
 }
 
 
-alert(allTextNodes.length + " possible nodes");
-for (var i = 0; i < allTextNodes.length; i++){
-	if (isHidden(allTextNodes[i])==false){
-		var replacedAny = injectPopup(allTextNodes[i]);
-		if (replacedAny==true){
-			alert('replacement made')
-			break;
-
-
 function initialize(){
 	/// storing all text nodes from page; from recursive 'walk' function
 	var allTextNodes = [];

@@ -577,9 +577,9 @@ function injectPopup(textNode){//,timedQuotes){
 function initialize(){
 	/// storing all text nodes from page; from recursive 'walk' function
 	var allTextNodes = [];
-	console.log("a");
+	alert("a");
 	walk(document.body);
-	console.log("b")
+	alert("b")
 
 	/// shuffling the text nodes so tooltips are placed randomly
 	shuffleArray(allTextNodes);

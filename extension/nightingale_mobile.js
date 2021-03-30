@@ -506,7 +506,6 @@ var regex2quote = [
 //////////////
 
 
-
 function isHidden(el) {
 	// https://stackoverflow.com/a/21696585
 	// does this actually do anything?
@@ -531,7 +530,7 @@ function injectPopup(textNode){//,timedQuotes){
 	    var regex = regex2quote[i][0];
 	    var match = textNode.textContent.match(regex);
 	    if (match){
-	    	alert("🪶")
+	    	alert("🪶") /// something has been replaced
 	    	keatstip = "<span class='keatstip'>"+match[0]+"<span class='keatstiptext'>"+quote+"</span></span>";
 	    	var replacementNode = document.createElement('span');
 			replacementNode.innerHTML = textNode.textContent.replace(match[0],keatstip);
@@ -545,7 +544,12 @@ function injectPopup(textNode){//,timedQuotes){
 }
 
 
-function initialize(){
+function initialize(nodeListChange){
+	/// reads the nodes
+	/// randomizes the quotes
+	/// tries to add 
+
+
 	/// storing all text nodes from page; from recursive 'walk' function
 	function walk(node){
 		// source: http://is.gd/mwZp7E
@@ -575,14 +579,16 @@ function initialize(){
 	}
 
 
-
+	/// get all the nodes
 	var allTextNodes = [];
 	walk(document.body);
 
-	/// shuffling the text nodes so tooltips are placed randomly
-	shuffleArray(allTextNodes);
-	alert(allTextNodes.length + " nodes");
 
+	if (nodeListChange == "random"){/// shuffling the text nodes so tooltips are placed randomly
+		shuffleArray(allTextNodes);
+	}else if (nodeListChange == "reverse"){  /// just reversing them (for scrolling down on Twitter)
+		allTextNodes.reverse();
+	}
 
 	/// sampling regex2quote pairs
 	var sampleN = 60;
@@ -590,12 +596,11 @@ function initialize(){
 	regex2quote = regex2quote.slice(0, sampleN);
 
 
-	///
+	/// add, break if one is added
 	for (var i = 0; i < allTextNodes.length; i++){
 		if (isHidden(allTextNodes[i])==false){
 			var replacedAny = injectPopup(allTextNodes[i]);
 			if (replacedAny==true){
-				alert("replaced")
 				break;
 			}
 		}
@@ -603,15 +608,17 @@ function initialize(){
 }
 
 
-//
-// window.onload = (event) => {
-alert("page loaded");
-initialize();
-// tryToInjectInEachNode();
-// };
+/// main 
+/// sometimes randomize the nodes, sometimes start from the top
+if (Math.random()>.2){
+	initialize(nodeListChange=="random");
+}else{
+	initialize();
+}
 
 
-//// Twitter stuff
+/// Twitter stuff
+/// fires every so often as long as user has scrolled down
 alert(window.location.hostname)
 var scrollY = window.pageYOffset;
 if (window.location.hostname.includes("twitter")==true){
@@ -620,7 +627,7 @@ if (window.location.hostname.includes("twitter")==true){
 		if (scrollYNew - scrollY > 100){
 			scrollY = scrollYNew;
 			alert("scrolled down, reinitializing");
-			initialize();
+			initialize(nodeListChange=="reverse"); ///start from the end
 		}
 	},7000);
 }

@@ -28,6 +28,14 @@ Should someone else want to use *Nightingale* to fill their experience of the in
 
 *Nightingale* assumes that seeing the same lines from Keats pop up too frequently could breed resentment. It tracks in `localStorage` when a particular quotation from Keats was last inserted as a pop-up into a page I have visited, and the quotation will only reappear after a certain amount of time has elapsed (by default, 3 days). 
 
+***
+
+## Mobile Version
+
+*Nightingale* is also available as a extension for the experimental iOS mobile browser [Insight](https://insightbrowser.com/).  To activate *Nightingale* on Insight, create a custom extension with [this recipe](https://extensions.insightbrowser.com/extend/2bdcaaa9c7).  This injects the javascript from `nightingale_mobile.js` in this repo.  
+
+The mobile version does keep track of recently-seen quotes with `localstorage`.  However, it does contain a mobile-specific feature: scrolling a Twitter feed will prompt the program to continuously check newly-revealed (dynamically-loaded) tweets for possible matches.  
+
 
 
 

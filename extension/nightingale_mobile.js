@@ -6,7 +6,6 @@
 
 // adding css
 // https://stackoverflow.com/a/15506705
-
 function addStyle(styleString) {
   const style = document.createElement('style');
   style.textContent = styleString;
@@ -18,7 +17,6 @@ addStyle(`
   position: relative;
   display: inline-block;
   text-shadow: 0 0 3px #d10015, 0 0 6px #2d08d1;
-  cursor: url("chrome-extension://__MSG_@@extension_id__/nightingale_sm.png") 0 0, auto;
 }
 `
 );
@@ -530,7 +528,6 @@ function injectPopup(textNode){//,timedQuotes){
 	    var regex = regex2quote[i][0];
 	    var match = textNode.textContent.match(regex);
 	    if (match){
-	    	alert("🪶") /// something has been replaced
 	    	keatstip = "<span class='keatstip'>"+match[0]+"<span class='keatstiptext'>"+quote+"</span></span>";
 	    	var replacementNode = document.createElement('span');
 			replacementNode.innerHTML = textNode.textContent.replace(match[0],keatstip);
@@ -591,7 +588,7 @@ function initialize(nodeListChange){
 	}
 
 	/// sampling regex2quote pairs
-	var sampleN = 60;
+	var sampleN = 25;
 	shuffleArray(regex2quote);
 	regex2quote = regex2quote.slice(0, sampleN);
 
@@ -619,15 +616,13 @@ if (Math.random()>.2){
 
 /// Twitter stuff
 /// fires every so often as long as user has scrolled down
-alert(window.location.hostname)
 var scrollY = window.pageYOffset;
 if (window.location.hostname.includes("twitter")==true){
 	setInterval(function(){
 		var scrollYNew = window.pageYOffset;
 		if (scrollYNew - scrollY > 100){
 			scrollY = scrollYNew;
-			alert("scrolled down, reinitializing");
 			initialize(nodeListChange="reverse"); ///start from the end
 		}
-	},7000);
+	},12000);
 }

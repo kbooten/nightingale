@@ -611,7 +611,7 @@ function initialize(nodeListChange){
 /// main 
 /// sometimes randomize the nodes, sometimes start from the top
 if (Math.random()>.2){
-	initialize(nodeListChange=="random");
+	initialize(nodeListChange="random");
 }else{
 	initialize();
 }
@@ -627,7 +627,7 @@ if (window.location.hostname.includes("twitter")==true){
 		if (scrollYNew - scrollY > 100){
 			scrollY = scrollYNew;
 			alert("scrolled down, reinitializing");
-			initialize(nodeListChange=="reverse"); ///start from the end
+			initialize(nodeListChange="reverse"); ///start from the end
 		}
 	},7000);
 }

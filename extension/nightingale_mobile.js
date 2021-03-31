@@ -52,7 +52,6 @@ addStyle(`
 .keatstipOn .keatstiptext{
   visibility: visible;
   opacity: 1;
-  cursor:default;
   transition: all 6s ease;
   transition-delay: .25s;
 }
@@ -529,12 +528,13 @@ function injectPopup(textNode){//,timedQuotes){
 	    var regex = regex2quote[i][0];
 	    var match = textNode.textContent.match(regex);
 	    if (match){
+	    	alert("match")
 	    	keatstip = "<span class='keatstip'>"+match[0]+"<span class='keatstiptext'>"+quote+"</span></span>";
 	    	var replacementNode = document.createElement('span');
 			replacementNode.innerHTML = textNode.textContent.replace(match[0],keatstip);
-	    	replacementNode.addEventListener("click", function(){
-	    		replacementNode.classList.toggle("keatstipOn");
-	    	});
+	    	// replacementNode.addEventListener("click", function(){
+	    	// 	replacementNode.classList.toggle("keatstipOn");
+	    	// });
 			textNode.parentNode.insertBefore(replacementNode, textNode);
 			textNode.parentNode.removeChild(textNode);
 			return true

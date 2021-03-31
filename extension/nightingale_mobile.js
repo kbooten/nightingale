@@ -534,7 +534,7 @@ function injectPopup(textNode){//,timedQuotes){
 	    var match = textNode.textContent.match(regex);
 	    if (match){
 	    	alert("match")
-	    	keatstip = "<input class='keatstip'>"+match[0]+"<span class='keatstiptext'>"+quote+"</span></input>";
+	    	keatstip = "<span class='keatstip'>"+match[0]+"<span class='keatstiptext'>"+quote+"</span></span>";
 	    	var replacementNode = document.createElement('span');
 			replacementNode.innerHTML = textNode.textContent.replace(match[0],keatstip);
 			// replacementNode.addEventListener("webkitmouseforcewillbegin", prepareForForceClick, false);
@@ -542,7 +542,7 @@ function injectPopup(textNode){//,timedQuotes){
 			// replacementNode.addEventListener("webkitmouseforceup", function(){replacementNode.classList.toggle("keatstipOn");}, false);
 	    	replacementNode.addEventListener("click", function(){
 	    		alert("clicked")
-	    		//replacementNode.classList.toggle("keatstipOn");
+	    		replacementNode.classList.toggle("keatstipOn");
 	    	});
 			textNode.parentNode.insertBefore(replacementNode, textNode);
 			textNode.parentNode.removeChild(textNode);

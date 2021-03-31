@@ -63,8 +63,8 @@ addStyle(`
 .keatstipOn .keatstiptext{
   visibility: visible;
   opacity: 1;
-  transition: all 6s ease;
-  transition-delay: .25s;
+  transition: all 3s ease;
+  transition-delay: .1s;
 }
 `);
 
@@ -550,8 +550,8 @@ function injectPopup(textNode){//,timedQuotes){
 			// replacementNode.addEventListener("webkitmouseforcewillbegin", prepareForForceClick, false);
 			// replacementNode.addEventListener("webkitmouseforcedown", function(){replacementNode.classList.toggle("keatstipOn");}, false);
 			// replacementNode.addEventListener("webkitmouseforceup", function(){replacementNode.classList.toggle("keatstipOn");}, false);
-	    	replacementNode.addEventListener("click", function(){
-	    		replacementNode.classList.toggle("keatstipOn");
+	    	textnode.addEventListener("click", function(){
+	    		textnode.classList.toggle("keatstipOn");
 	    	});
 			textNode.parentNode.insertBefore(replacementNode, textNode);
 			textNode.parentNode.removeChild(textNode);

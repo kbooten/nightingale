@@ -520,7 +520,6 @@ function shuffleArray(array) {
 }
 
 
-
 function injectPopup(textNode){//,timedQuotes){
 	// regexes matching web text to poetry
 	// inject first match
@@ -533,10 +532,13 @@ function injectPopup(textNode){//,timedQuotes){
 	    	keatstip = "<span class='keatstip'>"+match[0]+"<span class='keatstiptext'>"+quote+"</span></span>";
 	    	var replacementNode = document.createElement('span');
 			replacementNode.innerHTML = textNode.textContent.replace(match[0],keatstip);
-	    	replacementNode.addEventListener("click", function(){
-	    		alert("clicked")
-	    		//replacementNode.classList.toggle("keatstipOn");
-	    	});
+			replacementNode.addEventListener("webkitmouseforcewillbegin", prepareForForceClick, false);
+			replacementNode.addEventListener("webkitmouseforcedown", function(){replacementNode.classList.toggle("keatstipOn");}, false);
+			replacementNode.addEventListener("webkitmouseforceup", function(){replacementNode.classList.toggle("keatstipOn");}, false);
+	    	// replacementNode.addEventListener("click", function(){
+	    	// 	alert("clicked")
+	    	// 	//replacementNode.classList.toggle("keatstipOn");
+	    	// });
 			textNode.parentNode.insertBefore(replacementNode, textNode);
 			textNode.parentNode.removeChild(textNode);
 			return true

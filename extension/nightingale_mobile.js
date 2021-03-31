@@ -535,6 +535,8 @@ function shuffleArray(array) {
 }
 
 
+var targetTextId = 0;
+
 function injectPopup(textNode){//,timedQuotes){
 	// regexes matching web text to poetry
 	// inject first match
@@ -544,17 +546,19 @@ function injectPopup(textNode){//,timedQuotes){
 	    var match = textNode.textContent.match(regex);
 	    if (match){
 	    	alert("match")
-	    	keatstip = "<span class='keatstip'>"+match[0]+"<span class='keatstiptext'>"+quote+"</span></span>";
+	    	keatstip = "<span class='keatstip' id='targetText"+targetTextId+"'>"+match[0]+"<span class='keatstiptext'>"+quote+"</span></span>";
 	    	var replacementNode = document.createElement('span');
 			replacementNode.innerHTML = textNode.textContent.replace(match[0],keatstip);
-			textNode.addEventListener("webkitmouseforcewillbegin", prepareForForceClick, false);
-			textNode.addEventListener("webkitmouseforcedown", function(){textNode.classList.toggle("keatstipOn");}, false);
-			textNode.addEventListener("webkitmouseforceup", function(){textNode.classList.toggle("keatstipOn");}, false);
+			var targetTextNode = document.getElementById('targetText'+targetTextId);
+			targetTextNode.addEventListener("webkitmouseforcewillbegin", prepareForForceClick, false);
+			targetTextNode.addEventListener("webkitmouseforcedown", function(){targetTextNode.classList.toggle("keatstipOn");}, false);
+			targetTextNode.addEventListener("webkitmouseforceup", function(){targetTextNode.classList.toggle("keatstipOn");}, false);
 	    	// textnode.addEventListener("click", function(){
 	    	// 	textnode.classList.toggle("keatstipOn");
 	    	// });
 			textNode.parentNode.insertBefore(replacementNode, textNode);
 			textNode.parentNode.removeChild(textNode);
+			targetTextId+=1; //increment in case there is more than one on page (in case of Twitter)
 			return true
 		}
 	}

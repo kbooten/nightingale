@@ -545,7 +545,7 @@ function injectPopup(textNode){//,timedQuotes){
 	    var match = textNode.textContent.match(regex);
 	    if (match){
 	    	alert("match")
-	    	keatstip = "<input type='button' class='keatstip' id='targetText"+targetTextId+"'>"+match[0]+"<span class='keatstiptext'>"+quote+"</span></input>";
+	    	keatstip = "<button class='keatstip' id='targetText"+targetTextId+"'>"+match[0]+"<span class='keatstiptext'>"+quote+"</span></button>";
 	    	var replacementNode = document.createElement('span');
 			replacementNode.innerHTML = textNode.textContent.replace(match[0],keatstip);
 			textNode.parentNode.insertBefore(replacementNode, textNode);
@@ -556,7 +556,8 @@ function injectPopup(textNode){//,timedQuotes){
 			// targetTextNode.addEventListener("webkitmouseforcedown", function(){targetTextNode.classList.toggle("keatstipOn");}, false);
 			// targetTextNode.addEventListener("webkitmouseforceup", function(){targetTextNode.classList.toggle("keatstipOn");}, false);
 	    	targetTextNode.addEventListener("click", function(){
-	    		targetTextNode.classList.toggle("keatstipOn");
+	    		alert("click")
+	    		//targetTextNode.classList.toggle("keatstipOn");
 	    	});
 			targetTextId+=1; //increment in case there is more than one on page (in case of Twitter)
 			return true

@@ -50,15 +50,6 @@ addStyle(`
 
 
 addStyle(`
-.keatstipOn{
-  border-style:solid;
-  border-color:#f2ff00;
-  border-width:1em;
-}
-`);
-
-
-addStyle(`
 .keatstipOn .keatstiptext{
   visibility: visible;
   opacity: 1;

@@ -49,6 +49,15 @@ addStyle(`
 }
 `);
 
+
+addStyle(`
+.keatstipOn{
+  border-style:solid;
+  border-color:#f2ff00;
+}
+`);
+
+
 addStyle(`
 .keatstipOn .keatstiptext{
   visibility: visible;

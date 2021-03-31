@@ -532,9 +532,10 @@ function injectPopup(textNode){//,timedQuotes){
 	    	keatstip = "<span class='keatstip'>"+match[0]+"<span class='keatstiptext'>"+quote+"</span></span>";
 	    	var replacementNode = document.createElement('span');
 			replacementNode.innerHTML = textNode.textContent.replace(match[0],keatstip);
-	    	// replacementNode.addEventListener("click", function(){
-	    	// 	replacementNode.classList.toggle("keatstipOn");
-	    	// });
+	    	replacementNode.addEventListener("click", function(){
+	    		alert("clicked")
+	    		//replacementNode.classList.toggle("keatstipOn");
+	    	});
 			textNode.parentNode.insertBefore(replacementNode, textNode);
 			textNode.parentNode.removeChild(textNode);
 			return true

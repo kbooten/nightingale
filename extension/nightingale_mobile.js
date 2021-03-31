@@ -49,7 +49,7 @@ addStyle(`
 `);
 
 addStyle(`
-.keatstip:hover .keatstiptext{
+.keatstipOn .keatstiptext{
   visibility: visible;
   opacity: 1;
   cursor:default;
@@ -520,6 +520,7 @@ function shuffleArray(array) {
 }
 
 
+
 function injectPopup(textNode){//,timedQuotes){
 	// regexes matching web text to poetry
 	// inject first match
@@ -531,6 +532,9 @@ function injectPopup(textNode){//,timedQuotes){
 	    	keatstip = "<span class='keatstip'>"+match[0]+"<span class='keatstiptext'>"+quote+"</span></span>";
 	    	var replacementNode = document.createElement('span');
 			replacementNode.innerHTML = textNode.textContent.replace(match[0],keatstip);
+	    	replacementNode.addEventListener("click", function(){
+	    		replacementNode.classList.toggle("keatstipOn");
+	    	});
 			textNode.parentNode.insertBefore(replacementNode, textNode);
 			textNode.parentNode.removeChild(textNode);
 			return true

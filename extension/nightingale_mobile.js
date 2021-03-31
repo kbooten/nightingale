@@ -549,16 +549,16 @@ function injectPopup(textNode){//,timedQuotes){
 	    	keatstip = "<span class='keatstip' id='targetText"+targetTextId+"'>"+match[0]+"<span class='keatstiptext'>"+quote+"</span></span>";
 	    	var replacementNode = document.createElement('span');
 			replacementNode.innerHTML = textNode.textContent.replace(match[0],keatstip);
-			// targetTextNode.addEventListener("webkitmouseforcewillbegin", prepareForForceClick, false);
-			// targetTextNode.addEventListener("webkitmouseforcedown", function(){targetTextNode.classList.toggle("keatstipOn");}, false);
-			// targetTextNode.addEventListener("webkitmouseforceup", function(){targetTextNode.classList.toggle("keatstipOn");}, false);
 			textNode.parentNode.insertBefore(replacementNode, textNode);
 			textNode.parentNode.removeChild(textNode);
 			var targetTextNode = document.getElementById('targetText'+targetTextId);
 			alert(targetTextNode)
-	    	targetTextNode.addEventListener("click", function(){
-	    		targetTextNode.classList.toggle("keatstipOn");
-	    	});
+			targetTextNode.addEventListener("webkitmouseforcewillbegin", prepareForForceClick, false);
+			targetTextNode.addEventListener("webkitmouseforcedown", function(){targetTextNode.classList.toggle("keatstipOn");}, false);
+			targetTextNode.addEventListener("webkitmouseforceup", function(){targetTextNode.classList.toggle("keatstipOn");}, false);
+	    	// targetTextNode.addEventListener("click", function(){
+	    	// 	targetTextNode.classList.toggle("keatstipOn");
+	    	// });
 			targetTextId+=1; //increment in case there is more than one on page (in case of Twitter)
 			return true
 		}

@@ -534,7 +534,7 @@ function injectPopup(textNode){//,timedQuotes){
 	    var match = textNode.textContent.match(regex);
 	    if (match){
 	    	alert("match")
-	    	keatstip = "<span class='keatstip'>"+match[0]+"<span class='keatstiptext'>"+quote+"</span></span>";
+	    	keatstip = "<input class='keatstip'>"+match[0]+"<span class='keatstiptext'>"+quote+"</span></input>";
 	    	var replacementNode = document.createElement('span');
 			replacementNode.innerHTML = textNode.textContent.replace(match[0],keatstip);
 			// replacementNode.addEventListener("webkitmouseforcewillbegin", prepareForForceClick, false);

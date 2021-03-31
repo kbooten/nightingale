@@ -504,6 +504,11 @@ var regex2quote = [
 //////////////
 
 
+function prepareForForceClick(){
+	event.preventDefault();
+}
+
+
 function isHidden(el) {
 	// https://stackoverflow.com/a/21696585
 	// does this actually do anything?

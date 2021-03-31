@@ -54,6 +54,7 @@ addStyle(`
 .keatstipOn{
   border-style:solid;
   border-color:#f2ff00;
+  border-width:1em;
 }
 `);
 
@@ -513,9 +514,9 @@ var regex2quote = [
 //////////////
 
 
-function prepareForForceClick(event){
-	event.preventDefault();
-}
+// function prepareForForceClick(event){
+// 	event.preventDefault();
+// }
 
 
 function isHidden(el) {

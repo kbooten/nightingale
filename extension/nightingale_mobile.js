@@ -514,9 +514,9 @@ var regex2quote = [
 //////////////
 
 
-// function prepareForForceClick(event){
-// 	event.preventDefault();
-// }
+function prepareForForceClick(event){
+	event.preventDefault();
+}
 
 
 function isHidden(el) {
@@ -547,12 +547,12 @@ function injectPopup(textNode){//,timedQuotes){
 	    	keatstip = "<span class='keatstip'>"+match[0]+"<span class='keatstiptext'>"+quote+"</span></span>";
 	    	var replacementNode = document.createElement('span');
 			replacementNode.innerHTML = textNode.textContent.replace(match[0],keatstip);
-			// replacementNode.addEventListener("webkitmouseforcewillbegin", prepareForForceClick, false);
-			// replacementNode.addEventListener("webkitmouseforcedown", function(){replacementNode.classList.toggle("keatstipOn");}, false);
-			// replacementNode.addEventListener("webkitmouseforceup", function(){replacementNode.classList.toggle("keatstipOn");}, false);
-	    	textnode.addEventListener("click", function(){
-	    		textnode.classList.toggle("keatstipOn");
-	    	});
+			textNode.addEventListener("webkitmouseforcewillbegin", prepareForForceClick, false);
+			textNode.addEventListener("webkitmouseforcedown", function(){textNode.classList.toggle("keatstipOn");}, false);
+			textNode.addEventListener("webkitmouseforceup", function(){textNode.classList.toggle("keatstipOn");}, false);
+	    	// textnode.addEventListener("click", function(){
+	    	// 	textnode.classList.toggle("keatstipOn");
+	    	// });
 			textNode.parentNode.insertBefore(replacementNode, textNode);
 			textNode.parentNode.removeChild(textNode);
 			return true

@@ -504,7 +504,7 @@ var regex2quote = [
 //////////////
 
 
-function prepareForForceClick(){
+function prepareForForceClick(event){
 	event.preventDefault();
 }
 

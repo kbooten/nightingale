@@ -550,12 +550,13 @@ function injectPopup(textNode){//,timedQuotes){
 	    	var replacementNode = document.createElement('span');
 			replacementNode.innerHTML = textNode.textContent.replace(match[0],keatstip);
 			var targetTextNode = document.getElementById('targetText'+targetTextId);
-			targetTextNode.addEventListener("webkitmouseforcewillbegin", prepareForForceClick, false);
-			targetTextNode.addEventListener("webkitmouseforcedown", function(){targetTextNode.classList.toggle("keatstipOn");}, false);
-			targetTextNode.addEventListener("webkitmouseforceup", function(){targetTextNode.classList.toggle("keatstipOn");}, false);
-	    	// textnode.addEventListener("click", function(){
-	    	// 	textnode.classList.toggle("keatstipOn");
-	    	// });
+			alert(targetTextNode)
+			// targetTextNode.addEventListener("webkitmouseforcewillbegin", prepareForForceClick, false);
+			// targetTextNode.addEventListener("webkitmouseforcedown", function(){targetTextNode.classList.toggle("keatstipOn");}, false);
+			// targetTextNode.addEventListener("webkitmouseforceup", function(){targetTextNode.classList.toggle("keatstipOn");}, false);
+	    	targetTextNode.addEventListener("click", function(){
+	    		textnode.classList.toggle("keatstipOn");
+	    	});
 			textNode.parentNode.insertBefore(replacementNode, textNode);
 			textNode.parentNode.removeChild(textNode);
 			targetTextId+=1; //increment in case there is more than one on page (in case of Twitter)

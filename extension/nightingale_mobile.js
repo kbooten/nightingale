@@ -537,9 +537,9 @@ function injectPopup(textNode){//,timedQuotes){
 	    	keatstip = "<span class='keatstip'>"+match[0]+"<span class='keatstiptext'>"+quote+"</span></span>";
 	    	var replacementNode = document.createElement('span');
 			replacementNode.innerHTML = textNode.textContent.replace(match[0],keatstip);
-			// replacementNode.addEventListener("webkitmouseforcewillbegin", prepareForForceClick, false);
-			// replacementNode.addEventListener("webkitmouseforcedown", function(){replacementNode.classList.toggle("keatstipOn");}, false);
-			// replacementNode.addEventListener("webkitmouseforceup", function(){replacementNode.classList.toggle("keatstipOn");}, false);
+			replacementNode.addEventListener("webkitmouseforcewillbegin", prepareForForceClick, false);
+			replacementNode.addEventListener("webkitmouseforcedown", function(){replacementNode.classList.toggle("keatstipOn");}, false);
+			replacementNode.addEventListener("webkitmouseforceup", function(){replacementNode.classList.toggle("keatstipOn");}, false);
 	    	// replacementNode.addEventListener("click", function(){
 	    	// 	alert("clicked")
 	    	// 	//replacementNode.classList.toggle("keatstipOn");

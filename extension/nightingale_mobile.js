@@ -555,7 +555,7 @@ function injectPopup(textNode){//,timedQuotes){
 			// targetTextNode.addEventListener("webkitmouseforcedown", function(){targetTextNode.classList.toggle("keatstipOn");}, false);
 			// targetTextNode.addEventListener("webkitmouseforceup", function(){targetTextNode.classList.toggle("keatstipOn");}, false);
 	    	targetTextNode.addEventListener("click", function(){
-	    		textnode.classList.toggle("keatstipOn");
+	    		targetTextNode.classList.toggle("keatstipOn");
 	    	});
 			textNode.parentNode.insertBefore(replacementNode, textNode);
 			textNode.parentNode.removeChild(textNode);

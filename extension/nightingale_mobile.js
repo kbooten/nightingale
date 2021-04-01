@@ -577,7 +577,7 @@ function injectPopup(textNode){//,timedQuotes){
 	    		alert(quote);
 	    		//alert(document.getElementById("popup"))
 	    		//document.getElementById("popup").innerHTML = quote; 
-	    		togglePopup();//targetTextNode.classList.add("keatstipOn");
+	    		//togglePopup();//targetTextNode.classList.add("keatstipOn");
 	    		e.preventDefault(); // keep anchors from firing hyperlink
 	    	});
 			targetTextId+=1; //increment in case there is more than one on page (in case of Twitter)

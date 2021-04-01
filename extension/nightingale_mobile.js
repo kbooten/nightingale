@@ -553,9 +553,9 @@ function injectPopup(textNode){//,timedQuotes){
 			textNode.parentNode.removeChild(textNode);
 			var targetTextNode = document.getElementById('targetText'+targetTextId);
 			alert(targetTextNode)
-			targetTextNode.addEventListener("webkitmouseforcewillbegin", prepareForForceClick, false);
-			targetTextNode.addEventListener("webkitmouseforcedown", function(){toggle(targetTextNode);}, false);
-			targetTextNode.addEventListener("webkitmouseforceup", function(){toggle(targetTextNode);}, false);
+			// targetTextNode.addEventListener("webkitmouseforcewillbegin", prepareForForceClick, false);
+			// targetTextNode.addEventListener("webkitmouseforcedown", function(){toggle(targetTextNode);}, false);
+			// targetTextNode.addEventListener("webkitmouseforceup", function(){toggle(targetTextNode);}, false);
 	    	// targetTextNode.addEventListener("click", function(){
 	    	// 	alert("click")
 	    	// 	targetTextNode.classList.add("keatstipOn");

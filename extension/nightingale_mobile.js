@@ -574,7 +574,7 @@ function injectPopup(textNode){//,timedQuotes){
 			// targetTextNode.addEventListener("webkitmouseforceup", function(){toggle(targetTextNode);}, false);
 	    	targetTextNode.addEventListener("click", function(e){
 	    		document.getElementById('popup').innerHTML = quote;
-	    		toggle(targetTextNode);//targetTextNode.classList.add("keatstipOn");
+	    		togglePopup(targetTextNode);//targetTextNode.classList.add("keatstipOn");
 	    		e.preventDefault(); // keep anchors from firing hyperlink
 	    	});
 			targetTextId+=1; //increment in case there is more than one on page (in case of Twitter)

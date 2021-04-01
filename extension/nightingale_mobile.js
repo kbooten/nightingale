@@ -36,7 +36,7 @@ addStyle(`
   font-size: 20px;
   
   /* Position the tooltip source: https://stackoverflow.com/a/25829529*/
-  position: fixed;
+  position: absolute;
   left: 50%;
   top: 45%;
   transform: translate(-50%, -50%);
@@ -58,16 +58,6 @@ addStyle(`
   transition-delay: .2s;
 }
 `);
-
-//https://stackoverflow.com/a/39149079
-addStyle(`
-.keatstiptext-wrapper{
-  position: absolute;
-  visibility: hidden;
-}
-
-
-`)
 
 
 
@@ -556,7 +546,7 @@ function injectPopup(textNode){//,timedQuotes){
 	    var regex = regex2quote[i][0];
 	    var match = textNode.textContent.match(regex);
 	    if (match){
-	    	keatstip = "<button class='keatstip' id='targetText"+targetTextId+"'>🪶"+match[0]+"<span class='keatstiptext-wrapper'><span class='keatstiptext'>"+quote+"</span></span></button>";
+	    	keatstip = "<button class='keatstip' id='targetText"+targetTextId+"'>🪶"+match[0]+"<span class='keatstiptext'>"+quote+"</span></</button>";
 	    	var replacementNode = document.createElement('span');
 			replacementNode.innerHTML = textNode.textContent.replace(match[0],keatstip);
 			textNode.parentNode.insertBefore(replacementNode, textNode);

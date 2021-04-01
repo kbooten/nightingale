@@ -54,7 +54,7 @@ addStyle(`
   visibility: visible;
   opacity: 1;
   transition: all 3s ease;
-  transition-delay: .1s;
+  transition-delay: 1s;
 }
 `);
 
@@ -525,7 +525,17 @@ function shuffleArray(array) {
 }
 
 
+function toggle(element){
+	if element.classList.contains("keatstipOn"){
+		element.classList.remove("keatstipOn");
+	}else{
+		classList.add("keatstipOn");
+	}
+}
+
+
 var targetTextId = 0;
+
 
 function injectPopup(textNode){//,timedQuotes){
 	// regexes matching web text to poetry
@@ -543,13 +553,13 @@ function injectPopup(textNode){//,timedQuotes){
 			textNode.parentNode.removeChild(textNode);
 			var targetTextNode = document.getElementById('targetText'+targetTextId);
 			alert(targetTextNode)
-			// targetTextNode.addEventListener("webkitmouseforcewillbegin", prepareForForceClick, false);
-			// targetTextNode.addEventListener("webkitmouseforcedown", function(){targetTextNode.classList.toggle("keatstipOn");}, false);
-			// targetTextNode.addEventListener("webkitmouseforceup", function(){targetTextNode.classList.toggle("keatstipOn");}, false);
-	    	targetTextNode.addEventListener("click", function(){
-	    		alert("click")
-	    		targetTextNode.classList.add("keatstipOn");
-	    	});
+			targetTextNode.addEventListener("webkitmouseforcewillbegin", prepareForForceClick, false);
+			targetTextNode.addEventListener("webkitmouseforcedown", function(){toggle(targetTextNode);}, false);
+			targetTextNode.addEventListener("webkitmouseforceup", function(){toggle(targetTextNode);}, false);
+	    	// targetTextNode.addEventListener("click", function(){
+	    	// 	alert("click")
+	    	// 	targetTextNode.classList.add("keatstipOn");
+	    	// });
 			targetTextId+=1; //increment in case there is more than one on page (in case of Twitter)
 			return true
 		}

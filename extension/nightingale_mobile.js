@@ -44,17 +44,18 @@ addStyle(`
   opacity: 0;  
   z-index: 10;
   transition: all 2.0s ease;
-  transition-delay: 2s;
+  transition-delay: .2s;
 }
 `);
 
 
 addStyle(`
 .keatstipOn .keatstiptext{
+  all: inherit;
   visibility: visible;
   opacity: 1;
   transition: all 3s ease;
-  transition-delay: 1s;
+  transition-delay: .2s;
 }
 `);
 
@@ -545,14 +546,12 @@ function injectPopup(textNode){//,timedQuotes){
 	    var regex = regex2quote[i][0];
 	    var match = textNode.textContent.match(regex);
 	    if (match){
-	    	alert("match")
-	    	keatstip = "<button class='keatstip' id='targetText"+targetTextId+"'>"+match[0]+"<span class='keatstiptext'>"+quote+"</span></button>";
+	    	keatstip = "<button class='keatstip' id='targetText"+targetTextId+"'>🪶"+match[0]+"<span class='keatstiptext'>"+quote+"</span></button>";
 	    	var replacementNode = document.createElement('span');
 			replacementNode.innerHTML = textNode.textContent.replace(match[0],keatstip);
 			textNode.parentNode.insertBefore(replacementNode, textNode);
 			textNode.parentNode.removeChild(textNode);
 			var targetTextNode = document.getElementById('targetText'+targetTextId);
-			alert(targetTextNode)
 			// targetTextNode.addEventListener("webkitmouseforcewillbegin", prepareForForceClick, false);
 			// targetTextNode.addEventListener("webkitmouseforcedown", function(){toggle(targetTextNode);}, false);
 			// targetTextNode.addEventListener("webkitmouseforceup", function(){toggle(targetTextNode);}, false);

@@ -36,7 +36,7 @@ addStyle(`
   font-size: 20px;
   
   /* Position the tooltip source: https://stackoverflow.com/a/25829529*/
-  position: fixed;
+  position: absolute;
   left: 50%;
   top: 45%;
   transform: translate(-50%, -50%);

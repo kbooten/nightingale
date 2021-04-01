@@ -575,7 +575,8 @@ function injectPopup(textNode){//,timedQuotes){
 			// targetTextNode.addEventListener("webkitmouseforceup", function(){toggle(targetTextNode);}, false);
 	    	targetTextNode.addEventListener("click", function(e){
 	    		alert(quote);
-	    		document.getElementById("popup").innerHTML = quote; 
+	    		alert(document.getElementById("popup"))
+	    		//document.getElementById("popup").innerHTML = quote; 
 	    		togglePopup();//targetTextNode.classList.add("keatstipOn");
 	    		e.preventDefault(); // keep anchors from firing hyperlink
 	    	});

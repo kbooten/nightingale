@@ -23,7 +23,7 @@ addStyle(`
 );
 
 addStyle(`
-.keatstip .keatstiptext {
+.keatstiptext{
   visibility: hidden;
   min-width: 200px;
   background-color: black;
@@ -36,7 +36,7 @@ addStyle(`
   font-size: 20px;
   
   /* Position the tooltip source: https://stackoverflow.com/a/25829529*/
-  position: absolute;
+  position: fixed;
   left: 50%;
   top: 45%;
   transform: translate(-50%, -50%);
@@ -51,7 +51,7 @@ addStyle(`
 
 
 addStyle(`
-.keatstipOn .keatstiptext{
+.keatstipOn{
   visibility: visible;
   opacity: 1;
   transition: all 3s ease;
@@ -526,16 +526,33 @@ function shuffleArray(array) {
 }
 
 
-function toggle(element){
-	if (element.classList.contains("keatstipOn")){
-		element.classList.remove("keatstipOn");
+// function toggle(element){
+// 	if (element.classList.contains("keatstipOn")){
+// 		element.classList.remove("keatstipOn");
+// 	}else{
+// 		element.classList.add("keatstipOn");
+// 	}
+// }
+
+
+function togglePopup(){
+	p = document.getElementById('popup');
+	if (p.classList.contains("keatstipOn")){
+		p.classList.remove("keatstipOn");
 	}else{
-		element.classList.add("keatstipOn");
+		p.classList.add("keatstipOn");
 	}
 }
 
 
 var targetTextId = 0;
+
+
+///only one popup per page, text needs to change
+var popup = document.createElement('div');
+popup.setAttribute("id", "popup");
+popup.classList.add("keatstiptext");
+document.body.appendChild(popup);
 
 
 function injectPopup(textNode){//,timedQuotes){
@@ -546,7 +563,7 @@ function injectPopup(textNode){//,timedQuotes){
 	    var regex = regex2quote[i][0];
 	    var match = textNode.textContent.match(regex);
 	    if (match){
-	    	keatstip = "<button class='keatstip' id='targetText"+targetTextId+"'>🪶"+match[0]+"<div class='keatstiptext'>"+quote+"</div></</button>";
+	    	keatstip = "<button class='keatstip' id='targetText"+targetTextId+"'>🪶"+match[0]+"</button>";
 	    	var replacementNode = document.createElement('span');
 			replacementNode.innerHTML = textNode.textContent.replace(match[0],keatstip);
 			textNode.parentNode.insertBefore(replacementNode, textNode);
@@ -556,6 +573,7 @@ function injectPopup(textNode){//,timedQuotes){
 			// targetTextNode.addEventListener("webkitmouseforcedown", function(){toggle(targetTextNode);}, false);
 			// targetTextNode.addEventListener("webkitmouseforceup", function(){toggle(targetTextNode);}, false);
 	    	targetTextNode.addEventListener("click", function(e){
+	    		document.getElementById('popup').innerHTML = quote;
 	    		toggle(targetTextNode);//targetTextNode.classList.add("keatstipOn");
 	    		e.preventDefault(); // keep anchors from firing hyperlink
 	    	});

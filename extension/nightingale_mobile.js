@@ -526,7 +526,7 @@ function shuffleArray(array) {
 
 
 function toggle(element){
-	if (element.classList.contains("keatstipOn"){
+	if (element.classList.contains("keatstipOn")){
 		element.classList.remove("keatstipOn");
 	}else{
 		classList.add("keatstipOn");

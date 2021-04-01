@@ -525,13 +525,13 @@ function shuffleArray(array) {
 }
 
 
-function toggle(element){
-	if (element.classList.contains("keatstipOn")){
-		element.classList.remove("keatstipOn");
-	}else{
-		classList.add("keatstipOn");
-	}
-}
+// function toggle(element){
+// 	if (element.classList.contains("keatstipOn")){
+// 		element.classList.remove("keatstipOn");
+// 	}else{
+// 		classList.add("keatstipOn");
+// 	}
+// }
 
 
 var targetTextId = 0;
@@ -553,13 +553,14 @@ function injectPopup(textNode){//,timedQuotes){
 			textNode.parentNode.removeChild(textNode);
 			var targetTextNode = document.getElementById('targetText'+targetTextId);
 			alert(targetTextNode)
-			targetTextNode.addEventListener("webkitmouseforcewillbegin", prepareForForceClick, false);
-			targetTextNode.addEventListener("webkitmouseforcedown", function(){toggle(targetTextNode);}, false);
-			targetTextNode.addEventListener("webkitmouseforceup", function(){toggle(targetTextNode);}, false);
-	    	// targetTextNode.addEventListener("click", function(){
-	    	// 	alert("click")
-	    	// 	targetTextNode.classList.add("keatstipOn");
-	    	// });
+			// targetTextNode.addEventListener("webkitmouseforcewillbegin", prepareForForceClick, false);
+			// targetTextNode.addEventListener("webkitmouseforcedown", function(){toggle(targetTextNode);}, false);
+			// targetTextNode.addEventListener("webkitmouseforceup", function(){toggle(targetTextNode);}, false);
+	    	targetTextNode.addEventListener("click", function(e){
+	    		alert("click")
+	    		targetTextNode.classList.add("keatstipOn");
+	    		e.stopPropagation(); // keep anchors from firing hyperlink
+	    	});
 			targetTextId+=1; //increment in case there is more than one on page (in case of Twitter)
 			return true
 		}

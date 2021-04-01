@@ -13,12 +13,12 @@ shuffleArray(allTextNodes);
 
 // for debugging
 // comment this out before deploying
-function clearStorage(){
-	chrome.storage.local.set({"timedQuotes":{}},function(){
-		console.log("Clearing Localstorage (for debugging)");
-	});		
-}
-clearStorage();
+// function clearStorage(){
+// 	chrome.storage.local.set({"timedQuotes":{}},function(){
+// 		console.log("Clearing Localstorage (for debugging)");
+// 	});		
+// }
+// clearStorage();
 
 
 chrome.storage.local.get({'timedQuotes':{}}, function(data){

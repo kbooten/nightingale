@@ -43,7 +43,7 @@ addStyle(`
 
   /*  opacity and z-index */  
   opacity: 0;  
-  z-index: 10;
+  z-index: 100;
   transition: all 2.0s ease;
   transition-delay: .2s;
 }

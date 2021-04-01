@@ -36,11 +36,6 @@ Should someone else want to use *Nightingale* to fill their experience of the in
 
 The mobile version does keep track of recently-seen quotes with `localstorage`.  However, it does contain a mobile-specific feature: scrolling a Twitter feed will prompt the program to continuously check newly-revealed (dynamically-loaded) tweets for possible matches.  
 
-*The mobile version currently has some usability issues, including:*
-* *difficult to trigger pop-ups from text that is also hyperlinked*
-* *on Twitter, pop-ups are sometimes partially occluded*
-
-
 
 
 

@@ -32,7 +32,7 @@ Should someone else want to use *Nightingale* to fill their experience of the in
 
 ## Mobile Version
 
-*Nightingale* is also available as a extension for the experimental iOS mobile browser [Insight](https://insightbrowser.com/).  To activate *Nightingale* on Insight, create a custom extension with [this recipe](https://extensions.insightbrowser.com/extend/2bdcaaa9c7).  This injects the javascript from `nightingale_mobile.js` in this repo.  
+*Nightingale* is also available as a extension for the experimental iOS mobile browser [Insight](https://insightbrowser.com/).  To activate *Nightingale* on Insight, create a custom extension with [this recipe](https://extensions.insightbrowser.com/extend/00f8ab9264).  This injects the javascript from `nightingale_mobile.js` in this repo.  
 
 The mobile version does keep track of recently-seen quotes with `localstorage`.  However, it does contain a mobile-specific feature: scrolling a Twitter feed will prompt the program to continuously check newly-revealed (dynamically-loaded) tweets for possible matches.  
 

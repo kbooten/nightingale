@@ -565,7 +565,6 @@ function injectPopup(textNode){//,timedQuotes){
 	    var regex = regex2quote[i][0];
 	    var match = textNode.textContent.match(regex);
 	    if (match){
-	    	alert("match")
 	    	keatstip = "<button class='keatstip' id='targetText"+targetTextId+"'>🪶 "+match[0]+"</button>";
 	    	var replacementNode = document.createElement('span');
 			replacementNode.innerHTML = textNode.textContent.replace(match[0],keatstip);
@@ -576,9 +575,7 @@ function injectPopup(textNode){//,timedQuotes){
 			// targetTextNode.addEventListener("webkitmouseforcedown", function(){toggle(targetTextNode);}, false);
 			// targetTextNode.addEventListener("webkitmouseforceup", function(){toggle(targetTextNode);}, false);
 	    	targetTextNode.addEventListener("click", function(e){
-	    		alert(quote);
 	    		p = document.getElementById('popup');
-	    		alert(p);
 	    		p.innerHTML = quote; 
 	    		togglePopup();//targetTextNode.classList.add("keatstipOn");
 	    		e.preventDefault(); // keep anchors from firing hyperlink

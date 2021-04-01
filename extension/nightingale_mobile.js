@@ -563,7 +563,7 @@ function injectPopup(textNode){//,timedQuotes){
 	    var regex = regex2quote[i][0];
 	    var match = textNode.textContent.match(regex);
 	    if (match){
-	    	keatstip = "<button class='keatstip' id='targetText"+targetTextId+"'>🪶"+match[0]+"</button>";
+	    	keatstip = "<button class='keatstip' id='targetText"+targetTextId+"'>🪶 "+match[0]+"</button>";
 	    	var replacementNode = document.createElement('span');
 			replacementNode.innerHTML = textNode.textContent.replace(match[0],keatstip);
 			textNode.parentNode.insertBefore(replacementNode, textNode);
@@ -574,7 +574,7 @@ function injectPopup(textNode){//,timedQuotes){
 			// targetTextNode.addEventListener("webkitmouseforceup", function(){toggle(targetTextNode);}, false);
 	    	targetTextNode.addEventListener("click", function(e){
 	    		document.getElementById('popup').innerHTML = quote;
-	    		togglePopup(targetTextNode);//targetTextNode.classList.add("keatstipOn");
+	    		togglePopup();//targetTextNode.classList.add("keatstipOn");
 	    		e.preventDefault(); // keep anchors from firing hyperlink
 	    	});
 			targetTextId+=1; //increment in case there is more than one on page (in case of Twitter)

@@ -529,7 +529,7 @@ function toggle(element){
 	if (element.classList.contains("keatstipOn")){
 		element.classList.remove("keatstipOn");
 	}else{
-		classList.add("keatstipOn");
+		element.classList.add("keatstipOn");
 	}
 }
 

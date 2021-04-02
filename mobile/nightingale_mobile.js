@@ -1,6 +1,6 @@
-// console.log('Nightingale')
-// console.log('(C) kyle booten 2021')
-// console.log('*'.repeat(20))
+// Nightingale
+// (C) kyle booten 2021
+// https://github.com/kbooten/nightingale
 // version for Insight Browser
 
 
@@ -66,8 +66,6 @@ addStyle(`
 //////////////
 //////////////
 
-
-/// kyle booten 2020
 /// regex interpretetations of keats' 6 late odes
 /// pairs: (regex, quote from keats)
 
@@ -538,15 +536,6 @@ function shuffleArray(array) {
 }
 
 
-// function toggle(element){
-// 	if (element.classList.contains("keatstipOn")){
-// 		element.classList.remove("keatstipOn");
-// 	}else{
-// 		element.classList.add("keatstipOn");
-// 	}
-// }
-
-
 function togglePopup(){
 	p = document.getElementById('popup');
 	if (p.classList.contains("keatstipOn")){
@@ -582,9 +571,6 @@ function injectPopup(textNode){//,timedQuotes){
 			textNode.parentNode.insertBefore(replacementNode, textNode);
 			textNode.parentNode.removeChild(textNode);
 			var targetTextNode = document.getElementById('targetText'+targetTextId);
-			// targetTextNode.addEventListener("webkitmouseforcewillbegin", prepareForForceClick, false);
-			// targetTextNode.addEventListener("webkitmouseforcedown", function(){toggle(targetTextNode);}, false);
-			// targetTextNode.addEventListener("webkitmouseforceup", function(){toggle(targetTextNode);}, false);
 			var p = document.getElementById('popup');
 	    	targetTextNode.addEventListener("click", function(e){
 	    		p.innerHTML = quote; 

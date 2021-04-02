@@ -30,7 +30,7 @@ Should someone else want to use *Nightingale* to fill their experience of the in
 
 ***
 
-## Mobile Version
+## 📱 Mobile Version
 
 *Nightingale* is also available as a extension for the experimental iOS mobile browser [Insight](https://insightbrowser.com/).  To activate *Nightingale* on Insight, create a custom extension with [this recipe](https://extensions.insightbrowser.com/extend/4897a82f47).  This injects the javascript from `nightingale_mobile.js` in this repo.  
 

@@ -34,7 +34,7 @@ Should someone else want to use *Nightingale* to fill their experience of the in
 
 *Nightingale* is also available as a extension for the experimental iOS mobile browser [Insight](https://insightbrowser.com/).  To activate *Nightingale* on Insight, create a custom extension with [this recipe](https://extensions.insightbrowser.com/extend/4897a82f47).  This injects the javascript from `nightingale_mobile.js` in this repo.  
 
-The mobile version does keep track of recently-seen quotes with `localstorage`.  However, it does contain a mobile-specific feature: scrolling a Twitter feed will prompt the program to continuously check newly-revealed (dynamically-loaded) tweets for possible matches.  
+The mobile version does keep track of recently-seen quotes with `localStorage`.  However, it does contain a mobile-specific feature: scrolling a Twitter feed will prompt the program to continuously check newly-revealed (dynamically-loaded) tweets for possible matches.  
 
 Another currently mobile-only feature: clicking on the Keatsian pop-up will open a window with the corresponding poem.  
 

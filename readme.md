@@ -36,6 +36,8 @@ Should someone else want to use *Nightingale* to fill their experience of the in
 
 The mobile version does keep track of recently-seen quotes with `localstorage`.  However, it does contain a mobile-specific feature: scrolling a Twitter feed will prompt the program to continuously check newly-revealed (dynamically-loaded) tweets for possible matches.  
 
+Another currently mobile-only feature: clicking on the Keatsian pop-up will open a window with the corresponding poem.  
+
 
 
 

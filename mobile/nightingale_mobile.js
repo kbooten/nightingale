@@ -573,7 +573,7 @@ function injectPopup(textNode){//,timedQuotes){
 	for (var i = 0; i < regex2quote.length; i++){
 		var quote = regex2quote[i][1];
 	    var regex = regex2quote[i][0];
-	    var poemUrl = regex2quote[i][2][num2poemUrl];
+	    var poemUrl = num2poemUrl[regex2quote[i][2]];
 	    var match = textNode.textContent.match(regex);
 	    if (match && textNode.textContent.includes('🪶')==false){
 	    	keatstip = "<button class='keatstip' id='targetText"+targetTextId+"'>🪶 "+match[0]+"</button>";

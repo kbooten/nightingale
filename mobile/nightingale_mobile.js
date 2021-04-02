@@ -590,9 +590,10 @@ function injectPopup(textNode){//,timedQuotes){
 	    		p.innerHTML = quote; 
 	    		togglePopup();//targetTextNode.classList.add("keatstipOn");
 	    		e.preventDefault(); // keep anchors from firing hyperlink
+	    		e.event.stopPropagation();
 	    	});
 	    	p.addEventListener('click',function(e){ // click on tooltip to open full poem page
-	    		window.open(poemUrl, "_self");
+	    		window.open(poemUrl, "_blank");
 	    	})
 			targetTextId+=1; //increment in case there is more than one on page (in case of Twitter)
 			return true

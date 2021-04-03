@@ -671,6 +671,13 @@ if (Math.random()>.2){
 }
 
 
+/// https://stackoverflow.com/a/44905133
+window.addEventListener("click", function(event) {
+	alert(e.target);  /// to get the element
+    alert(e.target.id);  /// to get the element tag name alone
+});
+
+
 /// Twitter stuff
 /// fires every so often as long as user has scrolled down
 var scrollY = window.pageYOffset;

@@ -104,7 +104,7 @@ var regex2quote = [
 	[/\b(Icarus|Caravaggio|Jarman)\b|\bthe \w+ boy I know\b|\bthe winged \w+\b/i,
 		"The winged boy I knew",0],
 
-	[/\b(\w+(y|Y|ie|IE)),? \1\b|\btrue [B-DF-HJ-NP-TV-Z]\w+\b/,
+	[/\b(\w+(y|Y|ie|IE)), \1\b|\btrue [B-DF-HJ-NP-TV-Z]\w+\b/,
 		"But who wast thou, O happy, happy dove?<br>His Psyche true!",0],
 
 	[/\bla\w+st (\w+ )?and lo\w+st\b|\b(\w+st|most \w+) (vision|sight|scene|view|panorama|vista)\b|\b\w+ed \w+archy\b|\bit[ -]girl\b|\b(Jane Birken|Chlo[eë] Sevigny|Kendall Jenner|Grace Jones|Edie Sedgwick)\b/i,
@@ -644,7 +644,7 @@ function initialize(nodeListChange){
 	}
 
 	/// sampling regex2quote pairs
-	var sampleN = 25;
+	var sampleN = 60;
 	shuffleArray(regex2quote);
 	regex2quote = regex2quote.slice(0, sampleN);
 

@@ -591,10 +591,10 @@ function injectPopup(textNode){//,timedQuotes){
 }
 
 
-document.body.addEventListener('click',function(e){ //https://stackoverflow.com/a/5073384
-	p = document.getElementById('popup');
-	p.classList.remove("keatstipOn");
-})
+// document.body.addEventListener('click',function(e){ //https://stackoverflow.com/a/5073384
+// 	p = document.getElementById('popup');
+// 	p.classList.remove("keatstipOn");
+// })
 
 
 function initialize(nodeListChange){

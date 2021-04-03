@@ -580,6 +580,7 @@ function injectPopup(textNode){//,timedQuotes){
 	    	});
 	    	p.addEventListener('click',function(e){ // click on tooltip to open full poem page
 	    		window.open(poemUrl, "_blank");
+	    		e.stopPropagation(); 
 	    	})
 			targetTextId+=1; //increment in case there is more than one on page (in case of Twitter)
 			return true
@@ -588,6 +589,12 @@ function injectPopup(textNode){//,timedQuotes){
 	// }
 	return false
 }
+
+
+document.body.addEventListener('click',function(e){ //https://stackoverflow.com/a/5073384
+	p = document.getElementById('popup');
+	p.classList.remove("keatstipOn");
+})
 
 
 function initialize(nodeListChange){
@@ -652,6 +659,12 @@ function initialize(nodeListChange){
 		}
 	}
 }
+
+
+
+/// in case popup lingers going back to page
+p = document.getElementById('popup');
+p.classList.remove("keatstipOn");
 
 
 /// main 

@@ -644,7 +644,7 @@ function initialize(nodeListChange){
 	}
 
 	/// sampling regex2quote pairs
-	var sampleN = 25;
+	var sampleN = 100;
 	shuffleArray(regex2quote);
 	regex2quote = regex2quote.slice(0, sampleN);
 
@@ -659,21 +659,6 @@ function initialize(nodeListChange){
 		}
 	}
 }
-
-
-
-// /// in case popup lingers going back to page
-// p = document.getElementById('popup');
-// p.classList.remove("keatstipOn");
-
-
-// https://stackoverflow.com/a/45857949
-if (window.performance && window.performance.navigation.type === window.performance.navigation.TYPE_BACK_FORWARD) {
-    alert('back');
-	p = document.getElementById('popup');
-	p.classList.remove("keatstipOn");
-}
-
 
 
 /// main 

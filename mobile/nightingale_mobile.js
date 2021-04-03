@@ -672,10 +672,10 @@ if (Math.random()>.2){
 
 
 /// https://stackoverflow.com/a/44905133
-window.addEventListener("click", function(event) {
-	alert(event.target);  /// to get the element
-    alert(event.target.id);  /// to get the element tag name alone
-});
+// window.addEventListener("click", function(event) {
+// 	p = document.getElementById('popup');
+// 	alert(event.target);  /// to get the element
+// });
 
 
 /// Twitter stuff

@@ -662,9 +662,18 @@ function initialize(nodeListChange){
 
 
 
-/// in case popup lingers going back to page
-p = document.getElementById('popup');
-p.classList.remove("keatstipOn");
+// /// in case popup lingers going back to page
+// p = document.getElementById('popup');
+// p.classList.remove("keatstipOn");
+
+
+// https://stackoverflow.com/a/45857949
+if (window.performance && window.performance.navigation.type === window.performance.navigation.TYPE_BACK_FORWARD) {
+    alert('back');
+	p = document.getElementById('popup');
+	p.classList.remove("keatstipOn");
+}
+
 
 
 /// main 

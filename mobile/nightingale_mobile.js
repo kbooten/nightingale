@@ -644,7 +644,7 @@ function initialize(nodeListChange){
 	}
 
 	/// sampling regex2quote pairs
-	var sampleN = 100;
+	var sampleN = 25;
 	shuffleArray(regex2quote);
 	regex2quote = regex2quote.slice(0, sampleN);
 

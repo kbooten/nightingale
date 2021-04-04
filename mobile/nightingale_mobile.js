@@ -564,7 +564,7 @@ function injectPopup(textNode){//,timedQuotes){
 	    var regex = regex2quote[i][0];
 	    var poemUrl = num2poemUrl[regex2quote[i][2]];
 	    var match = textNode.textContent.match(regex);
-	    if (match && textNode.textContent.includes('🪶')==false){
+	    if (match && textNode.textContent.includes('🪶')==false && textNode.classList.contains("keatstiptext");){
 	    	//alert(match);//
 	    	keatstip = "<button class='keatstip' id='targetText"+targetTextId+"'>🪶 "+match[0]+"</button>";
 	    	var replacementNode = document.createElement('span');

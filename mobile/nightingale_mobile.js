@@ -573,11 +573,12 @@ function injectPopup(textNode){//,timedQuotes){
 			textNode.parentNode.removeChild(textNode);
 			var targetTextNode = document.getElementById('targetText'+targetTextId);
 			var p = document.getElementById('popup');
+			targetTextNode.onclick = null;//trying to cancel all default events
 	    	targetTextNode.addEventListener("click", function(e){
 	    		p.innerHTML = quote; 
 	    		togglePopup();//targetTextNode.classList.add("keatstipOn");
 	    		e.preventDefault(); // keep anchors from firing hyperlink
-	    		e.stopPropagation();
+	    		e.stopPropagation(); // keep from bubbling
 	    	});
 	    	p.addEventListener('click',function(e){ // click on tooltip to open full poem page
 	    		window.open(poemUrl, "_blank");

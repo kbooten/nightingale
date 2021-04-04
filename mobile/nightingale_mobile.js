@@ -565,7 +565,7 @@ function injectPopup(textNode){//,timedQuotes){
 	    var poemUrl = num2poemUrl[regex2quote[i][2]];
 	    var match = textNode.textContent.match(regex);
 	    if (match && textNode.textContent.includes('🪶')==false && textNode.classList.contains("keatstiptext")==false){
-	    	//alert(match);//
+	    	alert(match);//
 	    	keatstip = "<button class='keatstip' id='targetText"+targetTextId+"'>🪶 "+match[0]+"</button>";
 	    	var replacementNode = document.createElement('span');
 			replacementNode.innerHTML = textNode.textContent.replace(match[0],keatstip);
@@ -573,7 +573,7 @@ function injectPopup(textNode){//,timedQuotes){
 			textNode.parentNode.removeChild(textNode);
 			var targetTextNode = document.getElementById('targetText'+targetTextId);
 			var p = document.getElementById('popup');
-			targetTextNode.onclick = null;//trying to cancel all default events
+			//targetTextNode.onclick = null;//trying to cancel all default events
 	    	targetTextNode.addEventListener("click", function(e){
 	    		p.innerHTML = quote; 
 	    		togglePopup();//targetTextNode.classList.add("keatstipOn");

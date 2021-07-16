@@ -555,6 +555,8 @@ popup.setAttribute("id", "popup");
 popup.classList.add("keatstiptext");
 document.body.appendChild(popup);
 
+const lastChecked = localStorage.getItem("lastCheckedQuote");
+alert(const)
 
 function injectPopup(textNode){//,timedQuotes){
 	// regexes matching web text to poetry

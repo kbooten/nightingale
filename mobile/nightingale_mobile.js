@@ -544,7 +544,7 @@ function togglePopup(){
 	}else{
 		p.classList.add("keatstipOn");
 		// use localStorage to keep track
-		readingTimer = setInterval(function(){localStorage.setItem("lastCheckedQuote", Date.now());},10000);
+		// readingTimer = setInterval(function(){localStorage.setItem("lastCheckedQuote", Date.now());},10000);
 	}
 }
 

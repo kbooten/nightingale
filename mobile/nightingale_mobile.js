@@ -539,11 +539,11 @@ function togglePopup(){
 	p = document.getElementById('popup');
 	if (p.classList.contains("keatstipOn")){
 		p.classList.remove("keatstipOn");
-		window.clearInterval(readingTimer); // interrupt the process if not let alone for long enough time
+		window.clearTimeout(readingTimer); // interrupt the process if not let alone for long enough time
 	}else{
 		p.classList.add("keatstipOn");
 		// use localStorage to keep track
-		window.readingTimer = setInterval(function(){localStorage.setItem("lastCheckedQuote", Date.now());},10000);
+		window.readingTimer = setTimeout(function(){localStorage.setItem("lastCheckedQuote", Date.now());alert("set");},10000);
 	}
 }
 

@@ -540,7 +540,7 @@ function togglePopup(){
 	p = document.getElementById('popup');
 	if (p.classList.contains("keatstipOn")){
 		p.classList.remove("keatstipOn");
-		clearInterval(readingTimer); // interrupt the process if not let alone for long enough time
+		// clearInterval(readingTimer); // interrupt the process if not let alone for long enough time
 	}else{
 		p.classList.add("keatstipOn");
 		// use localStorage to keep track

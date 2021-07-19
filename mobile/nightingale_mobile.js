@@ -557,17 +557,13 @@ popup.setAttribute("id", "popup");
 popup.classList.add("keatstiptext");
 document.body.appendChild(popup);
 
-var lastChecked = localStorage.getItem("lastCheckedQuote");
-if (lastChecked === null){
-	var lastChecked = 0; // default value...very much in the past
-}
-alert(lastChecked);
 
-function injectPopup(textNode){//,timedQuotes){
+function injectPopup(textNode){
+	//,timedQuotes){
 	// regexes matching web text to poetry
 	// inject first match
 	for (var i = 0; i < regex2quote.length; i++){
-		var quote = regex2quote[i][1];
+	    var quote = regex2quote[i][1];
 	    var regex = regex2quote[i][0];
 	    var poemUrl = num2poemUrl[regex2quote[i][2]];
 	    var match = textNode.textContent.match(regex);
@@ -590,8 +586,15 @@ function injectPopup(textNode){//,timedQuotes){
 	    		window.open(poemUrl, "_blank");
 	    		e.stopPropagation(); 
 	    	})
-			targetTextId+=1; //increment in case there is more than one on page (in case of Twitter)
-			return true
+		/// note what quotes have been recently seen
+		var nRecentQuotes_ = JSON.parse(localStorage.getItem("nRecents"));
+		nRecentQuotes_.unshift(quote); // prepend
+		nRecentQuotes_ = nRecentQuotes_.slice(0,5); // limit size
+		localStorage(setItem("nRecents"),JSON.stringify(nRecentQuotes_));
+		alert(nRecentQuotes_);
+		//
+		targetTextId+=1; //increment in case there is more than one on page (in case of Twitter)
+		return true
 		}
 	}
 	// }
@@ -657,6 +660,18 @@ function initialize(nodeListChange){
 	regex2quote = regex2quote.slice(0, sampleN);
 
 
+	/// filtering out those in the currently forbidden list in localstorage
+	var nRecentQuotes_ = JSON.parse(localStorage.getItem("nRecents"));
+	var regex2quote_filtered = []; 
+	for (var i = 0; i < regex2quote; i++){
+		var quote = regex2quote[i][1];
+		if (nRecentQuotes_.contains(quote)=false){
+			regex2quote_filtered.push(regex2quote[i]);
+		}
+	}
+	regex2quote = regex2quote_filtered; 
+	
+	
 	/// add, break if one is added
 	for (var i = 0; i < allTextNodes.length; i++){
 		if (isHidden(allTextNodes[i])==false){
@@ -670,13 +685,28 @@ function initialize(nodeListChange){
 
 
 /// main 
+/// check to make sure enough time has passed since last click (per domain)
 /// sometimes randomize the nodes, sometimes start from the top
-if (Math.random()>.2){
-	initialize(nodeListChange="random");
-}else{
-	initialize();
+var lastChecked = localStorage.getItem("lastCheckedQuote");
+if (lastChecked === null){
+	var lastChecked = 0; // default value...very much in the past
 }
-
+alert(lastChecked)
+// initialize the bucket of recents if doesn't exist
+var nRecentQuotes = localStorage.getItem("nRecents");
+if (nRecentQuotes === null){
+	localStorage.setItem("nRecents",JSON.stringify([]));
+}
+alert(nRecentQuotes);
+// alert(lastChecked);
+var timeOut = 86400 * 5; // seconds in a day times number of days
+if (Date.now() - lastChecked > timeOut){ // enough time passed
+	if (Math.random()>.2){
+		initialize(nodeListChange="random");
+	}else{
+		initialize();
+	}
+}
 
 /// https://stackoverflow.com/a/44905133
 // window.addEventListener("click", function(event) {

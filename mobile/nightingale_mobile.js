@@ -587,11 +587,11 @@ function injectPopup(textNode){
 	    		e.stopPropagation(); 
 	    	})
 		/// note what quotes have been recently seen
-		var nRecentQuotes_ = JSON.parse(localStorage.getItem("nRecents"));
-		nRecentQuotes_.unshift(quote); // prepend
-		nRecentQuotes_ = nRecentQuotes_.slice(0,5); // limit size
-		localStorage(setItem("nRecents"),JSON.stringify(nRecentQuotes_));
-		alert(nRecentQuotes_);
+		// var nRecentQuotes_ = JSON.parse(localStorage.getItem("nRecents"));
+		// nRecentQuotes_.unshift(quote); // prepend
+		// nRecentQuotes_ = nRecentQuotes_.slice(0,5); // limit size
+		// localStorage(setItem("nRecents"),JSON.stringify(nRecentQuotes_));
+		// alert(nRecentQuotes_);
 		//
 		targetTextId+=1; //increment in case there is more than one on page (in case of Twitter)
 		return true
@@ -661,15 +661,15 @@ function initialize(nodeListChange){
 
 
 	/// filtering out those in the currently forbidden list in localstorage
-	var nRecentQuotes_ = JSON.parse(localStorage.getItem("nRecents"));
-	var regex2quote_filtered = []; 
-	for (var i = 0; i < regex2quote; i++){
-		var quote = regex2quote[i][1];
-		if (nRecentQuotes_.contains(quote)=false){
-			regex2quote_filtered.push(regex2quote[i]);
-		}
-	}
-	regex2quote = regex2quote_filtered; 
+	// var nRecentQuotes_ = JSON.parse(localStorage.getItem("nRecents"));
+	// var regex2quote_filtered = []; 
+	// for (var i = 0; i < regex2quote; i++){
+	// 	var quote = regex2quote[i][1];
+	// 	if (nRecentQuotes_.contains(quote)=false){
+	// 		regex2quote_filtered.push(regex2quote[i]);
+	// 	}
+	// }
+	// regex2quote = regex2quote_filtered; 
 	
 	
 	/// add, break if one is added

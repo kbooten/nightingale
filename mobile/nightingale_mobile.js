@@ -702,6 +702,7 @@ if (nRecentQuotes === null){
 alert(nRecentQuotes);
 // alert(lastChecked);
 var timeOut = 86400 * 5; // seconds in a day times number of days
+timeOut = 60 * 7 // for debugging
 if (Date.now() - lastChecked > timeOut){ // enough time passed
 	if (Math.random()>.2){
 		initialize(nodeListChange="random");

@@ -695,7 +695,9 @@ alert(lastChecked)
 // initialize the bucket of recents if doesn't exist
 var nRecentQuotes = localStorage.getItem("nRecents");
 if (nRecentQuotes === null){
+	// if does not exist yet
 	localStorage.setItem("nRecents",JSON.stringify([]));
+	nRecentQuotes = [];
 }
 alert(nRecentQuotes);
 // alert(lastChecked);

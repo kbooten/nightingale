@@ -671,6 +671,7 @@ function initialize(nodeListChange){
 		}
 	}
 	regex2quote = regex2quote_filtered; 
+	alert(regex2quote.length);
 	
 	
 	

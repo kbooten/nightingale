@@ -702,7 +702,8 @@ alert(lastChecked)
 var nRecentQuotes = localStorage.getItem("nRecents");
 if (nRecentQuotes === null){
 	// if does not exist yet
-	localStorage.setItem("nRecents",JSON.stringify([]));
+	var emptyArray = [];
+	localStorage.setItem("nRecents",JSON.stringify(emptyArray));
 	nRecentQuotes = [];
 }
 // alert(nRecentQuotes);

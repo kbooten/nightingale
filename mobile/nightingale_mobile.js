@@ -587,11 +587,12 @@ function injectPopup(textNode){
 	    		e.stopPropagation(); 
 	    	})
 		/// note what quotes have been recently seen
-		// var nRecentQuotes_ = JSON.parse(localStorage.getItem("nRecents"));
-		// nRecentQuotes_.unshift(quote); // prepend
-		// nRecentQuotes_ = nRecentQuotes_.slice(0,5); // limit size
-		// localStorage(setItem("nRecents"),JSON.stringify(nRecentQuotes_));
-		// alert(nRecentQuotes_);
+		var nRecentQuotes_ = JSON.parse(localStorage.getItem("nRecents"));
+		alert(nRecentQuotes_);
+		nRecentQuotes_.unshift(quote); // prepend
+		nRecentQuotes_ = nRecentQuotes_.slice(0,5); // limit size
+		localStorage(setItem("nRecents"),JSON.stringify(nRecentQuotes_));
+		alert(nRecentQuotes_);
 		//
 		targetTextId+=1; //increment in case there is more than one on page (in case of Twitter)
 		return true
@@ -673,6 +674,7 @@ function initialize(nodeListChange){
 	
 	
 	/// add, break if one is added
+	alert("trying to add");
 	for (var i = 0; i < allTextNodes.length; i++){
 		if (isHidden(allTextNodes[i])==false){
 			var replacedAny = injectPopup(allTextNodes[i]);

@@ -664,14 +664,14 @@ function initialize(nodeListChange){
 	/// filtering out those in the currently forbidden list in localstorage
 	var nRecentQuotes_ = JSON.parse(localStorage.getItem("nRecents"));
 	var regex2quote_filtered = []; 
-	for (var i = 0; i < regex2quote; i++){
+	for (var i = 0; i < regex2quote.length; i++){
 		var quote = regex2quote[i][1];
-		alert(nRecentQuotes_.contains(quote))
 		if (nRecentQuotes_.contains(quote)==false){
 			regex2quote_filtered.push(regex2quote[i]);
 		}
 	}
 	regex2quote = regex2quote_filtered; 
+	
 	
 	
 	/// add, break if one is added

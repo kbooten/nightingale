@@ -592,7 +592,7 @@ function injectPopup(textNode){
 		nRecentQuotes_.unshift(quote); // prepend
 		nRecentQuotes_ = nRecentQuotes_.slice(0,5); // limit size
 		localStorage(setItem("nRecents"),JSON.stringify(nRecentQuotes_));
-		alert(nRecentQuotes_);
+		//alert(nRecentQuotes_);
 		//
 		targetTextId+=1; //increment in case there is more than one on page (in case of Twitter)
 		return true
@@ -665,6 +665,7 @@ function initialize(nodeListChange){
 	var nRecentQuotes_ = JSON.parse(localStorage.getItem("nRecents"));
 	alert("filtering out...");
 	alert(nRecentQuotes_);
+	alert(regex2quote.length);
 	var regex2quote_filtered = []; 
 	for (var i = 0; i < regex2quote; i++){
 		var quote = regex2quote[i][1];
@@ -673,6 +674,7 @@ function initialize(nodeListChange){
 		}
 	}
 	regex2quote = regex2quote_filtered; 
+	alert(regex2quote.length);
 	
 	
 	/// add, break if one is added

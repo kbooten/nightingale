@@ -663,10 +663,7 @@ function initialize(nodeListChange){
 
 	/// filtering out those in the currently forbidden list in localstorage
 	var nRecentQuotes_ = JSON.parse(localStorage.getItem("nRecents"));
-	alert(typeof nRecentQuotes_);
-	alert(localStorage.getItem("nRecents"));
-	alert("filtering out...");
-	alert(nRecentQuotes_);
+	alert(Array.isArray(nRecentQuotes_));
 	alert(regex2quote.length);
 	var regex2quote_filtered = []; 
 	for (var i = 0; i < regex2quote; i++){

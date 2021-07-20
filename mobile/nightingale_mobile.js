@@ -663,6 +663,7 @@ function initialize(nodeListChange){
 
 	/// filtering out those in the currently forbidden list in localstorage
 	var nRecentQuotes_ = JSON.parse(localStorage.getItem("nRecents"));
+	alert(typeof nRecentQuotes_);
 	alert("filtering out...");
 	alert(nRecentQuotes_);
 	alert(regex2quote.length);
@@ -698,10 +699,12 @@ if (lastChecked === null){
 	var lastChecked = 0; // default value...very much in the past
 }
 alert(lastChecked)
+
 // initialize the bucket of recents if doesn't exist
 var nRecentQuotes = localStorage.getItem("nRecents");
 if (nRecentQuotes === null){
 	// if does not exist yet
+	alert('initializing empty array'); 
 	var emptyArray = [];
 	localStorage.setItem("nRecents",JSON.stringify(emptyArray));
 	nRecentQuotes = [];

@@ -543,7 +543,7 @@ function togglePopup(){
 	}else{
 		p.classList.add("keatstipOn");
 		// use localStorage to keep track
-		window.readingTimer = setTimeout(function(){localStorage.setItem("lastCheckedQuote", Date.now());alert("set");},10000);
+		window.readingTimer = setTimeout(function(){localStorage.setItem("lastCheckedQuote", Date.now());},10000);
 	}
 }
 
@@ -588,7 +588,7 @@ function injectPopup(textNode){
 	    	})
 		/// note what quotes have been recently seen
 		var nRecentQuotes_ = JSON.parse(localStorage.getItem("nRecents"));
-		alert(nRecentQuotes_);
+		// alert(nRecentQuotes_);
 		nRecentQuotes_.unshift(quote); // prepend
 		nRecentQuotes_ = nRecentQuotes_.slice(0,5); // limit size
 		localStorage(setItem("nRecents"),JSON.stringify(nRecentQuotes_));
@@ -662,19 +662,21 @@ function initialize(nodeListChange){
 
 
 	/// filtering out those in the currently forbidden list in localstorage
-	// var nRecentQuotes_ = JSON.parse(localStorage.getItem("nRecents"));
-	// var regex2quote_filtered = []; 
-	// for (var i = 0; i < regex2quote; i++){
-	// 	var quote = regex2quote[i][1];
-	// 	if (nRecentQuotes_.contains(quote)=false){
-	// 		regex2quote_filtered.push(regex2quote[i]);
-	// 	}
-	// }
-	// regex2quote = regex2quote_filtered; 
+	var nRecentQuotes_ = JSON.parse(localStorage.getItem("nRecents"));
+	alert("filtering out...");
+	alert(nRecentQuotes_);
+	var regex2quote_filtered = []; 
+	for (var i = 0; i < regex2quote; i++){
+		var quote = regex2quote[i][1];
+		if (nRecentQuotes_.contains(quote)==false){
+			regex2quote_filtered.push(regex2quote[i]);
+		}
+	}
+	regex2quote = regex2quote_filtered; 
 	
 	
 	/// add, break if one is added
-	alert("trying to add");
+	// alert("trying to add");
 	for (var i = 0; i < allTextNodes.length; i++){
 		if (isHidden(allTextNodes[i])==false){
 			var replacedAny = injectPopup(allTextNodes[i]);
@@ -701,12 +703,12 @@ if (nRecentQuotes === null){
 	localStorage.setItem("nRecents",JSON.stringify([]));
 	nRecentQuotes = [];
 }
-alert(nRecentQuotes);
+// alert(nRecentQuotes);
 // alert(lastChecked);
 var timeOut = 86400 * 5; // seconds in a day times number of days
 timeOut = 60 * 7; // for debugging
 if (Date.now() - lastChecked > timeOut){ // enough time passed
-	alert("enough time passed");
+	// alert("enough time passed");
 	if (Math.random()>.2){
 		initialize(nodeListChange="random");
 	}else{
@@ -729,7 +731,7 @@ var scrollY = window.pageYOffset;
 if (window.location.hostname.includes("twitter")==true){
 	setInterval(function(){
 		var scrollYNew = window.pageYOffset;
-		if (scrollYNew - scrollY > 100){
+		if (scrollYNew - scrollY > 1000){
 			scrollY = scrollYNew;
 			initialize(nodeListChange="reverse"); ///start from the end
 		}

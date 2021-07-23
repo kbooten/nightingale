@@ -568,6 +568,8 @@ function injectPopup(textNode){
 	    var poemUrl = num2poemUrl[regex2quote[i][2]];
 	    var match = textNode.textContent.match(regex);
 	    if (match && textNode.textContent.includes('🪶')==false){
+		alert('match found');
+		alert(match[0]);
 	    	keatstip = "<button class='keatstip' id='targetText"+targetTextId+"'>🪶 "+match[0]+"</button>";
 	    	var replacementNode = document.createElement('span');
 			replacementNode.innerHTML = textNode.textContent.replace(match[0],keatstip);
@@ -671,13 +673,12 @@ function initialize(nodeListChange){
 		}
 	}
 	regex2quote = regex2quote_filtered;
-	alert(regex2quote.length);
-	
 	
 	
 	/// add, break if one is added
 	// alert("trying to add");
 	for (let i = 0; i < allTextNodes.length; i++){
+		alert('trying to add');
 		if (isHidden(allTextNodes[i])==false){
 			var replacedAny = injectPopup(allTextNodes[i]);
 			if (replacedAny==true){
@@ -711,7 +712,7 @@ if (nRecentQuotes === null){
 var timeOut = 86400 * 5; // seconds in a day times number of days
 timeOut = 60 * 7; // for debugging
 if (Date.now() - lastChecked > timeOut){ // enough time passed
-	// alert("enough time passed");
+	alert("enough time passed");
 	if (Math.random()>.2){
 		initialize(nodeListChange="random");
 	}else{

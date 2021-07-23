@@ -677,8 +677,8 @@ function initialize(nodeListChange){
 	
 	/// add, break if one is added
 	// alert("trying to add");
+	alert('trying to add');
 	for (let i = 0; i < allTextNodes.length; i++){
-		alert('trying to add');
 		if (isHidden(allTextNodes[i])==false){
 			var replacedAny = injectPopup(allTextNodes[i]);
 			if (replacedAny==true){

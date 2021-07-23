@@ -665,12 +665,12 @@ function initialize(nodeListChange){
 	var nRecentQuotes_ = JSON.parse(localStorage.getItem("nRecents"));
 	var regex2quote_filtered = []; 
 	alert(regex2quote.length);
-	for (var i = 0; i < regex2quote.length; i++){
-		var quote = regex2quote[i][1];
-		if (nRecentQuotes_.contains(quote)==false){
-			regex2quote_filtered.push(regex2quote[i]);
-		}
-	}
+	// for (var i = 0; i < regex2quote.length; i++){
+	// 	var quote = regex2quote[i][1];
+	// 	if (nRecentQuotes_.contains(quote)==false){
+	// 		regex2quote_filtered.push(regex2quote[i]);
+	// 	}
+	// }
 	regex2quote = regex2quote_filtered; 
 	alert(regex2quote.length);
 	

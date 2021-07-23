@@ -562,7 +562,7 @@ function injectPopup(textNode){
 	//,timedQuotes){
 	// regexes matching web text to poetry
 	// inject first match
-	for (var i = 0; i < regex2quote.length; i++){
+	for (let i = 0; i < regex2quote.length; i++){
 	    var quote = regex2quote[i][1];
 	    var regex = regex2quote[i][0];
 	    var poemUrl = num2poemUrl[regex2quote[i][2]];
@@ -665,20 +665,21 @@ function initialize(nodeListChange){
 	var nRecentQuotes_ = JSON.parse(localStorage.getItem("nRecents"));
 	var regex2quote_filtered = []; 
 	alert(regex2quote.length);
-	// for (var i = 0; i < regex2quote.length; i++){
-	// 	var quote = regex2quote[i][1];
-	// 	if (nRecentQuotes_.contains(quote)==false){
-	// 		regex2quote_filtered.push(regex2quote[i]);
-	// 	}
-	// }
-	regex2quote = regex2quote_filtered; 
+	for (let i = 0; i < regex2quote.length; i++){
+		var quote = regex2quote[i][1];
+		alert(quote);
+		// if (nRecentQuotes_.contains(quote)==false){
+		// 	regex2quote_filtered.push(regex2quote[i]);
+		// }
+	}
+	regex2quote = regex2quote_filtered;
 	alert(regex2quote.length);
 	
 	
 	
 	/// add, break if one is added
 	// alert("trying to add");
-	for (var i = 0; i < allTextNodes.length; i++){
+	for (let i = 0; i < allTextNodes.length; i++){
 		if (isHidden(allTextNodes[i])==false){
 			var replacedAny = injectPopup(allTextNodes[i]);
 			if (replacedAny==true){

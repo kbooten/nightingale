@@ -623,7 +623,7 @@ function initialize(nodeListChange){
 		// source: http://is.gd/mwZp7E
 		var child, next;
 		var tagName = node.tagName ? node.tagName.toLowerCase() : "";
-		if (tagName == 'INPUT' || tagName == 'BUTTON' || tagName == 'TEXTAREA' || tagName == 'STYLE' || tagName == 'SCRIPT'){
+		if (tagName == 'input' || tagName == 'button' || tagName == 'textarea' || tagName == 'style' || tagName == 'script'){
 			return;
 		}
 		switch ( node.nodeType )  

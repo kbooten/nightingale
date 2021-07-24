@@ -3,7 +3,7 @@
 // https://github.com/kbooten/nightingale
 // version for Insight Browser
 
-alert('~');
+
 // adding css
 // https://stackoverflow.com/a/15506705
 function addStyle(styleString) {

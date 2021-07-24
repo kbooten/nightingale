@@ -717,6 +717,7 @@ var timeOut = 86400 * 5; // seconds in a day times number of days
 // timeOut = 60 * 7; // for debugging
 alert(Date.now() - lastChecked);
 alert(lastChecked);
+var enoughTimePassed = true;
 if (Date.now() - lastChecked > timeOut){ // enough time passed
 	alert("enough time passed");
 	if (Math.random()>.2){
@@ -726,6 +727,7 @@ if (Date.now() - lastChecked > timeOut){ // enough time passed
 	}
 }else{
 	alert("not enough time passed");
+	enoughTimePassed = false;
 }
 
 /// https://stackoverflow.com/a/44905133
@@ -738,7 +740,7 @@ if (Date.now() - lastChecked > timeOut){ // enough time passed
 /// Twitter stuff
 /// fires every so often as long as user has scrolled down
 var scrollY = window.pageYOffset;
-if (window.location.hostname.includes("twitter")==true && popupAdded==false){
+if (window.location.hostname.includes("twitter")==true && popupAdded==false && enoughTimePassed == true){
 	setInterval(function(){
 		var scrollYNew = window.pageYOffset;
 		if (scrollYNew - scrollY > 1000){

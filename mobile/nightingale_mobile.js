@@ -514,6 +514,9 @@ var num2poemUrl = {
 //////////////
 //////////////
 
+// keep track of whether any popup has been added
+var popupAdded = false;
+
 
 function prepareForForceClick(event){
 	event.preventDefault();
@@ -568,8 +571,6 @@ function injectPopup(textNode){
 	    var poemUrl = num2poemUrl[regex2quote[i][2]];
 	    var match = textNode.textContent.match(regex);
 	    if (match && textNode.textContent.includes('🪶')==false){
-		alert('match found');
-		alert(match[0]);
 	    	keatstip = "<button class='keatstip' id='targetText"+targetTextId+"'>🪶 "+match[0]+"</button>";
 	    	var replacementNode = document.createElement('span');
 			replacementNode.innerHTML = textNode.textContent.replace(match[0],keatstip);
@@ -622,7 +623,7 @@ function initialize(nodeListChange){
 		// source: http://is.gd/mwZp7E
 		var child, next;
 		var tagName = node.tagName ? node.tagName.toLowerCase() : "";
-		if (tagName == 'input' || tagName == 'textarea' || tagName == 'style' || tagName == 'script'){
+		if (tagName == 'INPUT' || tagName == 'BUTTON' || tagName == 'TEXTAREA' || tagName == 'STYLE' || tagName == 'SCRIPT'){
 			return;
 		}
 		switch ( node.nodeType )  
@@ -682,6 +683,8 @@ function initialize(nodeListChange){
 		if (isHidden(allTextNodes[i])==false){
 			var replacedAny = injectPopup(allTextNodes[i]);
 			if (replacedAny==true){
+				// make a note globally so only one is added (needed for twitter) 
+				popupAdded = true; 
 				break;
 			}
 		}
@@ -732,12 +735,14 @@ if (Date.now() - lastChecked > timeOut){ // enough time passed
 /// Twitter stuff
 /// fires every so often as long as user has scrolled down
 var scrollY = window.pageYOffset;
-if (window.location.hostname.includes("twitter")==true){
+if (window.location.hostname.includes("twitter")==true && popupAdded==false){
 	setInterval(function(){
 		var scrollYNew = window.pageYOffset;
 		if (scrollYNew - scrollY > 1000){
 			scrollY = scrollYNew;
-			initialize(nodeListChange="reverse"); ///start from the end
+			if (popupAdded==false){// kind of repetitive (see ref to variable above) but required by my use of setInterval
+				initialize(nodeListChange="reverse"); ///start from the end
+			}
 		}
 	},12000);
 }

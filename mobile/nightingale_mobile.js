@@ -684,6 +684,7 @@ function initialize(nodeListChange){
 			var replacedAny = injectPopup(allTextNodes[i]);
 			if (replacedAny==true){
 				// make a note globally so only one is added (needed for twitter) 
+				alert('popupAdded = true');
 				popupAdded = true; 
 				break;
 			}
@@ -713,7 +714,9 @@ if (nRecentQuotes === null){
 // alert(nRecentQuotes);
 // alert(lastChecked);
 var timeOut = 86400 * 5; // seconds in a day times number of days
-timeOut = 60 * 7; // for debugging
+// timeOut = 60 * 7; // for debugging
+alert(Date.now() - lastChecked);
+alert(lastChecked);
 if (Date.now() - lastChecked > timeOut){ // enough time passed
 	alert("enough time passed");
 	if (Math.random()>.2){

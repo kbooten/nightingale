@@ -678,13 +678,12 @@ function initialize(nodeListChange){
 	
 	/// add, break if one is added
 	// alert("trying to add");
-	alert('trying to add');
 	for (let i = 0; i < allTextNodes.length; i++){
 		if (isHidden(allTextNodes[i])==false){
 			var replacedAny = injectPopup(allTextNodes[i]);
 			if (replacedAny==true){
 				// make a note globally so only one is added (needed for twitter) 
-				alert('popupAdded = true');
+				// alert('popupAdded = true');
 				popupAdded = true; 
 				break;
 			}
@@ -706,35 +705,29 @@ if (lastChecked === null){
 var nRecentQuotes = localStorage.getItem("nRecents");
 if (nRecentQuotes === null){
 	// if does not exist yet
-	alert('initializing empty array'); 
+	// alert('initializing empty array'); 
 	var emptyArray = [];
 	localStorage.setItem("nRecents",JSON.stringify(emptyArray));
 	nRecentQuotes = [];
 }
-// alert(nRecentQuotes);
-// alert(lastChecked);
+
+// timeOut
 var timeOut = 86400 * 1000 * 5; // seconds in a day times number of days
-timeOut = 60 * 1000 * 7; // for debugging
-alert(Date.now() - lastChecked);
-alert(lastChecked);
+timeOut = 60 * 1000 * 30; // for debugging
+// alert(Date.now() - lastChecked);
+// alert(lastChecked);
 var enoughTimePassed = true;
 if (Date.now() - lastChecked > timeOut){ // enough time passed
-	alert("enough time passed");
+	// alert("enough time passed");
 	if (Math.random()>.2){
 		initialize(nodeListChange="random");
 	}else{
 		initialize();
 	}
 }else{
-	alert("not enough time passed");
+	//alert("not enough time passed");
 	enoughTimePassed = false;
 }
-
-/// https://stackoverflow.com/a/44905133
-// window.addEventListener("click", function(event) {
-// 	p = document.getElementById('popup');
-// 	alert(event.target);  /// to get the element
-// });
 
 
 /// Twitter stuff

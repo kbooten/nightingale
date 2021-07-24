@@ -713,8 +713,8 @@ if (nRecentQuotes === null){
 }
 // alert(nRecentQuotes);
 // alert(lastChecked);
-var timeOut = 86400 * 5; // seconds in a day times number of days
-// timeOut = 60 * 7; // for debugging
+var timeOut = 86400 * 1000 * 5; // seconds in a day times number of days
+timeOut = 60 * 1000 * 7; // for debugging
 alert(Date.now() - lastChecked);
 alert(lastChecked);
 var enoughTimePassed = true;
@@ -745,7 +745,7 @@ if (window.location.hostname.includes("twitter")==true && popupAdded==false && e
 		var scrollYNew = window.pageYOffset;
 		if (scrollYNew - scrollY > 1000){
 			scrollY = scrollYNew;
-			if (popupAdded==false){// kind of repetitive (see ref to variable above) but required by my use of setInterval
+			if (popupAdded==false && enoughTimePassed == true){// kind of repetitive (see ref to variable above) but required by my use of setInterval
 				initialize(nodeListChange="reverse"); ///start from the end
 			}
 		}

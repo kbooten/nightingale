@@ -595,7 +595,7 @@ function injectPopup(textNode){
 		/// note what quotes have been recently seen
 		var nRecentQuotes_ = JSON.parse(localStorage.getItem("nRecents"));
 		alert(nRecentQuotes_);
-		alert(Array.isArray(nRecentQuotes));
+		alert(Array.isArray(nRecentQuotes_));
 		// nRecentQuotes_.unshift(quote); // prepend
 		// nRecentQuotes_ = nRecentQuotes_.slice(0,5); // limit size
 		// localStorage(setItem("nRecents"),JSON.stringify(nRecentQuotes_));
@@ -706,7 +706,7 @@ if (lastChecked === null){
 var nRecentQuotes = localStorage.getItem("nRecents");
 if (nRecentQuotes === null){
 	// if does not exist yet
-	// alert('initializing empty array'); 
+	alert('initializing empty array'); 
 	var emptyArray = [];
 	localStorage.setItem("nRecents",JSON.stringify(emptyArray));
 	nRecentQuotes = [];

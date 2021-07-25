@@ -593,12 +593,12 @@ function injectPopup(textNode){
 	    		e.stopPropagation(); 
 	    	})
 		/// note what quotes have been recently seen
-		//var nRecentQuotes_ = JSON.parse(localStorage.getItem("nRecents"));
-		//// alert(nRecentQuotes_);
-		//nRecentQuotes_.unshift(quote); // prepend
-		//nRecentQuotes_ = nRecentQuotes_.slice(0,5); // limit size
-		//localStorage(setItem("nRecents"),JSON.stringify(nRecentQuotes_));
-		////alert(nRecentQuotes_);
+		var nRecentQuotes_ = JSON.parse(localStorage.getItem("nRecents"));
+		alert(nRecentQuotes_);
+		nRecentQuotes_.unshift(quote); // prepend
+		nRecentQuotes_ = nRecentQuotes_.slice(0,5); // limit size
+		localStorage(setItem("nRecents"),JSON.stringify(nRecentQuotes_));
+		alert(nRecentQuotes_);
 		////
 		targetTextId+=1; //increment in case there is more than one on page (in case of Twitter)
 		alert('returning true');
@@ -715,7 +715,7 @@ if (nRecentQuotes === null){
 
 // timeOut
 var timeOut = 86400 * 1000 * 5; // seconds in a day times number of days
-timeOut = 60 * 1000 * 30; // for debugging
+timeOut = 60 * 1000 * 6; // for debugging
 // alert(Date.now() - lastChecked);
 // alert(lastChecked);
 var enoughTimePassed = true;

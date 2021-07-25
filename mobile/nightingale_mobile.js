@@ -603,7 +603,6 @@ function injectPopup(textNode){
 		return true
 		}
 	}
-	// }
 	return false
 }
 
@@ -677,12 +676,12 @@ function initialize(nodeListChange){
 	}
 	regex2quote = regex2quote_filtered;
 	
-	
 	/// add, break if one is added
 	// alert("trying to add");
 	for (let i = 0; i < allTextNodes.length; i++){
 		if (isHidden(allTextNodes[i])==false){
 			var replacedAny = injectPopup(allTextNodes[i]);
+			alert("replaced one");
 			if (replacedAny==true){
 				// make a note globally so only one is added (needed for twitter) 
 				alert('popupAdded = true');

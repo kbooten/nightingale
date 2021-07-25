@@ -546,7 +546,7 @@ function togglePopup(){
 	}else{
 		p.classList.add("keatstipOn");
 		// use localStorage to keep track
-		window.readingTimer = setTimeout(function(){localStorage.setItem("lastCheckedQuote", Date.now());},10000);
+		window.readingTimer = setTimeout(function(){localStorage.setItem("lastCheckedQuote", Date.now());alert('read');},10000);
 	}
 }
 
@@ -685,7 +685,7 @@ function initialize(nodeListChange){
 			var replacedAny = injectPopup(allTextNodes[i]);
 			if (replacedAny==true){
 				// make a note globally so only one is added (needed for twitter) 
-				// alert('popupAdded = true');
+				alert('popupAdded = true');
 				popupAdded = true; 
 				break;
 			}

@@ -546,7 +546,7 @@ function togglePopup(){
 	}else{
 		p.classList.add("keatstipOn");
 		// use localStorage to keep track
-		window.readingTimer = setTimeout(function(){localStorage.setItem("lastCheckedQuote", Date.now());alert('read');},10000);
+		window.readingTimer = setTimeout(function(){localStorage.setItem("lastCheckedQuote", Date.now());},10000);
 	}
 }
 
@@ -573,7 +573,6 @@ function injectPopup(textNode){
 	    // don't match popup, or span already injected with feather magic
 	    // though that is unnecessary if buttons are ignored in walk()
 	    if (match && textNode.id!="popup" && textNode.textContent.includes('🪶')==false){
-		alert('adding!');
 	    	keatstip = "<button class='keatstip' id='targetText"+targetTextId+"'>🪶 "+match[0]+"</button>";
 	    	var replacementNode = document.createElement('span');
 		replacementNode.innerHTML = textNode.textContent.replace(match[0],keatstip);
@@ -594,14 +593,10 @@ function injectPopup(textNode){
 	    	})
 		/// note what quotes have been recently seen
 		var nRecentQuotes_ = JSON.parse(localStorage.getItem("nRecents"));
-		alert(nRecentQuotes_);
-		alert(Array.isArray(nRecentQuotes_));
 		nRecentQuotes_.unshift(quote); // prepend
 		nRecentQuotes_ = nRecentQuotes_.slice(0,5); // limit size
-		alert(nRecentQuotes_);
 		localStorage.setItem("nRecents",JSON.stringify(nRecentQuotes_));
 		targetTextId+=1; //increment in case there is more than one on page (in case of Twitter)
-		alert('returning true');
 		return true
 		}
 	}
@@ -685,7 +680,6 @@ function initialize(nodeListChange){
 			var replacedAny = injectPopup(allTextNodes[i]);
 			if (replacedAny==true){
 				// make a note globally so only one is added (needed for twitter) 
-				alert('popupAdded = true');
 				popupAdded = true; 
 				break;
 			}
@@ -707,7 +701,7 @@ if (lastChecked === null){
 var nRecentQuotes = localStorage.getItem("nRecents");
 if (nRecentQuotes === null){
 	// if does not exist yet
-	alert('initializing empty array'); 
+	// alert('initializing empty array'); 
 	var emptyArray = [];
 	localStorage.setItem("nRecents",JSON.stringify(emptyArray));
 	nRecentQuotes = [];

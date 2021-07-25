@@ -595,6 +595,7 @@ function injectPopup(textNode){
 		/// note what quotes have been recently seen
 		var nRecentQuotes_ = JSON.parse(localStorage.getItem("nRecents"));
 		alert(nRecentQuotes_);
+		alert(nRecentQuotes_.isArray());
 		// nRecentQuotes_.unshift(quote); // prepend
 		// nRecentQuotes_ = nRecentQuotes_.slice(0,5); // limit size
 		// localStorage(setItem("nRecents"),JSON.stringify(nRecentQuotes_));

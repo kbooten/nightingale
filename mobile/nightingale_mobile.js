@@ -573,6 +573,7 @@ function injectPopup(textNode){
 	    // don't match popup, or span already injected with feather magic
 	    // though that is unnecessary if buttons are ignored in walk()
 	    if (match && textNode.id!="popup" && textNode.textContent.includes('🪶')==false){
+		alert('adding!');
 	    	keatstip = "<button class='keatstip' id='targetText"+targetTextId+"'>🪶 "+match[0]+"</button>";
 	    	var replacementNode = document.createElement('span');
 		replacementNode.innerHTML = textNode.textContent.replace(match[0],keatstip);
@@ -600,6 +601,7 @@ function injectPopup(textNode){
 		////alert(nRecentQuotes_);
 		////
 		targetTextId+=1; //increment in case there is more than one on page (in case of Twitter)
+		alert('returning true');
 		return true
 		}
 	}

@@ -570,15 +570,17 @@ function injectPopup(textNode){
 	    var regex = regex2quote[i][0];
 	    var poemUrl = num2poemUrl[regex2quote[i][2]];
 	    var match = textNode.textContent.match(regex);
-	    if (match && textNode.textContent.includes('🪶')==false){
+	    // don't match popup, or span already injected with feather magic
+	    // though that is unnecessary if buttons are ignored in walk()
+	    if (match && textNode.id!="popup" && textNode.textContent.includes('🪶')==false){
 	    	keatstip = "<button class='keatstip' id='targetText"+targetTextId+"'>🪶 "+match[0]+"</button>";
 	    	var replacementNode = document.createElement('span');
-			replacementNode.innerHTML = textNode.textContent.replace(match[0],keatstip);
-			textNode.parentNode.insertBefore(replacementNode, textNode);
-			textNode.parentNode.removeChild(textNode);
-			var targetTextNode = document.getElementById('targetText'+targetTextId);
-			var p = document.getElementById('popup');
-			//targetTextNode.onclick = null;//trying to cancel all default events
+		replacementNode.innerHTML = textNode.textContent.replace(match[0],keatstip);
+		textNode.parentNode.insertBefore(replacementNode, textNode);
+		textNode.parentNode.removeChild(textNode);
+		var targetTextNode = document.getElementById('targetText'+targetTextId);
+		var p = document.getElementById('popup');
+		//targetTextNode.onclick = null;//trying to cancel all default events
 	    	targetTextNode.addEventListener("click", function(e){
 	    		p.innerHTML = quote; 
 	    		togglePopup();//targetTextNode.classList.add("keatstipOn");

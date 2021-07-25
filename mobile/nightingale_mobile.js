@@ -518,11 +518,6 @@ var num2poemUrl = {
 var popupAdded = false;
 
 
-function prepareForForceClick(event){
-	event.preventDefault();
-}
-
-
 function isHidden(el) {
 	// https://stackoverflow.com/a/21696585
 	// does this actually do anything?
@@ -537,6 +532,7 @@ function shuffleArray(array) {
         [array[i], array[j]] = [array[j], array[i]];
     }
 }
+
 
 function togglePopup(){
 	p = document.getElementById('popup');
@@ -562,52 +558,46 @@ document.body.appendChild(popup);
 
 
 function injectPopup(textNode){
-	//,timedQuotes){
 	// regexes matching web text to poetry
 	// inject first match
 	for (let i = 0; i < regex2quote.length; i++){
-	    var quote = regex2quote[i][1];
-	    var regex = regex2quote[i][0];
-	    var poemUrl = num2poemUrl[regex2quote[i][2]];
-	    var match = textNode.textContent.match(regex);
-	    // don't match popup, or span already injected with feather magic
-	    // though that is unnecessary if buttons are ignored in walk()
-	    if (match && textNode.id!="popup" && textNode.textContent.includes('🪶')==false){
-	    	keatstip = "<button class='keatstip' id='targetText"+targetTextId+"'>🪶 "+match[0]+"</button>";
-	    	var replacementNode = document.createElement('span');
-		replacementNode.innerHTML = textNode.textContent.replace(match[0],keatstip);
-		textNode.parentNode.insertBefore(replacementNode, textNode);
-		textNode.parentNode.removeChild(textNode);
-		var targetTextNode = document.getElementById('targetText'+targetTextId);
-		var p = document.getElementById('popup');
-		//targetTextNode.onclick = null;//trying to cancel all default events
-	    	targetTextNode.addEventListener("click", function(e){
-	    		p.innerHTML = quote; 
-	    		togglePopup();//targetTextNode.classList.add("keatstipOn");
-	    		e.preventDefault(); // keep anchors from firing hyperlink
-	    		e.stopPropagation(); // keep from bubbling
-	    	});
-	    	p.addEventListener('click',function(e){ // click on tooltip to open full poem page
-	    		window.open(poemUrl, "_blank");
-	    		e.stopPropagation(); 
-	    	})
-		/// note what quotes have been recently seen
-		var nRecentQuotes_ = JSON.parse(localStorage.getItem("nRecents"));
-		nRecentQuotes_.unshift(quote); // prepend
-		nRecentQuotes_ = nRecentQuotes_.slice(0,5); // limit size
-		localStorage.setItem("nRecents",JSON.stringify(nRecentQuotes_));
-		targetTextId+=1; //increment in case there is more than one on page (in case of Twitter)
-		return true
+		var quote = regex2quote[i][1];
+	    	var regex = regex2quote[i][0];
+	    	var poemUrl = num2poemUrl[regex2quote[i][2]];
+	    	var match = textNode.textContent.match(regex);
+	    	// don't match popup, or span already injected with feather magic
+	    	// though that is unnecessary if buttons are ignored in walk()
+	    	if (match && textNode.id!="popup" && textNode.textContent.includes('🪶')==false){
+	    		keatstip = "<button class='keatstip' id='targetText"+targetTextId+"'>🪶 "+match[0]+"</button>";
+	    		var replacementNode = document.createElement('span');
+			replacementNode.innerHTML = textNode.textContent.replace(match[0],keatstip);
+			textNode.parentNode.insertBefore(replacementNode, textNode);
+			textNode.parentNode.removeChild(textNode);
+			var targetTextNode = document.getElementById('targetText'+targetTextId);
+			var p = document.getElementById('popup');
+			p.innerHTML = quote; // add popup
+			// event listener for glowing text
+	    		targetTextNode.addEventListener("click", function(e){
+	    			togglePopup(); // popup on and off
+	    			e.preventDefault(); // keep anchors from firing hyperlink
+	    			e.stopPropagation(); // keep from bubbling
+	    		});
+			// event listener for popup
+	    		p.addEventListener('click',function(e){ // click on tooltip to open full poem page
+	    			window.open(poemUrl, "_blank");
+	    			e.stopPropagation(); 
+	    		})
+			/// note what quotes have been recently seen
+			var nRecentQuotes_ = JSON.parse(localStorage.getItem("nRecents"));
+			nRecentQuotes_.unshift(quote); // prepend
+			nRecentQuotes_ = nRecentQuotes_.slice(0,5); // limit size
+			localStorage.setItem("nRecents",JSON.stringify(nRecentQuotes_));
+			targetTextId+=1; //increment in case there is more than one on page (in case of Twitter)
+			return true
 		}
 	}
 	return false
 }
-
-
-// document.body.addEventListener('click',function(e){ //https://stackoverflow.com/a/5073384
-// 	p = document.getElementById('popup');
-// 	p.classList.remove("keatstipOn");
-// })
 
 
 function initialize(nodeListChange){
@@ -656,6 +646,7 @@ function initialize(nodeListChange){
 		allTextNodes.reverse();
 	}
 
+
 	/// sampling regex2quote pairs
 	var sampleN = 60;
 	shuffleArray(regex2quote);
@@ -673,6 +664,7 @@ function initialize(nodeListChange){
 	}
 	regex2quote = regex2quote_filtered;
 	
+
 	/// add, break if one is added
 	// alert("trying to add");
 	for (let i = 0; i < allTextNodes.length; i++){

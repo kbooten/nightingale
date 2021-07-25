@@ -596,8 +596,8 @@ function injectPopup(textNode){
 		var nRecentQuotes_ = JSON.parse(localStorage.getItem("nRecents"));
 		alert(nRecentQuotes_);
 		nRecentQuotes_.unshift(quote); // prepend
-		nRecentQuotes_ = nRecentQuotes_.slice(0,5); // limit size
-		localStorage(setItem("nRecents"),JSON.stringify(nRecentQuotes_));
+		// nRecentQuotes_ = nRecentQuotes_.slice(0,5); // limit size
+		// localStorage(setItem("nRecents"),JSON.stringify(nRecentQuotes_));
 		alert(nRecentQuotes_);
 		////
 		targetTextId+=1; //increment in case there is more than one on page (in case of Twitter)

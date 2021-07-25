@@ -681,7 +681,6 @@ function initialize(nodeListChange){
 	for (let i = 0; i < allTextNodes.length; i++){
 		if (isHidden(allTextNodes[i])==false){
 			var replacedAny = injectPopup(allTextNodes[i]);
-			alert(replacedAny.toString());
 			if (replacedAny==true){
 				// make a note globally so only one is added (needed for twitter) 
 				alert('popupAdded = true');

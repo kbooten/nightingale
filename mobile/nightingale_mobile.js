@@ -104,7 +104,7 @@ var regex2quote = [
 	[/\b(Icarus|Caravaggio|Jarman)\b|\bthe \w+ boy I know\b|\bthe winged \w+\b/i,
 		"The winged boy I knew",0],
 
-	[/\b(\w+(y|Y|ie|IE)), \1\b|\btrue [B-DF-HJ-NP-TV-Z]\w+\b/,
+	[/\b(\w+(y|Y|ie|IE)), \1\b|\b(his|her) (true|real) [B-DF-HJ-NP-TV-Z]\w+\b/,
 		"But who wast thou, O happy, happy dove?<br>His Psyche true!",0],
 
 	[/\bla\w+st (\w+ )?and lo\w+st\b|\b(\w+st|most \w+) (vision|sight|scene|view|panorama|vista)\b|\b\w+ed \w+archy\b|\bit[ -]girl\b|\b(Jane Birken|Chlo[eë] Sevigny|Kendall Jenner|Grace Jones|Edie Sedgwick)\b/i,
@@ -125,7 +125,7 @@ var regex2quote = [
 	[/\b(seculari\w+|rates? of (church|relig\w+))\b|\b(prophe\w+|Ezekiel|Isaiah|Jeremiah)\b|\b((data|predictive) analytics|(logistic|linear) regression|(language|time series) models|actuar\w+)\b/i,
 		"No shrine, no grove, no oracle, no heat<br>Of pale-mouth'd prophet dreaming.",0],
 
-	[/\btoo, too\b|\btoo late for (the|a\w+)\b|\bfor a promises?\b|\b(the|an?) (\w+ )?(\w+)?(believing|faithful|religious) \w+|\bfor (\w+ )?(ancient|vintage|antique|old|aged) \w+s\b/i,
+	[/\btoo, too\b|\btoo late for (the|a\w+)\b|\bfor a promises?\b|\b(the|an?) (\w+ )?(believing|faithful|credulous) \w+|\bfor (\w+ )?(ancient|vintage|antique|old|aged) \w+s\b/i,
 		"O brightest! though too late for antique vows,<br>Too, too late for the fond believing lyre",0],
 
 	[/\b(air)\b.{2,50}\b(water|fire)\b|\b(water)\b.{2,50}\b(air|fire)\b|\b(fire)\b.{2,50}\b(water|air)\b|\b(haunted|spooky) (forests?|woods?)\b/i,
@@ -140,7 +140,7 @@ var regex2quote = [
 	[/\b(your (\w+ )?\w+, ){1,}((and )?your (\w+ )?\w+)\b/i,
 		"Thy voice, thy lute, thy pipe, thy incense sweet<br>From swinged censer teeming",0],
 
-	[/\b(shrines?|gardens?|altars?|oracles?|priests?|prophets?|tombs?|dreams?(ing)?|holy?|sacred?|mystical|mysterious|flowers?|flora|vines?)\b[^.!?]+\b(shrines?|gardens?|alters?|oracles?|priests?|prophets?|tombs?|dreams?(ing)?|holy?|sacred?|mystical|mysterious|flowers?|flora|vines?)/i,
+	[/\b(shrines?|gardens?|altars?|oracles?|priests?|prophets?|tombs?|dreams?(ing)?|holy?|sacred?|mystical|mysterious|flowers?|flora|vines?)\b[^.!?]+\b(shrines?|gardens?|alters?|oracles?|priests?|prophets?|tombs?|dreams?(ing)?|holy?|sacred?|mystical|mysterious|flowers?|flora|vines?)\b/i,
 		"Thy shrine, thy grove, thy oracle, thy heat<br>Of pale-mouth'd prophet dreaming.",0],
 
 	[/\ba (temple|shrine|church) in some\b|\b(bethel|basilica|shrine|chapel|tabernacle|stupa|reliquary|buts?udan|maq[āa]m|chantry|ciborium|chantry)\b/i,
@@ -149,7 +149,7 @@ var regex2quote = [
 	[/\b(primeval|primary|virgin|wild|untouched|) (forest?|gardens?|woods?|nature)\b|\bnature preserves?\b|\b(concept|mind)[- ]map(\w+)?\b|\b(neurogenesis|synap\w+|dendrit\w+|decision trees?)|\bin the wind\b/i,
 		"In some untrodden region of my mind,<br>Where branched thoughts, new grown with pleasant pain,<br>Instead of pines shall murmur in the wind",0],
 
-	[/\b(winged|gr[eo]ws?(ing)? (\w+ )?wings|(baby|fledgling) birds?)\b|\bs\w+ by s\w+\b|\bfar,? far\b|terrafor\w+/i,
+	[/\b(winged|gr[eo]ws?(ing)? (\w+ )?wings|(baby|fledgling) birds?)\b|\bs\w+ by s\1\b|\bfar,? far\b|terrafor\w+/i,
 		"Far, far around shall those dark-cluster'd trees<br>Fledge the wild-ridged mountains steep by steep",0],
 
 	[/\b(light|west(ern?)) winds?\b|\bbirds and (the )?bees\b|\b(dryads?|fairy|fairies|nymphs?|oaks?|oaken|pixies?)\b|\b(melatonin|ambien)s?\b/i,
@@ -224,7 +224,7 @@ var regex2quote = [
 	[/\b((your|my) ((late|early|mid)[- ])?((twen|thir|for|six|seven|eigh|nine)ties|(2|3|4|5|6|7|8|9)0s))\b|\bretirement[- ]age\b|\buniversal[- ]basic income\b/i,
 		"O, for an age so shelter’d from annoy,<br>That I may never know how change the moons,<br>Or hear the voice of busy common-sense!",1],
 
-	[/\b([b-df-hj-np-tv-z]+)\w+ \1[b-df-hj-np-tv-z]{0,}(ea[nm]s?|oo[nm]s?|ai[nm]s?)\b|\bembroidered with\b/i,
+	[/\b([b-df-hj-np-tv-z]+)(\w+d|[aeiou]{1,}[b-df-hj-np-tv-z]{1,}) \1[b-df-hj-np-tv-z]{0,}(ea[nm]s?|oo[nm]s?|ai[nm]s?)\b|\bembroidered with\b/i,
 		"My sleep had been embroider’d with dim dreams;<br>My soul had been a lawn besprinkled o’er<br>With flowers, and stirring shades, and baffled beams",1],
 
 	[/\b(starlings|goldfinch(es)?|magpies?|sparrows?|wrens?|crows?|orioles?|warblers?)'s?|\b(vine|ivy|tendril)[,.]|\bpent[- ]up\b/i,
@@ -284,7 +284,7 @@ var regex2quote = [
 	[/\b(gnostic\w+|sommeliers?|(refined|excellent|superb) tastes?|secret (society|club))|a sophisticate\b|\bsensitive (people|person|guy)\b/i,
 		"Veil'd Melancholy has her sovran shrine,<br>Though seen of none save him whose strenuous tongue<br>Can burst Joy's grape against his palate fine",2],
 
-	[/\bthe \w+ness of (my|her|our|your|his|their)? [b-df-hj-np-tv-z]{0,}[aeiou]+[b-df-hj-np-tv-z]+\b|\b\w[b-df-hj-np-tv-z]{0,}[aeiou]+[b-df-hj-np-tv-z]+(y|ies?) \w[b-df-hj-np-tv-z]{0,}[aeiou]+[b-df-hj-np-tv-z]+(y|ies?)\b|\b(troph(ies|y)\b|\bof her (might|power|strength|capability|influence|prestige|control|design))\b/i,
+	[/\bthe \w+ness of (my|her|his|our|your|his|their)? [b-df-hj-np-tv-z]{0,}[aeiou]+[b-df-hj-np-tv-z]+\b|(my|her|his|our|your|his|their) \b\w[b-df-hj-np-tv-z]{0,}[aeiou]+[b-df-hj-np-tv-z]+(y|ies?) \w[b-df-hj-np-tv-z]{0,}[aeiou]+[b-df-hj-np-tv-z]+(y|ies?)\b|\b(troph(ies|y)\b|\bof her (might|power|strength|capability|influence|prestige|control|design))\b/i,
 		"His soul shalt taste the sadness of her might,<br>And be among her cloudy trophies hung.",2],
 
 
@@ -356,13 +356,13 @@ var regex2quote = [
 	[/\b(my grave|my burial|my death|my demise|my corpse|turn to (grass|dirt)|requiem|Mozart's|Verdi's|about death)\b|\bbecome a [a-z]o[a-z]|\bstill you would \w+,/i,
 		"Still wouldst thou sing, and I have ears in vain—<br>To thy high requiem become a sod.",3],
 
-	[/\b(born (to die|for death|undying))\b|, \w+ [A-Z]\w+!|\b immortal B\w+/,
+	[/\b(born (to die|for death|undying))\b|, [a-z]\w{5,} [A-Z]\w+!|\b immortal B\w+/,
 		"Thou wast not born for death, immortal Bird!",3],
 
-	[/\b(ancient|vintage|antique|old|aged) [b-df-hj-np-tv-z]{0,}[aeiou]+[b-df-hj-np-tv-z]+\b|\bby [b-df-hj-np-tv-z]{0,}[aeiou]+[b-df-hj-np-tv-z]+[aeiou]+[b-df-hj-np-tv-z]+[aeiou]+[b-df-hj-np-tv-z]+\b (and|or) [b-df-hj-np-tv-z]+[aeiou]+[b-df-hj-np-tv-z]+\b/i,
+	[/\b(ancient|vintage|antique|old|aged|previous|medieval|primeval|bygone|former) (times?|years?|mornings?|evenings?|hours?|customs?|cultures?|patterns?|civilizations?|ways?)/i,
 		"No hungry generations tread thee down;<br>The voice I hear this passing night was heard<br>In ancient days by emperor and clown",3],
 
-	[/\bs\w+(-| )s\w+ song\b|\bm\w+ melod(y|ies)|\bthe [b-df-hj-np-tv-z]{0,}[aeiou]+[b-df-hj-np-tv-z]+\b [b-df-hj-np-tv-z]{0,}[aeiou]+[b-df-hj-np-tv-z]+\b of [B-DF-HJ-NP-TV-Z]{0,}[aeiou]+[b-df-hj-np-tv-z]+\b|\bwhen, \w+ (for|of|in|by) \w+,|\bthe alien [b-df-hj-np-tv-z]{0,}[aeiou]+[b-df-hj-np-tv-z]+\b/,
+	[/\bs\w+(-| )s\w+ song\b|\bm\w+ melod(y|ies)|\bthe [b-df-hj-np-tv-z]{0,}[aeiou]+[b-df-hj-np-tv-z]+\b [b-df-hj-np-tv-z]{0,}[aeiou]+[b-df-hj-np-tv-z]+\b of [B-DF-HJ-NP-TV-Z]{1,}[aeiou]+[b-df-hj-np-tv-z]+\b|\bwhen, \w+ (for|of|in|by) \w+,|\bthe alien [b-df-hj-np-tv-z]{0,}[aeiou]+[b-df-hj-np-tv-z]+\b/,
 		"Perhaps the self-same song that found a path<br>Through the sad heart of Ruth, when, sick for home,<br>She stood in tears amid the alien corn",3],
 
 	[/\bha[ds] charmed\b|\bf\w+ l\w+ f\w+\b|\b(casements?|lattice[sd]?|awning|hinged)\b|\bforlorn\./i,
@@ -437,7 +437,7 @@ var regex2quote = [
 	[/\bOh? [A-Z]\w+ \w+!|\b(embroidery|braid|ponytail|pigtails?|plait)\b|\bwith forest \w+s\b|\b\w+(en|ed)\b weed\b/i,
 		"O Attic shape! Fair attitude! with brede<br>Of marble men and maidens overwrought,<br>With forest branches and the trodden weed",4],
 
-	[/\beternity\b|\bout of (my|your|their) minds?\b|\bC\w+ [A-Z]\w+!/i,
+	[/\beternity\b|\bout of (my|your|their) minds?\b|\bC\w+ [A-Z]\w+!/,
 		"Thou, silent form, dost tease us out of thought<br>As doth eternity: Cold Pastoral!",4],
 
 	[/\bold age\b|\bthis generation\b|\bwoe\b|\bwasted? (my|your|our|their) (life|lives)\b/i,

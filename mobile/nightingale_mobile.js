@@ -158,7 +158,7 @@ var regex2quote = [
 	[/\bin the midst of this\b|\ba w\+ (sanctuary|temple|church|shrine|mosque)\b|\b(neural[ -]?network|cognition|neurogenesis|synap\w+|dendrit\w+|decision trees?)\b|\bnoise( -)cancelling\b|\b(florists?|landscape arch\w+)\b/i,
 		"And in the midst of this wide quietness<br>A rosy sanctuary will I dress<br>With the wreath'd trellis of a working brain",0],
 
-	[/\bb[aeiou]+[b-df-hj-np-tv-z]+,? (and|not|or|with|of|for) ?b[aeiou]+[b-df-hj-np-tv-z]+|without (a name|names)|\bgreen thumbs?|horticult\w+\b|\bheirloom (vegetables?|fruits?|agricult\w+)\b|\bone of a kind\b|\bbroke the mou?ld\b|\bastron\w+\b|\bbook of Genesis\b|\bGenesis 2:[0-9]{2}/i,
+	[/\bb[aeiou]+[b-df-hj-np-tv-z]+,? (and|not|or|with|of|for) ?b[aeiou]+[b-df-hj-np-tv-z]+\b|\bwithout (a name|names)\b|\bgreen thumbs?|horticult\w+\b|\bheirloom (vegetables?|fruits?|agricult\w+)\b|\bone of a kind\b|\bbroke the mou?ld\b|\bastron\w+\b|\bbook of Genesis\b|\bGenesis 2:[0-9]{2}\b/i,
 		"With buds, and bells, and stars without a name,<br>With all the gardener Fancy e'er could feign,<br>Who breeding flowers, will never breed the same",0],
 
 	[/\b(all|most|some) (soft|sweet|kind|delicious|merciful|good|pure|beautiful|nice|holy) \w{6,}\b|\bthere (shall|will) be (for|in|by|of)\b|\blaw of attraction\b|\bpower of positiv(ity|e (thoughts|thinking))\b|\b(an?|the) (truce|endgame)\b/i,
@@ -173,7 +173,7 @@ var regex2quote = [
 	[/\bwith (an? )?\w+ed (necks?|heads?|face?|hands?|arms?|lips?|eyes?|mouths?|smiles?|shoulders?|teeth|tooth|noses?|fingers?|foot|feet|hair), and (an? )?\w+ (necks?|heads?|face?|hands?|arms?|lips?|eyes?|mouths?|smiles?|shoulders?|teeth|tooth|noses?|fingers?|foot|feet|hair)\b/i,
 		"One morn before me were three figures seen,<br>With bowèd necks, and joinèd hands, side-faced;",1],
 
-	[/\b\w+ed in (white|black|silver|gold) \w+s|\b\w+ in (white|black|silver|gold) \w+s \w+ed\b|\wed,? one (behind|in front of|with) the other\b|one (behind|in front of|with) the other \w+ed|\b(tevas|birkenstocks|chacos)\b/i,
+	[/\b\w+ed in (white|black|silver|gold) \w+s\b|\b\w+ in (white|black|silver|gold) \w+s \w+ed\b|\bone (behind|in front of|with) the other \w+ed\b|\b(tevas|birkenstocks|chacos)\b/i,
 		"And one behind the other stepp’d serene,<br>In placid sandals, and in white robes graced",1],
 
 	[/\b(zoetrope|duotrope|wintergarden|Méliès|george melies|action movies?|british cinema|(mm|millimetres?) film|horse gait|gait of (the|a) ?horses)\b/i,

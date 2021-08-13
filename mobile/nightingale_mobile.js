@@ -353,7 +353,7 @@ var regex2quote = [
 	[/\b(Now more than ever it seems)\b|\bwant(s|ed|ing)? the pain to (just )?(stop|end)\b|\bin (such )?ecstasy!|\b(too|so|really) (fucking )?emo\b/i,
 		"Now more than ever seems it rich to die,<br>To cease upon the midnight with no pain,<br>While thou art pouring forth thy soul abroad<br>In such an ecstasy!",3],
 
-	[/\b(my grave|my burial|my death|my demise|my corpse|turn to (grass|dirt)|requiem|Mozart's|Verdi's|about death)\b|\bbecome a [a-z]o[a-z]|\bstill you would \w+,/i,
+	[/\b(my grave|my burial|my death|my demise|my corpse|turn to (grass|dirt)|requiem|Mozart's|Verdi's|about death)\b|\bbecome a [a-z]o[a-z]\b|\bstill you would \w+,/i,
 		"Still wouldst thou sing, and I have ears in vain—<br>To thy high requiem become a sod.",3],
 
 	[/\b(born (to die|for death|undying))\b|, [a-z]\w{5,} [A-Z]\w+!|\b immortal B\w+/,
@@ -386,7 +386,7 @@ var regex2quote = [
 	[/(\b\w+ed (bride|wife|husband)\b|\b-child\b|\bof quiet\b|\bof silence\b)|of \w+ness\b|s\w+ and s\w+\b t[aeiou]\w+\b|still un\w+ed\b/i,
 		"Thou still unravish'd bride of quietness,<br>Thou foster-child of silence and slow time",4],
 
-	[/\b(of the forest|my rhyme|historian of)\b|, who \b(can't|can)\b|\ba \w+ \b(story|tale|history|drama|narrative)\b|\b(?:my|our)\b \b(rhyme|echo|melody)\b/i,
+	[/\b(of the forest|my rhyme|historian of)\b|, who \b(can't|can)\b|\ba \w+y \b(story|tale|history|drama|narrative)\b|\b(?:my|our)\b \b(rhyme|echo|melody)\b/i,
 		"Sylvan historian, who canst thus express<br>A flowery tale more sweetly than our rhyme",4],	
 
 	[/\b(legend|legendary|haunts|of (deities|gods)|(gods|deities) (and|or) (humans|mortals))\b/i,

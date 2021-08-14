@@ -89,7 +89,7 @@ var regex2quote = [
 	[/\b(pikachus?|raichus?|caterpies?|pokemon)\b|\b(rivulet|(the|a) (creek|brook))\b|\b(coucher|collocate|the \w+ couple)\b|\boff the beaten (trail|track|path)\b/,
 		"...two fair creatures, couched side by side<br>In deepest grass, beneath the whisp'ring roof<br>Of leaves and trembled blossoms, where there ran<br>A brooklet, scarce espied",0],
 
-	[/\b(blue|green|black|white|silver|gold|green|pink|orange|teal|gr[ea]y|pink|purple|yellow)\b[ -]\b(blue|green|black|white|silver|gold|green|pink|orange|teal|gr[ea]y|pink|purple|yellow)|\b(soft|cool|damp) (earth|soil|mud|dirt)\b|\bbreathing (exercises?|techniques?)\b|\bbiofeedback\b|\bdeep breathing\b|\b(cool|cold)-\w+\b/i,
+	[/\b(blue|green|black|white|silver|gold|green|red|orange|teal|gr[ea]y|pink|purple|yellow)\b[ -]\b(blue|green|black|white|silver|gold|green|red|orange|teal|gr[ea]y|pink|purple|yellow)\b|\b(soft|cool|damp) (earth|soil|mud|dirt)\b|\bbreathing (exercises?|techniques?)\b|\bbiofeedback\b|\bdeep breathing\b|\b(cool|cold)-\w+\b/i,
 		"Mid hush'd, cool-rooted flowers, fragrant-eyed,<br>Blue, silver-white, and budded Tyrian,<br>They lay calm-breathing, on the bedded grass",0],
 
 	[/\b(their arms|legs|wings|buffalo wild wings|bw3|wing stop|drivetrain)\b|\b\w+oo\b.{5,50}ieu\b/i,
@@ -149,7 +149,7 @@ var regex2quote = [
 	[/\b(primeval|primary|virgin|wild|untouched|) (forest?|gardens?|woods?|nature)\b|\bnature preserves?\b|\b(concept|mind)[- ]map(\w+)?\b|\b(neurogenesis|synap\w+|dendrit\w+|decision trees?)|\bin the wind\b/i,
 		"In some untrodden region of my mind,<br>Where branched thoughts, new grown with pleasant pain,<br>Instead of pines shall murmur in the wind",0],
 
-	[/\b(winged|gr[eo]ws?(ing)? (\w+ )?wings|(baby|fledgling) birds?)\b|\bs\w+ by s\1\b|\bfar,? far\b|terrafor\w+/i,
+	[/\b(winged|gr[eo]ws?(ing)? (\w+ )?wings|(baby|fledgling) birds?)\b|\bs(\w+) by s\5\b|\bfar,? far\b|terrafor\w+/i,
 		"Far, far around shall those dark-cluster'd trees<br>Fledge the wild-ridged mountains steep by steep",0],
 
 	[/\b(light|west(ern?)) winds?\b|\bbirds and (the )?bees\b|\b(dryads?|fairy|fairies|nymphs?|oaks?|oaken|pixies?)\b|\b(melatonin|ambien)s?\b/i,
@@ -242,10 +242,10 @@ var regex2quote = [
 	[/\bsoftly (from|through|with|over|beyond|at|over|into)\b|\bon the [b-df-hj-np-tv-z]+eamy\b/i,
 		"Fade softly from my eyes, and be once more<br>In masque-like figures on the dreamy urn",1],
 
-	[/\b\w+s (for|of|with) the (night|evening|dark)[.,?!]|\bnights? [\w ,\n]{1,30}\bdays?\b/i,
+	[/\b\w+s (for|of|with) the (night|evening|dark)[.,?!]|\bnights?\b[^?.!]{1,30}\bdays?\b/i,
 		"Farewell! I yet have visions for the night,<br>And for the day faint visions there is store",1],
 
-	[/(fuckers|(\bassholes|shitheads|dipshits|losers|ghosts))!|\bfuck off!|\b(idle|lazy) [b-df-hj-np-tv-z]{0,}[aeiou]+[b-df-hj-np-tv-z]+[aeiou]?s?\b/i,
+	[/\byou (fuckers|assholes|shitheads|dipshits|losers|ghosts)!|\bfuck off!|\b(idle|lazy) [b-df-hj-np-tv-z]{0,}[aeiou]+[b-df-hj-np-tv-z]+[aeiou]?s?\b/i,
 		"Vanish, ye Phantoms! from my idle spright,<br>Into the clouds, and never more return!",1],
 
 
@@ -479,7 +479,7 @@ var regex2quote = [
 	[/\b(ciders?|applejack|calvados|deep attention|ooz(e[ds]?|ings?)|dregs|residues?)\b|a \w+-press\b|\b(hour|day|month)s? by (hour|day|month)s?\b/i,
 		"Or by a cyder-press, with patient look,<br>Thou watchest the last oozings hours by hours.",5],
 
-	[/\bWhere.{10,30}Where\b|\b[Tt]hink not of\b|\b[Yy]ou have your\b/,
+	[/\bWhere\b[^?.!]{5,50}\?[^?.!]{0,6}\b[Ww]here\b[^?.!]{5,50}\?|\b[Tt]hink not of\b|\b[Yy]ou have your\b/,
 		"Where are the songs of spring? Ay, Where are they?<br>Think not of them, thou hast thy music too,—",5],
 
 	[/\b(the evening|(five|5) o'?clock shadow|at (sunset|dusk)|stubble|with (rosy|reddish|pink(ish)?))\b/i,

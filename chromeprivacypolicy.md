@@ -2,7 +2,7 @@
 
 *Updated August 17, 2021*
 
-Nightingale reads the content of websites you visit, including in incognito mode.
+Nightingale reads the content of websites you visit.
 
 Nightingale works locally. It does not transmit your data anywhere.  
 

@@ -473,7 +473,7 @@ var regex2quote = [
 	[/\b(furrow|sound asleep|drowsy|sudafed|heroin|methadone|narcotic|opi(um|ate)|spared by|swath|thresher|eau de (parfum|toilette|cologne)|perfume|burnout)\b/i,
 		"Or on a half-reap'd furrow sound asleep,<br>Drows'd with the fume of poppies, while thy hook<br>Spares the next swath and all its twined flowers",5],
 
-	[/\b(chaff|deep attention|thresholds?|heavy is the head|across a brook|wrap(ping)? up|finishing touches)\b/i,
+	[/\b(chaff|deep attention|thresholds?|heavy is the head|across a brook)\b/i,
 		"And sometimes like a gleaner thou dost keep<br>Steady thy laden head across a brook",5],
 
 	[/\b(ciders?|applejack|calvados|deep attention|ooz(e[ds]?|ings?)|dregs|residues?)\b|a \w+-press\b|\b(hour|day|month)s? by (hour|day|month)s?\b/i,

@@ -4,10 +4,6 @@
 // version for Chrome
 
 
-// keep track of whether any popup has been added
-var popupAdded = false;
-
-
 function isHidden(el) {
 	// https://stackoverflow.com/a/21696585
 	// does this actually do anything?
@@ -183,8 +179,10 @@ function initialize(nodeListChange){
 }
 
 
-//////////
+// set a couple of global vars
 
+// keep track of whether any popup has been added
+var popupAdded = false;
 
 // check if on poetry foundation website
 var notOnPoetryFoundation = true;
@@ -196,7 +194,7 @@ if (window.location.href.startsWith('www.poetryfoundation.org/poems/444')==true)
 /// main
 var lastChecked = 0; // keep global
 if (notOnPoetryFoundation==false){
-	console.log("on poetry foundation site, not running")
+	console.log("on poetry foundation site, not running");
 }else{
 
 	chrome.storage.local.get("lastCheckedQuote", function(result) {
@@ -240,6 +238,7 @@ if (notOnPoetryFoundation==false){
 	});
 
 }
+
 
 /// Twitter stuff
 /// fires every so often as long as user has scrolled down

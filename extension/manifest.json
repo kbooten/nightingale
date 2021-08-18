@@ -2,7 +2,7 @@
 	"manifest_version": 2,
 	"name": "Nightingale",
 	"version": "1.0",
-	"description": "Darkling I listen",
+	"description": "Literary pop-ups from Keats's 1819 odes",
 	"content_scripts": 
 	[
 		{
@@ -12,6 +12,9 @@
 			"run_at": "document_end"
 		}
 	],
+	"icons":{
+		"128":"icon128.png"
+	},
 	"permissions":
 	[
 		"storage"

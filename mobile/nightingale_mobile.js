@@ -19,7 +19,6 @@ addStyle(`
   display: inline-block;
   text-shadow: 0 0 3px #d10015, 0 0 6px #2d08d1;
   font-size: inherit;
-  background-color;
 }
 `
 );

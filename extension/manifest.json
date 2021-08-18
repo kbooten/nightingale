@@ -12,6 +12,7 @@
 			"run_at": "document_end"
 		}
 	],
+	"incognito": "not_allowed",
 	"icons":{
 		"128":"icon128.png"
 	},

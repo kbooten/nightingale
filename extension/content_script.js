@@ -206,9 +206,9 @@ if (notOnPoetryFoundation==false){
 		// initialize the bucket of recents if doesn't exist
 		var nRecentQuotes = [];
 		chrome.storage.local.get("nRecents", function(result) {
-			console.log("current nRecents 1")
-			console.log(result.nRecents)
-			console.log(typeof result.nRecents)
+			// console.log("current nRecents 1")
+			// console.log(result.nRecents)
+			// console.log(typeof result.nRecents)
 			if (result.nRecents !== undefined){
 				nRecentQuotes = result.nRecents;
 			}else{
@@ -233,6 +233,23 @@ if (notOnPoetryFoundation==false){
 				enoughTimePassed = false;
 			}
 
+
+			/// Twitter stuff
+			/// fires every so often as long as user has scrolled down
+			var scrollY = window.pageYOffset;
+			if (window.location.hostname.includes("twitter")==true && popupAdded==false && enoughTimePassed==true){
+				setInterval(function(){
+					var scrollYNew = window.pageYOffset;
+					if (scrollYNew - scrollY > 1000){
+						scrollY = scrollYNew;
+						if (popupAdded==false && enoughTimePassed == true){// kind of repetitive (see ref to variable above) but required by my use of setInterval
+							initialize(nodeListChange="reverse"); ///start from the end
+						}
+					}
+				},12000);
+			}		
+			
+
 		});
 
 	});
@@ -240,17 +257,3 @@ if (notOnPoetryFoundation==false){
 }
 
 
-/// Twitter stuff
-/// fires every so often as long as user has scrolled down
-var scrollY = window.pageYOffset;
-if (window.location.hostname.includes("twitter")==true && popupAdded==false && enoughTimePassed==true){
-	setInterval(function(){
-		var scrollYNew = window.pageYOffset;
-		if (scrollYNew - scrollY > 1000){
-			scrollY = scrollYNew;
-			if (popupAdded==false && enoughTimePassed == true){// kind of repetitive (see ref to variable above) but required by my use of setInterval
-				initialize(nodeListChange="reverse"); ///start from the end
-			}
-		}
-	},12000);
-}

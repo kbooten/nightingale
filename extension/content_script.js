@@ -190,13 +190,6 @@ if (window.location.href.startsWith('www.poetryfoundation.org/poems/444')==true)
 	notOnPoetryFoundation = false;
 }
 
-// check if incognito
-if (tab.incognito==true){
-	var incog = true;
-}else{
-	var incog = false;
-}
-
 
 // main
 var lastChecked = 0; // keep global
@@ -250,7 +243,7 @@ if (notOnPoetryFoundation==false){
 /// Twitter stuff
 /// fires every so often as long as user has scrolled down
 var scrollY = window.pageYOffset;
-if (window.location.hostname.includes("twitter")==true && popupAdded==false && enoughTimePassed==true && incog==false){
+if (window.location.hostname.includes("twitter")==true && popupAdded==false && enoughTimePassed==true){
 	setInterval(function(){
 		var scrollYNew = window.pageYOffset;
 		if (scrollYNew - scrollY > 1000){

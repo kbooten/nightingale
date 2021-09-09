@@ -1,6 +1,6 @@
-# *Nightingale*
+# Nightingale
 
-*Nightingale* is a Chrome browser extension that fills the web with literary pop-up ads containing lines from Keats's 1819 odes ("Ode to Psyche," "Ode on Indolence," "Ode on Melancholy," "Ode to a Nightingale," "Ode on a Grecian Urn," and "To Autumn").
+Nightingale is a Chrome browser extension that fills the web with literary pop-up ads containing lines from Keats's 1819 odes ("Ode to Psyche," "Ode on Indolence," "Ode on Melancholy," "Ode to a Nightingale," "Ode on a Grecian Urn," and "To Autumn").
 
 ![](keatsdemo.gif)
 
@@ -16,13 +16,11 @@ will trigger a pop-up containing the lines:
 
 ## Adding it to your browser
 
-*Nightingale* is highly personalized software; the regular expressions that match web-text to Keats's odes encode my no-doubt idiosyncratic interpretations of this verse.  Still, Chrome users can install the extension by 
+The easiest way to install Nightingale is via the [Chrome Web Store](https://chrome.google.com/webstore/detail/nightingale/pplgdlbjfaoofpejfjebjgbjfabadnej). 
 
-1. navigating to `chrome://extensions/`
-2. clicking "Load Unpacked"
-3. loading this repo's folder `extension`
+The directory in this repo called `extension` can also be downloaded and [installed directly](https://webkul.com/blog/how-to-install-the-unpacked-extension-in-chrome/). 
 
-Should someone else want to use *Nightingale* to fill their experience of the internet with literature other than Keats, `extension/patterns.js` can simply be filled with other `(regex, quote)` pairs. 
+Nightingale is highly personalized software; the regular expressions that match web-text to Keats's odes encode my no-doubt idiosyncratic interpretations of this verse.  Should someone else want to use *Nightingale* to fill their experience of the internet with literature other than Keats, `extension/patterns.js` can simply be filled with other `(regex, quote)` pairs. 
 
 ## Other considerations
 
@@ -32,7 +30,7 @@ Should someone else want to use *Nightingale* to fill their experience of the in
 
 ## 📱 Mobile Version
 
-*Nightingale* is also available as a extension for the experimental iOS mobile browser [Insight](https://insightbrowser.com/).  To activate *Nightingale* on Insight, create a custom extension with [this recipe](https://extensions.insightbrowser.com/extend/4897a82f47).  This injects the javascript from `nightingale_mobile.js` in this repo.  
+Nightingale is also available as a extension for the experimental iOS mobile browser [Insight](https://insightbrowser.com/).  To activate Nightingale on Insight, create a custom extension with [this recipe](https://extensions.insightbrowser.com/extend/4897a82f47).  This injects the javascript from `nightingale_mobile.js` in this repo.  
 
 The mobile version does keep track of recently-seen quotes with `localStorage`.  However, it does contain a mobile-specific feature: scrolling a Twitter feed will prompt the program to continuously check newly-revealed (dynamically-loaded) tweets for possible matches.  
 

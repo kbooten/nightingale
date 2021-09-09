@@ -20,7 +20,7 @@ The easiest way to install Nightingale is via the [Chrome Web Store](https://chr
 
 The directory in this repo called `extension` can also be downloaded and [installed directly](https://webkul.com/blog/how-to-install-the-unpacked-extension-in-chrome/). 
 
-Nightingale is highly personalized software; the regular expressions that match web-text to Keats's odes encode my no-doubt idiosyncratic interpretations of this verse.  Should someone else want to use *Nightingale* to fill their experience of the internet with literature other than Keats, `extension/patterns.js` can simply be filled with other `(regex, quote)` pairs. 
+Nightingale is highly personalized software; the regular expressions that match web-text to Keats's odes encode my no-doubt idiosyncratic interpretations of this verse.  Should someone else want to rework these connections, or to use Nightingale to fill their experience of the internet with literature other than Keats, `extension/patterns.js` can simply be filled with other `(regex, quote)` pairs. 
 
 ## Other considerations
 

@@ -219,7 +219,7 @@ if (notOnPoetryFoundation==false){
 
 			// timeOut
 			var timeOut = 86400 * 1000 * 5; // seconds in a day times number of days
-			timeOut = 60 * 1000 * 6; // for debugging
+			// timeOut = 60 * 1000 * 6; // for debugging
 			var enoughTimePassed = true;
 			if (Date.now() - lastChecked > timeOut){ // enough time passed
 				console.log("enough time passed");

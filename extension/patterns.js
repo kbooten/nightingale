@@ -149,7 +149,7 @@ var regex2quote = [
 	[/\blove is\b|\bwant(s|ed|ing)? (wings|to hide|to fly( away)?|super[- ]?powers)|\bfade[ -](in|out)\b|\bOh? f\w+!|\bW(hat|here|ho|hen) (\b[A-Z]?[a-z]+\b ?){2,7}\? +(\b[A-Z]?[a-z]+\b ?){2,7}\?/i,
 		"They faded, and, forsooth! I wanted wings:<br>O folly! What is Love? and where is it?",1],
 
-	[/\b((stay|keep|get) motivated|need motivation|time management|bullet journal|pomodoro technique|to-?do app|trello)\b|\b\w+[’']s \w+ \w+[’']s/i,
+	[/\b((stay|keep|get) motivated|need motivation|time management|bullet journal|pomodoro technique|to-?do app|trello)\b|\b\w+[’']s (?!from)\w{3,} \w+[’']s/i,
 		"And for that poor Ambition! it springs<br>From a man’s little heart’s short fever-fit",1],
 
 	[/\bat least for me\b|\bnothing (sweeter|better|(as )?sweet|(as )?good) (as|than)\b|\bhoneyed\b|\brather be (sleeping|in bed)\b/i,
@@ -287,7 +287,7 @@ var regex2quote = [
 	[/\b(Now more than ever it seems)\b|\bwant(s|ed|ing)? the pain to (just )?(stop|end)\b|\bin (such )?ecstasy!|\b(too|so|really) (fucking )?emo\b/i,
 		"Now more than ever seems it rich to die,<br>To cease upon the midnight with no pain,<br>While thou art pouring forth thy soul abroad<br>In such an ecstasy!",3],
 
-	[/\b(my grave|my burial|my death|my demise|my corpse|turn to (grass|dirt)|requiem|Mozart's|Verdi's|about death)\b|\bbecome a [a-z]o[a-z]\b|\bstill you would \w+,/i,
+	[/\b(my grave|my burial|my death|my demise|my corpse|turn to (grass|dirt)|requiem|Mozart's|Verdi's|about death)\b|\bbecome a [b-df-hj-np-tv-z]o[b-df-hj-np-tv-z]\b|\bstill you would \w+,/i,
 		"Still wouldst thou sing, and I have ears in vain—<br>To thy high requiem become a sod.",3],
 
 	[/\b(born (to die|for death|undying))\b|, [a-z]\w{5,} [A-Z]\w+!|\b immortal B\w+/,
@@ -299,7 +299,7 @@ var regex2quote = [
 	[/\bs\w+(-| )s\w+ song\b|\bm\w+ melod(y|ies)|\bthe [b-df-hj-np-tv-z]{0,}[aeiou]+[b-df-hj-np-tv-z]+\b [b-df-hj-np-tv-z]{0,}[aeiou]+[b-df-hj-np-tv-z]+\b of [B-DF-HJ-NP-TV-Z]{1,}[aeiou]+[b-df-hj-np-tv-z]+\b|\bwhen, \w+ (for|of|in|by) \w+,|\bthe alien [b-df-hj-np-tv-z]{0,}[aeiou]+[b-df-hj-np-tv-z]+\b/,
 		"Perhaps the self-same song that found a path<br>Through the sad heart of Ruth, when, sick for home,<br>She stood in tears amid the alien corn",3],
 
-	[/\bha[ds] charmed\b|\bf\w+ l\w+ f\w+\b|\b(casements?|lattice[sd]?|awning|hinged)\b|\bforlorn\./i,
+	[/\bha[ds] charmed\b|\bf(?!rom)\w{4,} l\w+ f(?!rom)\w{4,}\b|\b(casements?|lattice[sd]?|awning|hinged)\b|\bforlorn\./i,
 		"The same that oft-times hath<br>Charm'd magic casements, opening on the foam<br>Of perilous seas, in faery lands forlorn.",3],
 
 	[/[.!?] +F\w+!|\b[Bb]ell\b.{1,20}[Tt]oll(s|ed)?|\b[Tt]he very \w+/,
@@ -317,7 +317,7 @@ var regex2quote = [
 
 	//ode on a grecian urn
 
-	[/(\b\w+ed (bride|wife|husband)\b|\b-child\b|\bof quiet\b|\bof silence\b)|of \w+ness\b|s\w+ and s\w+\b t[aeiou]\w+\b|still un\w+ed\b/i,
+	[/(\b\w+ed (bride|wife|husband)\b|\b-child\b|\bof quiet\b|\bof silence\b)|\bof \w+ness\b|\bs\w+ and s\w+\b t[aeiou]\w+\b|\bstill un\w+ed\b/i,
 		"Thou still unravish'd bride of quietness,<br>Thou foster-child of silence and slow time",4],
 
 	[/\b(of the forest|my rhyme|historian of)\b|, who \b(can't|can)\b|\ba \w+y \b(story|tale|history|drama|narrative)\b|\b(?:my|our)\b \b(rhyme|echo|melody)\b/i,
@@ -407,7 +407,7 @@ var regex2quote = [
 	[/\b(furrow|sound asleep|drowsy|sudafed|heroin|methadone|narcotic|opi(um|ate)|spared by|swath|thresher|eau de (parfum|toilette|cologne)|perfume|burnout)\b/i,
 		"Or on a half-reap'd furrow sound asleep,<br>Drows'd with the fume of poppies, while thy hook<br>Spares the next swath and all its twined flowers",5],
 
-	[/\b(chaff|deep attention|thresholds?|heavy is the head|across a brook|wrap(ping)? up|finishing touches)\b/i,
+	[/\b(chaff|deep attention|heavy is the head|heavy head|across a brook)\b/i,
 		"And sometimes like a gleaner thou dost keep<br>Steady thy laden head across a brook",5],
 
 	[/\b(ciders?|applejack|calvados|deep attention|ooz(e[ds]?|ings?)|dregs|residues?)\b|a \w+-press\b|\b(hour|day|month)s? by (hour|day|month)s?\b/i,

@@ -1,7 +1,7 @@
 {
 	"manifest_version": 2,
 	"name": "Nightingale",
-	"version": "1.0",
+	"version": "1.1",
 	"description": "Literary pop-ups from Keats's 1819 odes",
 	"content_scripts": 
 	[
